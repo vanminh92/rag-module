@@ -2,7 +2,22 @@
 
 Module Python tìm các đoạn liên quan đến câu hỏi tiếng Việt trong **Sổ tay sinh viên Khóa 50 — Trường Đại học Sư phạm Thành phố Hồ Chí Minh**.
 
-**Trạng thái:** đã hoàn thành phần truy xuất tài liệu (CV12–CV14). Phần tạo prompt và gọi LLM để sinh câu trả lời thuộc Code 2, chưa được triển khai trong dự án này. Vì vậy, đây là **thành phần Retrieval của RAG**, chưa phải hệ thống RAG hỏi đáp hoàn chỉnh.
+Ứng dụng Streamlit `streamlit_qa_app.py` ghép phần truy xuất với Qwen chạy qua Ollama. Khi người dùng hỏi, ứng dụng lấy ba đoạn liên quan, gửi chúng cùng câu hỏi đến mô hình và hiển thị câu trả lời kèm nguồn.
+
+## Chạy ứng dụng hỏi đáp trên Windows
+
+Mở PowerShell tại thư mục gốc dự án và giữ Ollama chạy. Tạo môi trường riêng cho dự án rồi chạy:
+
+```powershell
+py -3.11 -m venv .venv
+.\.venv\Scripts\python.exe -m pip install -r requirements.txt
+ollama pull qwen2.5:3b
+.\.venv\Scripts\python.exe -m streamlit run streamlit_qa_app.py
+```
+
+Bỏ qua lệnh tạo môi trường nếu đã có `.venv` của dự án. Nếu máy đã tải `qwen2.5:3b`, có thể bỏ qua lệnh `ollama pull`. Lần hỏi đầu tiên có thể cần tải mô hình truy xuất E5. Dự án đã có index cho toàn bộ sổ tay.
+
+Thử câu **“Sinh viên chính quy bắt đầu tự đăng ký học phần từ học kỳ nào?”**. Kết quả mong đợi là **từ học kỳ thứ hai của khóa học**, kèm nguồn **trang 15 của PDF**.
 
 ## 1. Dự án làm được gì?
 
@@ -22,7 +37,7 @@ Truy vấn:
 Câu hỏi → E5 → So sánh với index → Top-3 đoạn + nguồn + trang + score
 ```
 
-Để hoàn thiện RAG, Code 2 cần bổ sung:
+Sau truy xuất, Code 2 xử lý:
 
 ```text
 Câu hỏi + các đoạn truy xuất → Prompt cung cấp ngữ cảnh → LLM → Câu trả lời có dẫn nguồn
