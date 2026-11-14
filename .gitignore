@@ -1,0 +1,12 @@
+.venv/
+.tools/
+.cache/
+__pycache__/
+.pytest_cache/
+*.py[cod]
+.DS_Store
+.env
+*.log
+!docs/*.log
+# Original upload is retained locally; only the official, byte-identical copy is used.
+data/SO TAY SINH VIEN K50.pdf

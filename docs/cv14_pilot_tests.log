@@ -1,0 +1,49 @@
+..................................FF......................               [100%]
+=================================== FAILURES ===================================
+________________________ test_real_pipeline_end_to_end _________________________
+
+pdf_path = PosixPath('/Users/vanminh/Documents/Subject/Software Engineering/rag-demo/data/so_tay_sinh_vien_k50.pdf')
+tmp_path = PosixPath('/private/var/folders/r0/_w9s1m8n6dl_0npq9kvnqjj80000gn/T/pytest-of-vanminh/pytest-5/test_real_pipeline_end_to_end0')
+
+    @pytest.mark.real_model
+    def test_real_pipeline_end_to_end(pdf_path, tmp_path):
+        # Rebuild the actual 24 PDF pages, not a mocked pipeline or fabricated text.
+        meta = build_index(pdf_path, tmp_path, 8, 31)
+        assert meta["page_range"] == [8, 31]
+        assert meta["max_passage_tokens"] <= 512
+        vectors = np.load(tmp_path / "embeddings.npy", allow_pickle=False)
+        assert vectors.shape == (meta["num_chunks"], 384)
+        assert vectors.dtype == np.float32
+        index = Retriever(tmp_path, expected_page_range=(8, 31))
+        questions = json.loads(QUESTIONS_PATH.read_text(encoding="utf-8"))
+        validate_gold(questions, index.chunks)
+        for question in questions:
+            results = index.retrieve(question["question"])
+            assert len(results) == 3
+>           assert score_results(question, results)
+E           AssertionError: assert False
+E            +  where False = score_results({'id': 'Q03', 'question': 'Sinh viên chính quy bắt đầu tự đăng ký học phần từ học kỳ nào?', 'expected_page': 15, 'expe...ọc, sinh viên phải tự đăng ký các học phần trên hệ thống đăng ký học tập của Trường theo kế hoạch được ban hành.', ...}, [{'chunk_id': 'so_tay_sinh_vien_k50-p011-c005', 'text': 'buộc theo quy định trong CTĐT, hoặc một học phần thay thế nếu...n đăng ký học phần này thì phải bắt buộc đăng ký học phần kia;', 'source': 'so_tay_sinh_vien_k50.pdf', 'page': 9, ...}])
+
+tests/test_integration.py:58: AssertionError
+----------------------------- Captured stderr call -----------------------------
+Batches:   0%|          | 0/4 [00:00<?, ?it/s]Batches:  25%|██▌       | 1/4 [00:00<00:00,  3.55it/s]Batches:  50%|█████     | 2/4 [00:00<00:00,  3.76it/s]Batches:  75%|███████▌  | 3/4 [00:00<00:00,  4.11it/s]Batches: 100%|██████████| 4/4 [00:00<00:00,  5.04it/s]Batches: 100%|██████████| 4/4 [00:00<00:00,  4.53it/s]
+____________ test_evaluation_uses_public_api_and_writes_real_report ____________
+
+tmp_path = PosixPath('/private/var/folders/r0/_w9s1m8n6dl_0npq9kvnqjj80000gn/T/pytest-of-vanminh/pytest-5/test_evaluation_uses_public_ap0')
+
+    @pytest.mark.real_model
+    def test_evaluation_uses_public_api_and_writes_real_report(tmp_path):
+        output = tmp_path / "report.json"
+        report = run_evaluation(report_path=output)
+        assert json.loads(output.read_text(encoding="utf-8")) == report
+        assert report["total"] == 3
+        assert all(len(q["top_3"]) == 3 for q in report["questions"])
+        # Acceptance test: any regression is visible, without changing questions.
+>       assert report["hits"] == 3
+E       assert 2 == 3
+
+tests/test_integration.py:71: AssertionError
+=========================== short test summary info ============================
+FAILED tests/test_integration.py::test_real_pipeline_end_to_end - AssertionEr...
+FAILED tests/test_integration.py::test_evaluation_uses_public_api_and_writes_real_report
+2 failed, 56 passed in 4.83s

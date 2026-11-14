@@ -1,0 +1,122 @@
+{
+  "evaluated_at": "2026-11-14T04:46:28.383166+00:00",
+  "chunk_size_chars": 500,
+  "chunk_overlap_chars": 100,
+  "strategy": "split at original line-start article headings, then overlapping windows per section/page",
+  "num_chunks": 127,
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "Một tín chỉ học lý thuyết được quy định bao nhiêu giờ, và cần bao nhiêu giờ tự học có hướng dẫn?",
+      "expected_page": 8,
+      "expected_evidence": "15 giờ học lý thuyết và 30 giờ tự học, chuẩn bị cá nhân có hướng dẫn",
+      "expected_source": "so_tay_sinh_vien_k50.pdf",
+      "gold_chunk_ids": [
+        "so_tay_sinh_vien_k50-p008-c004"
+      ],
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p008-c004",
+          "text": "Điều 2. Tín chỉ và học phần 1. Tín chỉ được sử dụng để tính khối lượng học tập của sinh viên. Một tín chỉ được quy định bằng 15 giờ học lý thuyết và 30 giờ tự học, chuẩn bị cá nhân có hướng dẫn; hoặc bằng 30 giờ thực hành, thí nghiệm, thảo luận và 15 giờ tự học, chuẩn bị cá nhân có hướng dẫn; hoặc bằng 45 giờ thực tập tại cơ sở, làm tiểu luận, bài tập lớn, làm đồ án, khóa luận tốt nghiệp. Một giờ học được tính bằng 50 phút. 2.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 8,
+          "order": 3,
+          "score": 0.9263094663619995
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p011-c001",
+          "text": "SỔ TAY SINH VIÊN KHÓA 50 11 b) Thời gian học tập chuẩn toàn khóa và thời gian học tập tối đa đối với hình thức đào tạo vừa làm vừa học được quy định như sau: Chương trình đào tạo Thời gian học tập chuẩn Thời gian học tập tối đa Đào tạo đại học cấp bằng thứ nhất 5 năm học 9 năm học Đào tạo liên thông từ trình độ cao đẳng lên trình độ đại học 2 năm học 4 năm học Đào tạo liên thông từ trình độ trung cấp lên trình độ đại học 3 năm học 6 năm học Đào tạo liên thông trình độ đại học đối với người đã",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 11,
+          "order": 17,
+          "score": 0.8782705068588257
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p010-c004",
+          "text": "mỗi CTĐT trình độ đại học được thực hiện theo các quy định hiện hành của Bộ Giáo dục và Đào tạo. 6. Thời gian học tập chuẩn toàn khóa và thời gian học tập tối đa của CTĐT a) Thời gian học tập chuẩn toàn khóa và thời gian học tập tối đa đối với hình thức đào tạo chính quy được quy định như sau: Chương trình đào tạo Thời gian học tập chuẩn Thời gian học tập tối đa Đào tạo đại học cấp bằng thứ nhất 4 năm học 8 năm học Đào tạo liên thông từ trình độ cao đẳng lên trình độ đại học 1,5 năm học 3 năm",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 10,
+          "order": 15,
+          "score": 0.8747503757476807
+        }
+      ],
+      "hit_at_3": 1
+    },
+    {
+      "id": "Q02",
+      "question": "Sinh viên cần hoàn thành học phần tiên quyết vào thời điểm nào?",
+      "expected_page": 9,
+      "expected_evidence": "Học phần tiên quyết: là học phần sinh viên phải tích lũy trước khi học các học phần khác có liên quan;",
+      "expected_source": "so_tay_sinh_vien_k50.pdf",
+      "gold_chunk_ids": [
+        "so_tay_sinh_vien_k50-p009-c004"
+      ],
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p009-c004",
+          "text": "ung về giáo dục thể chất và giáo dục quốc phòng – an ninh, tin học cơ bản, ngoại ngữ không chuyên…; d) Học phần tiên quyết: là học phần sinh viên phải tích lũy trước khi học các học phần khác có liên quan; đ) Học phần học trước: là học phần sinh viên phải học trước khi học các học phần có liên quan; e) Học phần song hành: hai học phần được gọi là song hành khi sinh viên đăng ký học phần này thì phải bắt buộc đăng ký học phần kia;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 9,
+          "order": 8,
+          "score": 0.8824453949928284
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p014-c004",
+          "text": "kỳ, Trưởng phòng Đào tạo trình Hiệu trưởng quyết định số sinh viên tối thiểu cho mỗi lớp học phần. Nếu số sinh viên đăng ký ít hơn quy định, lớp học phần sẽ không được tổ chức và sinh viên phải đăng ký chuyển sang học ở những lớp học phần khác mà Trường có tổ chức cho đủ số tín chỉ tối thiểu quy định trong học kỳ. 3. Thời khóa biểu và phân công giảng dạy a) Căn cứ kế hoạch năm học, Trường xây dựng thời khóa biểu cho từng học kỳ;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 14,
+          "order": 36,
+          "score": 0.8785005807876587
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p019-c002",
+          "text": "X: Điểm chưa hoàn thiện do chưa đủ dữ liệu; R: Điểm học phần được miễn học và công nhận tín chỉ. 3. Học lại và học cải thiện điểm a) Sinh viên có điểm học phần không đạt phải đăng ký học lại theo quy định tại Điều 4 của Quy chế này, trừ trường hợp quy định tại điểm c khoản này; điểm lần học cuối là điểm chính thức của học phần; b) Sinh viên có điểm học phần đạt, được đăng ký học lại chính học phần đó để cải thiện điểm, điểm lần học cuối là điểm chính thức của học phần.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 19,
+          "order": 62,
+          "score": 0.8775600790977478
+        }
+      ],
+      "hit_at_3": 1
+    },
+    {
+      "id": "Q03",
+      "question": "Sinh viên chính quy bắt đầu tự đăng ký học phần từ học kỳ nào?",
+      "expected_page": 15,
+      "expected_evidence": "Từ học kỳ thứ hai của khóa học, sinh viên phải tự đăng ký các học phần trên hệ thống đăng ký học tập của Trường theo kế hoạch được ban hành.",
+      "expected_source": "so_tay_sinh_vien_k50.pdf",
+      "gold_chunk_ids": [
+        "so_tay_sinh_vien_k50-p015-c006"
+      ],
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p011-c005",
+          "text": "buộc theo quy định trong CTĐT, hoặc một học phần thay thế nếu học phần đó không còn được giảng dạy; d) Sinh viên không đạt một học phần tự chọn tự do sẽ phải đăng ký học lại học phần đó hoặc có thể chọn đăng ký học một học phần khác theo quy định trong CTĐT. 2. Trường áp dụng thống nhất phương thức tổ chức đào tạo theo tín chỉ đối với hình thức đào tạo chính quy và hình thức đào tạo vừa làm vừa học.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 11,
+          "order": 21,
+          "score": 0.8977035284042358
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p011-c004",
+          "text": "ương theo quy định trong CTĐT, hoặc một học phần thay thế nếu học phần đó không còn được giảng dạy; c) Sinh viên không đạt một học phần tự chọn bắt buộc sẽ phải đăng ký học lại chính học phần đó hoặc một học phần khác thuộc cùng nhóm học phần tự chọn bắt buộc theo quy định trong CTĐT, hoặc một học phần thay thế nếu học phần đó không còn được giảng dạy;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 11,
+          "order": 20,
+          "score": 0.8961912989616394
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p009-c004",
+          "text": "ung về giáo dục thể chất và giáo dục quốc phòng – an ninh, tin học cơ bản, ngoại ngữ không chuyên…; d) Học phần tiên quyết: là học phần sinh viên phải tích lũy trước khi học các học phần khác có liên quan; đ) Học phần học trước: là học phần sinh viên phải học trước khi học các học phần có liên quan; e) Học phần song hành: hai học phần được gọi là song hành khi sinh viên đăng ký học phần này thì phải bắt buộc đăng ký học phần kia;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 9,
+          "order": 8,
+          "score": 0.8940649032592773
+        }
+      ],
+      "hit_at_3": 0
+    }
+  ],
+  "hits": 2,
+  "total": 3
+}

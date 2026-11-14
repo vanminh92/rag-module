@@ -1,0 +1,5 @@
+Working directory: /private/var/folders/r0/_w9s1m8n6dl_0npq9kvnqjj80000gn/T
+Contract: retrieve(question: str, top_k: int = 3) -> list[dict]
+Code 2 import/retrieval from another working directory: OK
+Results: 3, exactly five required keys each
+Gold evidence page: 15 (rank 3)

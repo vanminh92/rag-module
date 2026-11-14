@@ -1,0 +1,5 @@
+W1114 11:45:18.203000 27549 torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 22709.54it/s]
+Q01 gold= ['so_tay_sinh_vien_k50-p008-c004'] hit= 1 [('so_tay_sinh_vien_k50-p008-c004', 0.9270046949386597), ('so_tay_sinh_vien_k50-p014-c007', 0.8829389214515686), ('so_tay_sinh_vien_k50-p008-c005', 0.8826640844345093)]
+Q02 gold= ['so_tay_sinh_vien_k50-p009-c004'] hit= 1 [('so_tay_sinh_vien_k50-p009-c004', 0.8926800489425659), ('so_tay_sinh_vien_k50-p014-c005', 0.8768355846405029), ('so_tay_sinh_vien_k50-p026-c006', 0.8740682601928711)]
+Q03 gold= ['so_tay_sinh_vien_k50-p015-c008'] hit= 0 [('so_tay_sinh_vien_k50-p011-c005', 0.896822452545166), ('so_tay_sinh_vien_k50-p011-c006', 0.8939145803451538), ('so_tay_sinh_vien_k50-p011-c004', 0.8891688585281372)]

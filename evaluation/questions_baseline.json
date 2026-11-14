@@ -1,0 +1,33 @@
+[
+  {
+    "id": "Q01",
+    "question": "Một tín chỉ học lý thuyết được quy định bao nhiêu giờ, và cần bao nhiêu giờ tự học có hướng dẫn?",
+    "expected_page": 8,
+    "expected_evidence": "15 giờ học lý thuyết và 30 giờ tự học, chuẩn bị cá nhân có hướng dẫn",
+    "expected_source": "so_tay_sinh_vien_k50.pdf",
+    "gold_chunk_ids": [
+      "so_tay_sinh_vien_k50-p008-c003",
+      "so_tay_sinh_vien_k50-p008-c004"
+    ]
+  },
+  {
+    "id": "Q02",
+    "question": "Sinh viên cần hoàn thành học phần tiên quyết vào thời điểm nào?",
+    "expected_page": 9,
+    "expected_evidence": "Học phần tiên quyết: là học phần sinh viên phải tích lũy trước khi học các học phần khác có liên quan;",
+    "expected_source": "so_tay_sinh_vien_k50.pdf",
+    "gold_chunk_ids": [
+      "so_tay_sinh_vien_k50-p009-c004"
+    ]
+  },
+  {
+    "id": "Q03",
+    "question": "Sinh viên chính quy bắt đầu tự đăng ký học phần từ học kỳ nào?",
+    "expected_page": 15,
+    "expected_evidence": "Từ học kỳ thứ hai của khóa học, sinh viên phải tự đăng ký các học phần trên hệ thống đăng ký học tập của Trường theo kế hoạch được ban hành.",
+    "expected_source": "so_tay_sinh_vien_k50.pdf",
+    "gold_chunk_ids": [
+      "so_tay_sinh_vien_k50-p015-c006"
+    ]
+  }
+]

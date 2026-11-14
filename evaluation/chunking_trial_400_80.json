@@ -1,0 +1,121 @@
+{
+  "evaluated_at": "2026-11-14T04:45:20.414337+00:00",
+  "chunk_size_chars": 400,
+  "chunk_overlap_chars": 80,
+  "num_chunks": 157,
+  "questions": [
+    {
+      "id": "Q01",
+      "question": "Một tín chỉ học lý thuyết được quy định bao nhiêu giờ, và cần bao nhiêu giờ tự học có hướng dẫn?",
+      "expected_page": 8,
+      "expected_evidence": "15 giờ học lý thuyết và 30 giờ tự học, chuẩn bị cá nhân có hướng dẫn",
+      "expected_source": "so_tay_sinh_vien_k50.pdf",
+      "gold_chunk_ids": [
+        "so_tay_sinh_vien_k50-p008-c004"
+      ],
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p008-c004",
+          "text": "i học theo hình thức chính quy và hình thức vừa làm vừa học tại Trường. Điều 2. Tín chỉ và học phần 1. Tín chỉ được sử dụng để tính khối lượng học tập của sinh viên. Một tín chỉ được quy định bằng 15 giờ học lý thuyết và 30 giờ tự học, chuẩn bị cá nhân có hướng dẫn; hoặc bằng 30 giờ thực hành, thí nghiệm, thảo luận và 15 giờ tự học, chuẩn bị cá nhân có hướng dẫn;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 8,
+          "order": 3,
+          "score": 0.9270046949386597
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p014-c007",
+          "text": "khác mà Trường có tổ chức cho đủ số tín chỉ tối thiểu quy định trong học kỳ. 3. Thời khóa biểu và phân công giảng dạy a) Căn cứ kế hoạch năm học, Trường xây dựng thời khóa biểu cho từng học kỳ; khoa đào tạo, bộ môn tổ chức phân công giảng viên giảng dạy các lớp học phần theo thời khóa biểu;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 14,
+          "order": 46,
+          "score": 0.8829389214515686
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p008-c005",
+          "text": "ực hành, thí nghiệm, thảo luận và 15 giờ tự học, chuẩn bị cá nhân có hướng dẫn; hoặc bằng 45 giờ thực tập tại cơ sở, làm tiểu luận, bài tập lớn, làm đồ án, khóa luận tốt nghiệp. Một giờ học được tính bằng 50 phút. 2. Học phần là khối lượng kiến thức tương đối trọn vẹn, thuận tiện cho sinh viên tích luỹ trong quá trình học tập. Từng học phần được ký hiệu bằng một mã số riêng.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 8,
+          "order": 4,
+          "score": 0.8826640844345093
+        }
+      ],
+      "hit_at_3": 1
+    },
+    {
+      "id": "Q02",
+      "question": "Sinh viên cần hoàn thành học phần tiên quyết vào thời điểm nào?",
+      "expected_page": 9,
+      "expected_evidence": "Học phần tiên quyết: là học phần sinh viên phải tích lũy trước khi học các học phần khác có liên quan;",
+      "expected_source": "so_tay_sinh_vien_k50.pdf",
+      "gold_chunk_ids": [
+        "so_tay_sinh_vien_k50-p009-c004"
+      ],
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p009-c004",
+          "text": "chất và giáo dục quốc phòng – an ninh, tin học cơ bản, ngoại ngữ không chuyên…; d) Học phần tiên quyết: là học phần sinh viên phải tích lũy trước khi học các học phần khác có liên quan; đ) Học phần học trước: là học phần sinh viên phải học trước khi học các học phần có liên quan;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 9,
+          "order": 8,
+          "score": 0.8926800489425659
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p014-c005",
+          "text": "phần dựa theo thời khóa biểu chung của Trường. Mỗi lớp học phần có mã số riêng; − Tùy theo điều kiện cụ thể của từng học kỳ, Trưởng phòng Đào tạo trình Hiệu trưởng quyết định số sinh viên tối thiểu cho mỗi lớp học phần.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 14,
+          "order": 44,
+          "score": 0.8768355846405029
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p026-c006",
+          "text": "c tập, sinh viên phải làm đơn gửi Phòng CTCT&HSSV để tiếp nhận trở lại học tập. Trường hợp sinh viên chưa thể trở lại học phải làm đơn xin gia hạn thời gian tạm dừng học tập. Quá thời gian tạm dừng học tập, sinh viên không trở lại Trường học tập xem như tự ý bỏ học. 4. Sinh viên được thôi học vì lý do cá nhân, nếu muốn quay trở lại học phải dự tuyển đầu vào như những thí sinh khác.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 26,
+          "order": 123,
+          "score": 0.8740682601928711
+        }
+      ],
+      "hit_at_3": 1
+    },
+    {
+      "id": "Q03",
+      "question": "Sinh viên chính quy bắt đầu tự đăng ký học phần từ học kỳ nào?",
+      "expected_page": 15,
+      "expected_evidence": "Từ học kỳ thứ hai của khóa học, sinh viên phải tự đăng ký các học phần trên hệ thống đăng ký học tập của Trường theo kế hoạch được ban hành.",
+      "expected_source": "so_tay_sinh_vien_k50.pdf",
+      "gold_chunk_ids": [
+        "so_tay_sinh_vien_k50-p015-c008"
+      ],
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p011-c005",
+          "text": "rong CTĐT, hoặc một học phần thay thế nếu học phần đó không còn được giảng dạy; c) Sinh viên không đạt một học phần tự chọn bắt buộc sẽ phải đăng ký học lại chính học phần đó hoặc một học phần khác thuộc cùng nhóm học phần tự chọn bắt buộc theo quy định trong CTĐT, hoặc một học phần thay thế nếu học phần đó không còn được giảng dạy;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 11,
+          "order": 23,
+          "score": 0.896822452545166
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p011-c006",
+          "text": "rong CTĐT, hoặc một học phần thay thế nếu học phần đó không còn được giảng dạy; d) Sinh viên không đạt một học phần tự chọn tự do sẽ phải đăng ký học lại học phần đó hoặc có thể chọn đăng ký học một học phần khác theo quy định trong CTĐT. 2. Trường áp dụng thống nhất phương thức tổ chức đào tạo theo tín chỉ đối với hình thức đào tạo chính quy và hình thức đào tạo vừa làm vừa học.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 11,
+          "order": 24,
+          "score": 0.8939145803451538
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p011-c004",
+          "text": "T theo kế hoạch học tập của cá nhân, phù hợp với kế hoạch giảng dạy của Trường; b) Sinh viên không đạt một học phần bắt buộc sẽ phải đăng ký học lại học phần đó hoặc một học phần tương đương theo quy định trong CTĐT, hoặc một học phần thay thế nếu học phần đó không còn được giảng dạy;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 11,
+          "order": 22,
+          "score": 0.8891688585281372
+        }
+      ],
+      "hit_at_3": 0
+    }
+  ],
+  "hits": 2,
+  "total": 3
+}

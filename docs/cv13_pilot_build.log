@@ -1,0 +1,32 @@
+INFO src.document_loader: PDF so_tay_sinh_vien_k50.pdf | total_pages=220 range=8-31 selected=24 text_pages=24 empty_pages=[] chars=43281
+W1114 11:42:23.458000 27449 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+INFO sentence_transformers.base.model: Loading SentenceTransformer model from intfloat/multilingual-e5-small.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 12249.29it/s]
+Batches:   0%|          | 0/4 [00:00<?, ?it/s]Batches:  25%|██▌       | 1/4 [00:00<00:01,  1.89it/s]Batches:  50%|█████     | 2/4 [00:00<00:00,  2.74it/s]Batches:  75%|███████▌  | 3/4 [00:00<00:00,  3.35it/s]Batches: 100%|██████████| 4/4 [00:01<00:00,  4.33it/s]Batches: 100%|██████████| 4/4 [00:01<00:00,  3.55it/s]
+INFO __main__: CV13 index: {"source": "so_tay_sinh_vien_k50.pdf", "source_sha256": "bbae270b9821c71eeede660e3168c868bde07f458f07b648645c14584bdeb8b0", "source_path": "../so_tay_sinh_vien_k50.pdf", "page_range": [8, 31], "total_pdf_pages": 220, "text_pages": 24, "empty_pages": [], "raw_chars": 43281, "normalized_chars": 40688, "model_name": "intfloat/multilingual-e5-small", "model_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3", "embedding_dim": 384, "num_chunks": 122, "chunk_size_chars": 500, "chunk_overlap_chars": 100, "max_model_tokens": 512, "max_passage_tokens": 166, "index_version": 1, "build_timestamp": "2026-11-14T04:42:25.991607+00:00", "chunks_sha256": "ad303f3c028995f5965aa152a6e5e0d1d6a76c83f7a7894949485d6c6436e860", "embeddings_sha256": "e4355fb095dbfd1a8b0f514468fe7f48ecea04fba67bf1252eba00fa588d1edc"}
+{
+  "source": "so_tay_sinh_vien_k50.pdf",
+  "source_sha256": "bbae270b9821c71eeede660e3168c868bde07f458f07b648645c14584bdeb8b0",
+  "source_path": "../so_tay_sinh_vien_k50.pdf",
+  "page_range": [
+    8,
+    31
+  ],
+  "total_pdf_pages": 220,
+  "text_pages": 24,
+  "empty_pages": [],
+  "raw_chars": 43281,
+  "normalized_chars": 40688,
+  "model_name": "intfloat/multilingual-e5-small",
+  "model_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "embedding_dim": 384,
+  "num_chunks": 122,
+  "chunk_size_chars": 500,
+  "chunk_overlap_chars": 100,
+  "max_model_tokens": 512,
+  "max_passage_tokens": 166,
+  "index_version": 1,
+  "build_timestamp": "2026-11-14T04:42:25.991607+00:00",
+  "chunks_sha256": "ad303f3c028995f5965aa152a6e5e0d1d6a76c83f7a7894949485d6c6436e860",
+  "embeddings_sha256": "e4355fb095dbfd1a8b0f514468fe7f48ecea04fba67bf1252eba00fa588d1edc"
+}

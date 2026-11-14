@@ -1,0 +1,26 @@
+{
+  "source": "so_tay_sinh_vien_k50.pdf",
+  "source_sha256": "bbae270b9821c71eeede660e3168c868bde07f458f07b648645c14584bdeb8b0",
+  "source_path": "../so_tay_sinh_vien_k50.pdf",
+  "page_range": [
+    8,
+    31
+  ],
+  "total_pdf_pages": 220,
+  "text_pages": 24,
+  "empty_pages": [],
+  "raw_chars": 43281,
+  "normalized_chars": 40688,
+  "model_name": "intfloat/multilingual-e5-small",
+  "model_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
+  "embedding_dim": 384,
+  "num_chunks": 122,
+  "chunk_size_chars": 500,
+  "chunk_overlap_chars": 100,
+  "max_model_tokens": 512,
+  "max_passage_tokens": 166,
+  "index_version": 1,
+  "build_timestamp": "2026-11-14T04:42:25.991607+00:00",
+  "chunks_sha256": "ad303f3c028995f5965aa152a6e5e0d1d6a76c83f7a7894949485d6c6436e860",
+  "embeddings_sha256": "e4355fb095dbfd1a8b0f514468fe7f48ecea04fba67bf1252eba00fa588d1edc"
+}

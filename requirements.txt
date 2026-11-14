@@ -1,0 +1,4 @@
+pypdf==7.1.0
+numpy==2.4.6
+sentence-transformers==5.7.0
+pytest==9.2.0
