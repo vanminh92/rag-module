@@ -1,8 +1,0 @@
-INFO src.document_loader: PDF so_tay_sinh_vien_k50.pdf | total_pages=220 range=8-31 selected=24 text_pages=24 empty_pages=[] chars=43281
-INFO __main__: CV12: {'text_pages': 24, 'raw_chars': 43281, 'num_chunks': 122, 'output': 'data/processed/chunks.json'}
-{
-  "text_pages": 24,
-  "raw_chars": 43281,
-  "num_chunks": 122,
-  "output": "data/processed/chunks.json"
-}

@@ -1,419 +1,139 @@
-# RAG — Hỏi đáp tự do trên Sổ tay sinh viên Khóa 50
+# K50 AI — Hỏi đáp Sổ tay sinh viên
 
-Giao diện Modern Chat + PDF Workbench: [hướng dẫn chạy và sử dụng](README_UI.md).
+Ứng dụng giúp bạn đặt câu hỏi bằng tiếng Việt về **Sổ tay sinh viên Khóa 50, Trường Đại học Sư phạm TP. Hồ Chí Minh**. Hệ thống tìm thông tin trong PDF 220 trang, tạo câu trả lời và cho phép mở trang nguồn để đối chiếu.
 
-Module Python tìm các đoạn liên quan đến câu hỏi tiếng Việt trong **Sổ tay sinh viên Khóa 50 — Trường Đại học Sư phạm Thành phố Hồ Chí Minh**.
+Đây là **bản demo**, không phải sản phẩm chính thức của nhà trường. Câu trả lời có thể sai hoặc thiếu ý; hãy kiểm tra nguồn trước khi dùng thông tin học vụ.
 
-Ứng dụng Streamlit sử dụng E5 + BM25 tiếng Việt, hợp nhất RRF, chọn 4–8 đoạn theo câu hỏi và kiểm tra từng luận điểm với trích dẫn nguyên văn. Qwen2.5 3B chạy qua Ollama; mô hình E5, PDF và API Code 2 được giữ nguyên. Đây là hỏi đáp trong phạm vi tài liệu, không phải tra cứu kiến thức ngoài sổ tay.
+![Giao diện chat và PDF](docs/ui_workbench/screenshots/desktop_light.png)
 
-## Chạy bản nâng cấp trên macOS
+## 1. Cần chuẩn bị gì?
 
-Giữ Ollama chạy ở máy cục bộ. Từ thư mục repository:
+- **Python 3.11 trở lên**, Git và ứng dụng **Ollama**.
+- Máy đã kiểm thử: MacBook Air M5, RAM 16GB.
+- Internet khi cài thư viện và tải model lần đầu. Sau khi tải xong, câu hỏi được xử lý cục bộ, không cần API key.
+
+Các lệnh dưới đây chạy trong **thư mục gốc dự án**, nơi có `README.md`, `requirements.txt` và `streamlit_qa_app.py`.
+
+## 2. Cài đặt lần đầu trên macOS
+
+Nếu đã có thư mục dự án trên máy, bỏ qua bước clone. Nếu tải mới, dùng đúng nhánh giao diện hiện tại:
 
 ```bash
+git clone --branch feature/streamlit-modern-research-workbench https://github.com/vanminh92/rag-module.git
+cd rag-module
+```
+
+Tạo môi trường Python riêng và cài các thành phần cần thiết:
+
+```bash
+python3.11 -m venv .venv
 .venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -m src.entailment --download
+
+# Model tạo câu trả lời
 ollama pull qwen2.5:3b
+
+# Chuẩn bị model kiểm tra bằng chứng cục bộ
+.venv/bin/python -m src.entailment --download
+```
+
+Việc tải model có thể mất vài phút. Nếu đã có `.venv` và model trên máy này, không cần tạo/tải lại. PDF và index đã có trong `data/`, nên **không cần build lại index để sử dụng**.
+
+## 3. Mỗi lần sử dụng
+
+Mở Terminal tại thư mục dự án, rồi chạy:
+
+```bash
+open -a Ollama
 .venv/bin/python -m streamlit run streamlit_qa_app.py
 ```
 
-Không cần build lại index đã có. Model NLI được chuẩn bị một lần để kiểm chứng cục bộ; không đổi E5 hoặc Qwen. Metadata cấu trúc được tạo một lần tại `data/processed/structure.json`, có kiểm tra hash; không thay đổi ba artifact index gốc. Nếu chưa có `.venv`, tạo bằng Python 3.11+ như mục cài đặt bên dưới.
+Mở địa chỉ Streamlit in ra, thường là **http://localhost:8501**. Giữ Terminal và Ollama chạy khi dùng; nhấn **Ctrl+C** trong Terminal để dừng ứng dụng.
 
-```bash
-# Chỉ truy xuất, không cần Ollama; đầu ra có plan, RRF, reranking và ngữ cảnh.
-.venv/bin/python -m src.pipeline --retrieve-only --question "Điểm thấp quá có bị đuổi học không?"
+<details>
+<summary>Cài và chạy trên Windows — PowerShell</summary>
 
-# Hỏi đáp, trích dẫn và nhật ký kiểm chứng.
-.venv/bin/python -m src.pipeline --question "Sinh viên đại học chính quy tự đăng ký học phần từ học kỳ nào?" --debug
-
-# Tùy chọn: dùng thêm Qwen để phân tích/viết lại truy vấn.
-RAG_QUERY_REWRITE=llm .venv/bin/python -m streamlit run streamlit_qa_app.py
-
-# Tắt reranking để thử nghiệm; mặc định là lexical, không tải thêm model.
-RAG_RERANKER=none .venv/bin/python -m streamlit run streamlit_qa_app.py
-
-# Chế độ nhẹ hơn để đối chiếu, bỏ NLI nhưng vẫn kiểm tra trích dẫn và Qwen.
-RAG_SUPPORT_CHECK=llm .venv/bin/python -m streamlit run streamlit_qa_app.py
-```
-
-Giao diện phân biệt trả lời đầy đủ, một phần và chưa đủ bằng chứng. Mỗi nguồn có tên tệp, trang vật lý PDF, trích đoạn và toàn văn chunk. Bật **Debug dành cho nhà phát triển** để xem truy vấn, ứng viên E5/BM25, RRF, reranking, ngữ cảnh, phản hồi LLM và kiểm tra chứng cứ.
-
-API cũ vẫn giữ nguyên chữ ký, năm trường và score cosine:
-
-```python
-from src.retriever import retrieve  # API Code 2, dense baseline, không đổi
-chunks = retrieve("Học phần tiên quyết là gì?", top_k=3)
-
-from src.pipeline import RAGPipeline  # API nâng cao mới
-result = RAGPipeline().ask("Câu hỏi tự nhiên liên quan đến sổ tay")
-print(result.status, result.answer, result.sources)
-```
-
-Chi tiết thiết kế, cấu hình, giới hạn và rollback: [docs/open_domain_rag.md](docs/open_domain_rag.md). Kết quả đo thật và các giai đoạn: [docs/upgrade_report.md](docs/upgrade_report.md). Cách đánh giá: [evaluation/README.md](evaluation/README.md). Các mục CV12–CV14 bên dưới là hợp đồng và lịch sử bàn giao, vẫn có thể tái chạy.
-
-Lượt đánh giá cuối dùng 70 câu, chia 35 dev/35 test. Trên test, bản mới trả lời đúng và đủ 22/30 câu có đủ thông tin, baseline 21/30; Recall@10 giảm từ 98,48% xuống 92,42%. Thời gian trung bình bản mới khoảng 25 giây/câu trên M5 16GB. Trích dẫn và độ đầy đủ vẫn có lỗi; xem báo cáo trước khi suy rộng kết quả.
-
-## Chạy ứng dụng hỏi đáp trên Windows
-
-Mở PowerShell tại thư mục gốc dự án và giữ Ollama chạy. Tạo môi trường riêng cho dự án rồi chạy:
+Mở Ollama bằng ứng dụng, rồi chạy tại thư mục dự án:
 
 ```powershell
 py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
-.\.venv\Scripts\python.exe -m src.entailment --download
 ollama pull qwen2.5:3b
+.\.venv\Scripts\python.exe -m src.entailment --download
 .\.venv\Scripts\python.exe -m streamlit run streamlit_qa_app.py
 ```
 
-Bỏ qua lệnh tạo môi trường nếu đã có `.venv` của dự án. Nếu máy đã tải `qwen2.5:3b`, có thể bỏ qua lệnh `ollama pull`. Lần hỏi đầu tiên có thể cần tải mô hình truy xuất E5. Dự án đã có index cho toàn bộ sổ tay.
+Các lần sau chỉ cần mở Ollama và chạy dòng cuối. Không copy `.venv` từ macOS sang Windows; tạo môi trường mới trên máy nhận. Giao diện hiện được kiểm thử trực tiếp trên macOS/Edge.
 
-Thử câu **“Sinh viên chính quy bắt đầu tự đăng ký học phần từ học kỳ nào?”**. Kết quả mong đợi là **từ học kỳ thứ hai của khóa học**, kèm nguồn **trang 15 của PDF**.
+</details>
 
-## 1. Dự án làm được gì?
+## 4. Dùng ứng dụng như thế nào?
 
-| Công việc | Chức năng đã có |
+1. Nhập câu hỏi vào ô chat hoặc nhấn một câu gợi ý. Ví dụ: **“Sinh viên đại học chính quy tự đăng ký học phần từ học kỳ nào?”**
+2. Đọc câu trả lời. Nếu chỉ tìm được một phần bằng chứng, UI hiển thị cảnh báo và phần chưa xác minh.
+3. Nhấn **`[1] Sổ tay K50 · Trang …`** để xem PDF và đoạn văn bản làm nguồn. Số trang là vị trí vật lý trong PDF, bắt đầu từ 1.
+4. Dùng **Trước/Sau**, nhập số trang hoặc chọn zoom để đọc. Nếu viewer lỗi, chọn **Bản dự phòng** hoặc tải trang PDF.
+5. Dùng **Trò chuyện mới** và danh sách bên trái để đổi cuộc trò chuyện. Đổi sáng/tối qua menu **⋮ → Light / Dark**.
+
+Trên mobile, PDF mở trong màn hình riêng có nút **Quay lại hội thoại**. Các thao tác xem nguồn, chuyển trang, đổi theme hoặc đổi chat không gửi lại câu hỏi tới model.
+
+**Lưu ý:** Lịch sử chỉ lưu trong phiên trình duyệt và có thể mất khi refresh/restart. Mỗi câu hỏi được tra cứu độc lập; khi hỏi tiếp, hãy nhắc lại chủ đề. Một phản hồi có thể mất hàng chục giây, nhất là lần đầu nạp model.
+
+## 5. Khi gặp lỗi
+
+| Hiện tượng | Cách xử lý |
 |---|---|
-| CV12 — Nạp tài liệu | Đọc PDF theo trang, chuẩn hóa tiếng Việt, chia đoạn có overlap, lưu nguồn và số trang |
-| CV13 — Truy xuất | Tạo embedding bằng E5, lưu index, tìm Top-k theo cosine similarity |
-| CV14 — Kiểm tra và bàn giao | Đánh giá ba câu hỏi có bằng chứng, lưu Top-3 và Hit@3, cung cấp tests và API cho Code 2 |
+| Không có lệnh `python3.11` | Kiểm tra `python3 --version`; nếu từ 3.11 trở lên, dùng `python3` để tạo `.venv`. |
+| Không thấy `.venv/bin/python` | Chạy bước tạo môi trường ở mục 2 trong đúng thư mục dự án. |
+| Báo thiếu thư viện | Chạy lại `.venv/bin/python -m pip install -r requirements.txt`. |
+| Không kết nối được Ollama | Mở ứng dụng Ollama; nhấn **Kiểm tra lại Ollama** trong sidebar. |
+| Chưa có Qwen | Chạy `ollama pull qwen2.5:3b`. |
+| Thiếu model kiểm chứng NLI | Chạy `.venv/bin/python -m src.entailment --download`. |
+| Thiếu/hỏng index hoặc PDF | Kiểm tra `data/so_tay_sinh_vien_k50.pdf` và các file trong `data/processed/`; xem [hướng dẫn phát triển](docs/development.md). |
+| PDF không hiện | Chọn **Bản dự phòng**, **Chỉ văn bản** hoặc **Tải trang này**. |
+| Cổng 8501 đang dùng | Mở địa chỉ thực tế Terminal in ra, hoặc thêm `--server.port 8502` vào lệnh chạy Streamlit. |
 
-Luồng đã triển khai:
+Đừng sửa PDF, đổi embedding hay xóa index để xử lý lỗi giao diện. Ứng dụng không tự build lại dữ liệu khi mở chat.
 
-```text
-Xây index, chạy khi PDF hoặc cấu hình thay đổi:
-PDF → Trích xuất từng trang → Chuẩn hóa → Chia chunks → E5 → Lưu index
-
-Truy vấn:
-Câu hỏi → E5 → So sánh với index → Top-3 đoạn + nguồn + trang + score
-```
-
-Sau truy xuất, Code 2 xử lý:
+## 6. Bên trong hệ thống
 
 ```text
-Câu hỏi + các đoạn truy xuất → Prompt cung cấp ngữ cảnh → LLM → Câu trả lời có dẫn nguồn
+Câu hỏi → Tìm đoạn liên quan trong PDF → Qwen tạo câu trả lời
+        → Kiểm tra bằng chứng → Hiển thị câu trả lời và trang nguồn
 ```
 
-Giao diện thuộc CV15; prompt và LLM thuộc CV16. Giao diện giúp người dùng tương tác nhưng không phải điều kiện bắt buộc của RAG. Khi chạy CLI hiện tại, kết quả là **các đoạn văn bản**, chưa phải câu trả lời do LLM tổng hợp.
+- **RAG** là cách trả lời dựa trên tài liệu tìm được thay vì chỉ dựa vào kiến thức model.
+- **Index** là dữ liệu đã chuẩn bị để tìm kiếm nhanh; dự án dùng E5 kết hợp BM25.
+- **Qwen2.5 3B** tạo câu trả lời qua Ollama. Model NLI hỗ trợ kiểm tra diễn giải, nhưng cũng có thể đánh giá sai.
 
-## 2. Chạy ngay bản đã bàn giao
-
-Mở Terminal tại thư mục gốc `rag-demo/`, nơi có file README này. Nếu môi trường `.venv/` đã được tạo trên máy hiện tại, kích hoạt:
-
-**macOS / Linux:**
-
-```bash
-source .venv/bin/activate
-python --version
-```
-
-**Windows PowerShell** (với môi trường được tạo trên Windows):
-
-```powershell
-.\.venv\Scripts\Activate.ps1
-python --version
-```
-
-Cần Python **3.11 trở lên**. Nếu chưa có môi trường hoặc đang chuyển máy, xem mục 3 trước.
-
-Index mặc định đã có sẵn cho **toàn bộ 220 trang**, nên có thể thử truy vấn ngay:
-
-```bash
-python -m src.demo_retrieve --question "Sinh viên chính quy bắt đầu tự đăng ký học phần từ học kỳ nào?" --top-k 3
-```
-
-Kết quả là một mảng JSON gồm ba đoạn, mỗi đoạn có `chunk_id`, `text`, `source`, `page`, `score`. Trong báo cáo hiện tại, bằng chứng đúng cho câu hỏi trên nằm ở **trang 15, vị trí thứ 3**.
-
-Để nhập liên tục nhiều câu hỏi trong cùng một tiến trình:
-
-```bash
-python -m src.demo_retrieve
-```
-
-Nhập câu hỏi rồi Enter; nhập dòng trống để thoát.
-
-## 3. Cài đặt trên máy mới
-
-Cần Python 3.11+ và Internet lần đầu cài thư viện/tải model. Chạy các lệnh từ thư mục gốc dự án.
-
-**macOS / Linux:**
-
-```bash
-python3.11 -m venv .venv
-source .venv/bin/activate
-python -m pip install -r requirements.txt
-```
-
-Có thể thay `python3.11` bằng `python3` nếu phiên bản đã từ 3.11 trở lên.
-
-**Windows PowerShell:**
-
-```powershell
-py -3.11 -m venv .venv
-.\.venv\Scripts\Activate.ps1
-python -m pip install -r requirements.txt
-```
-
-Nếu PowerShell chặn script kích hoạt, dùng trực tiếp `.\.venv\Scripts\python.exe` thay cho `python` trong các lệnh tiếp theo. Windows CMD có thể kích hoạt bằng `.venv\Scripts\activate.bat`. Nếu môi trường thiếu pip, chạy `python -m ensurepip --upgrade` trước khi cài dependencies.
-
-Model `intfloat/multilingual-e5-small` được tải tự động vào `.cache/models/`, không cần API key. Các lần sau ưu tiên cache cục bộ. Revision model được cố định trong `src/config.py`.
-
-Khi chuyển máy, giữ `src/`, `evaluation/`, `requirements.txt`, PDF và index theo cấu trúc dự án. PDF vẫn cần có để kiểm tra hash nguồn. Tạo lại môi trường trên máy nhận; không copy `.venv/` giữa các hệ điều hành. Nếu chưa có index, thực hiện mục 4.
-
-## 4. Xây lại index từ PDF
-
-Nguồn chính thức:
-
-```text
-data/so_tay_sinh_vien_k50.pdf
-```
-
-Đây là bản sao nguyên byte của file được cung cấp `SO TAY SINH VIEN K50.pdf`, gồm 220 trang. Metadata `page` dùng **trang vật lý PDF, bắt đầu từ 1**.
-
-### 4.1. CV12: chỉ trích xuất và chia đoạn
-
-Lệnh này không tải model:
-
-```bash
-python -m src.build_index --input data/so_tay_sinh_vien_k50.pdf --out data/chunks_preview --pages 8-31 --chunks-only
-```
-
-Đầu ra là `data/chunks_preview/chunks.json`, kèm thống kê trong terminal. `--chunks-only` yêu cầu thư mục đích chưa có embedding/index metadata để tránh ghi đè riêng một phần index.
-
-### 4.2. Pilot: xây index trang 8–31
-
-```bash
-python -m src.build_index --input data/so_tay_sinh_vien_k50.pdf --out data/processed_pilot --pages 8-31
-```
-
-`--pages 8-31` bao gồm cả hai đầu. Chọn một trang bằng `--pages 8-8`. Chương trình tự tạo thư mục đích.
-
-Để truy vấn và đánh giá đúng index pilot:
-
-**macOS / Linux:**
-
-```bash
-RAG_INDEX_DIR=data/processed_pilot python -m src.demo_retrieve --question "Sinh viên cần hoàn thành học phần tiên quyết vào thời điểm nào?" --top-k 3
-RAG_INDEX_DIR=data/processed_pilot python -m evaluation.run_evaluation --out evaluation/retrieval_report_pilot.json
-```
-
-**Windows PowerShell:**
-
-```powershell
-$env:RAG_INDEX_DIR = "data/processed_pilot"
-python -m src.demo_retrieve --question "Sinh viên cần hoàn thành học phần tiên quyết vào thời điểm nào?" --top-k 3
-python -m evaluation.run_evaluation --out evaluation/retrieval_report_pilot.json
-Remove-Item Env:RAG_INDEX_DIR
-```
-
-Pilot được lưu riêng, không ghi đè index toàn bộ ở `data/processed/`.
-
-### 4.3. Toàn bộ 220 trang
-
-Sau khi pilot hoạt động đúng, bỏ `--pages` để xử lý toàn bộ:
-
-```bash
-python -m src.build_index --input data/so_tay_sinh_vien_k50.pdf --out data/processed
-python -m evaluation.run_evaluation
-```
-
-Index gồm ba file được sinh bằng chạy thật:
-
-| File | Nội dung |
+| Thư mục/file | Dùng để làm gì? |
 |---|---|
-| `chunks.json` | Văn bản, chunk ID, nguồn, trang và thứ tự |
-| `embeddings.npy` | Ma trận vector float32, mỗi chunk có 384 chiều |
-| `index_meta.json` | Hash nguồn, phạm vi trang, model/revision, cấu hình, checksum và thời điểm build |
+| `streamlit_qa_app.py` | Điểm khởi chạy ứng dụng. |
+| `ui/` | Giao diện chat, lịch sử, trích dẫn và PDF. |
+| `src/` | Đọc tài liệu, tìm kiếm, tạo và kiểm tra câu trả lời. |
+| `data/` | PDF gốc và index đã chuẩn bị. |
+| `tests/` | Kiểm thử tự động. |
+| `evaluation/` | Bộ câu hỏi đánh giá, công cụ đo và kết quả cuối. |
+| `docs/` | Hướng dẫn kỹ thuật, kết quả kiểm thử và ảnh giao diện. |
 
-Chỉ build lại khi PDF hoặc cấu hình thay đổi. Mỗi câu hỏi chỉ được embedding một lần; chương trình tái sử dụng model và index trong tiến trình, không trích xuất lại PDF hay embedding lại tất cả chunks. Mỗi lần truy vấn vẫn kiểm tra hash PDF để phát hiện nguồn thay đổi.
-
-## 5. API sử dụng trong Code 2
-
-Chạy từ thư mục gốc dự án hoặc thêm thư mục gốc Code 1 vào `PYTHONPATH` để import được package `src`.
-
-```python
-from src.retriever import retrieve
-
-results = retrieve(
-    "Sinh viên cần hoàn thành học phần tiên quyết vào thời điểm nào?",
-    top_k=3,
-)
-
-for item in results:
-    print(item["text"])
-    print(item["source"], item["page"], item["score"])
-```
-
-Hợp đồng công khai:
-
-```python
-retrieve(question: str, top_k: int = 3) -> list[dict]
-```
-
-| Trường | Kiểu | Ý nghĩa |
-|---|---|---|
-| `chunk_id` | `str` | Định danh đoạn |
-| `text` | `str` | Nội dung thật đã chuẩn hóa |
-| `source` | `str` | Tên PDF nguồn |
-| `page` | `int` | Trang vật lý PDF, 1-based |
-| `score` | `float` | Cosine similarity |
-
-API trả đối tượng Python; CLI chuyển kết quả sang JSON. Kết quả sắp theo score giảm dần, điểm bằng nhau giữ `order` tăng dần. Trả `min(top_k, số chunks)` đoạn. `top_k` phải là số nguyên dương.
-
-**Score là mức tương đồng, không phải xác suất trả lời đúng.** API chưa xác nhận câu hỏi có đáp án trong tài liệu và chưa sinh câu trả lời. Code 2 nhận các đoạn này để làm ngữ cảnh cho LLM.
-
-Hướng dẫn chọn index, chuyển máy và bắt lỗi: [docs/code2_integration.md](docs/code2_integration.md).
-
-## 6. Kiểm tra hệ thống
-
-Chạy đánh giá ba câu CV14 với index mặc định:
+## 7. Dành cho người phát triển
 
 ```bash
-python -m evaluation.run_evaluation
+# Kiểm thử thông thường; một số tests cần model sẽ được bỏ qua
+.venv/bin/python -m pytest -q
+
+# Kiểm thử đầy đủ khi model đã được tải
+.venv/bin/python -m pytest -q --run-model
+
+# Kiểm tra retrieval cũ, không cần Ollama
+.venv/bin/python -m evaluation.run_evaluation --out .cache/cv14_recheck.json
 ```
 
-Chương trình in Top-3 của từng câu và ghi `evaluation/retrieval_report.json`. Một câu có hit khi Top-3 chứa chunk khớp **gold ID, nguồn, trang và toàn bộ bằng chứng**. Trùng trang nhưng không chứa chứng cứ sẽ không được chấm đúng.
+Lượt bàn giao trước khi dọn repo: **112 tests đạt**, CV14 **3/3**, browser live **10/10**. Đây không phải bằng chứng trả lời đúng mọi câu hỏi. Trong 30 câu test có đủ thông tin, bản nâng cấp trả lời đúng và đủ **22/30**; xem chi tiết và các trường hợp lỗi trong báo cáo bên dưới.
 
-Chạy tests nhanh, không tải model:
-
-```bash
-python -m pytest -q
-```
-
-Chạy đầy đủ với model E5 thật và integration tests:
-
-```bash
-python -m pytest -q --run-model
-```
-
-Output đã ghi nhận trong lượt bàn giao ngày **14/11/2026**:
-
-```text
-# Kiểm thử nhanh
-52 passed, 7 skipped in 0.96s
-
-# Kiểm thử đầy đủ với E5 thật
-59 passed in 6.29s
-```
-
-Bảy tests gắn nhãn `real_model` được bỏ qua ở lệnh nhanh và đã chạy trong lệnh đầy đủ. Fixtures dùng PDF được cung cấp; negative tests làm hỏng bản sao tạm và tests tie-break lặp lại vector thật. Những thay đổi kiểm thử này không tác động artifact bàn giao. Nếu chưa có index, một số tests phụ thuộc artifact sẽ skip và nêu lý do.
-
-Log thực thi: [tests nhanh](docs/unit_tests.log), [tests đầy đủ](docs/full_tests.log), [kiểm tra tích hợp Code 2](docs/code2_smoke.log).
-
-## 7. Kết quả truy xuất đã kiểm chứng
-
-| Lượt | Trang xử lý | Chunks | Token passage lớn nhất | Hit@3 |
-|---|---|---|---|---|
-| Pilot cuối | 8–31 | 254 | 143 | 3/3 |
-| Toàn bộ | 1–220 | 1.907 | 200 | 3/3 |
-
-Index mặc định là `data/processed/` cho toàn bộ 220 trang. Index pilot nằm ở `data/processed_pilot/`.
-
-Ba câu hỏi cố định:
-
-| ID | Câu hỏi | Trang bằng chứng |
-|---|---|---|
-| Q01 | Một tín chỉ học lý thuyết được quy định bao nhiêu giờ, và cần bao nhiêu giờ tự học có hướng dẫn? | 8 |
-| Q02 | Sinh viên cần hoàn thành học phần tiên quyết vào thời điểm nào? | 9 |
-| Q03 | Sinh viên chính quy bắt đầu tự đăng ký học phần từ học kỳ nào? | 15 |
-
-Top-3 trên toàn bộ PDF, từ [báo cáo thực tế](evaluation/retrieval_report.json):
-
-| Câu | Top-1: ID / cosine | Top-2: ID / cosine | Top-3: ID / cosine | Hit |
-|---|---|---|---|---|
-| Q01 | `p008-c006` / 0.931322 | `p032-c006` / 0.931322 | `p072-c003` / 0.895142 | 1 |
-| Q02 | `p009-c007` / 0.902875 | `p033-c007` / 0.902875 | `p019-c006` / 0.880307 | 1 |
-| Q03 | `p011-c008` / 0.892101 | `p035-c006` / 0.892101 | `p015-c011` / 0.891929 | 1 |
-
-ID trong bảng bỏ tiền tố chung `so_tay_sinh_vien_k50-`; nguồn là `so_tay_sinh_vien_k50.pdf`. JSON chứa ID đầy đủ, text và score từng kết quả.
-
-**Hit@3 = 3/3 = 1,0** chỉ phản ánh ba câu hỏi này. Riêng Q03 có bằng chứng đúng ở hạng 3; top-1 chưa trả lời được câu hỏi. Chỉ số này đánh giá truy xuất, chưa đánh giá câu trả lời do LLM sinh.
-
-Baseline chia cửa sổ 500/100 theo trang ban đầu đạt **2/3**. Sau khi tách theo cấu trúc điều/khoản/điểm trước khi chia cửa sổ, pilot đạt 3/3 rồi mới mở rộng toàn bộ PDF. Câu hỏi và nội dung chứng cứ được giữ nguyên; gold IDs được cập nhật theo chunks mới đã kiểm tra.
-
-Báo cáo [pilot](evaluation/retrieval_report_pilot.json), [baseline](evaluation/retrieval_report_baseline.json) và [lịch sử thử nghiệm](docs/ingestion_notes.md) được giữ để đối chiếu. `data/processed_pilot_baseline/` thuộc index version cũ, chỉ lưu lịch sử và không dùng với mã hiện tại.
-
-## 8. Cấu trúc dự án
-
-```text
-rag-demo/
-├── data/
-│   ├── so_tay_sinh_vien_k50.pdf
-│   ├── processed/
-│   │   ├── chunks.json
-│   │   ├── embeddings.npy
-│   │   └── index_meta.json
-│   ├── processed_pilot/
-│   └── processed_pilot_baseline/
-├── src/
-│   ├── __init__.py
-│   ├── config.py
-│   ├── document_loader.py
-│   ├── chunking.py
-│   ├── embeddings.py
-│   ├── build_index.py
-│   ├── retriever.py
-│   └── demo_retrieve.py
-├── tests/
-│   ├── __init__.py
-│   ├── conftest.py
-│   ├── test_document_loader.py
-│   ├── test_chunking.py
-│   ├── test_embeddings.py
-│   ├── test_retriever.py
-│   └── test_integration.py
-├── evaluation/
-│   ├── __init__.py
-│   ├── questions.json
-│   ├── run_evaluation.py
-│   ├── retrieval_report.json
-│   ├── retrieval_report_pilot.json
-│   └── ...                         # baseline và các lượt thử
-├── docs/
-│   ├── technical_spec.md
-│   ├── code2_integration.md
-│   ├── ingestion_notes.md
-│   ├── delivery.md
-│   ├── environment.txt
-│   └── ...                         # log và output chạy thật
-├── requirements.txt
-├── README.md
-└── .gitignore
-```
-
-Cây đầy đủ và danh sách file theo giai đoạn: [docs/delivery.md](docs/delivery.md). Bản đặc tả README ban đầu được giữ tại [docs/technical_spec.md](docs/technical_spec.md).
-
-## 9. Cấu hình, lỗi thường gặp và giới hạn
-
-Cấu hình chính nằm trong `src/config.py`:
-
-| Tham số | Giá trị |
-|---|---|
-| Model | `intfloat/multilingual-e5-small`, cố định revision |
-| Kích thước chunk tối đa | 500 ký tự |
-| Overlap mục tiêu | 100 ký tự bên trong đơn vị quy định dài |
-| Giới hạn model | 512 token, kiểm tra trước khi encode |
-| Embedding | 384 chiều, float32, chuẩn hóa L2 |
-| Index mặc định | `data/processed/`; có thể chọn bằng `RAG_INDEX_DIR` |
-
-Overlap không được ép qua ranh giới điều/khoản/điểm; chunks không vượt ranh giới trang. Passage có tiền tố `passage: `, câu hỏi có tiền tố `query: `. Nội dung quá giới hạn token bị từ chối, không cắt âm thầm. Đổi model hoặc cấu hình cần build lại index; đổi chunks cần kiểm tra lại gold IDs trước khi đánh giá.
-
-| Tình huống | Cách xử lý |
-|---|---|
-| Không import được `src` | Chạy tại thư mục gốc hoặc thêm thư mục gốc vào `PYTHONPATH` |
-| Thiếu `pypdf`, `numpy` hoặc thư viện khác | Kiểm tra đã kích hoạt đúng môi trường, rồi cài `requirements.txt` |
-| Thiếu index | Chạy build để tạo đủ ba artifact |
-| PDF/hash/cấu hình không khớp hoặc index hỏng | Kiểm tra PDF nguồn, build lại index |
-| Chưa tải được model | Kiểm tra Internet; model sẽ được dùng lại từ cache khi đã tải đủ |
-| Query rỗng hoặc `top_k` không hợp lệ | Dùng câu hỏi có nội dung và `top_k` là số nguyên dương |
-
-Các giới hạn còn lại:
-
-- Chỉ hỗ trợ PDF có văn bản trích xuất được; không làm OCR. “Trang có text” không bảo đảm toàn bộ chữ trong ảnh đã được lấy.
-- Giữ header/footer để tránh xóa nhầm. Bảng biểu được trải thành text, chưa bảo toàn quan hệ hàng/cột và công thức.
-- Sổ tay có các quy chế và đoạn giống nhau, có thể cạnh tranh vị trí Top-3. Không có reranking hoặc lọc trang ngầm.
-- Câu hỏi ngoài tài liệu vẫn có thể trả Top-3; hệ thống chưa có bước xác nhận đủ bằng chứng hay sinh câu trả lời.
-- Đã chạy trên macOS ARM64/Python 3.11.18; chưa chạy trực tiếp Windows/Linux và chưa đối chiếu thủ công toàn bộ 220 trang.
-
-Phiên bản thư viện thực tế: [docs/environment.txt](docs/environment.txt). Chi tiết trích xuất và hạn chế: [docs/ingestion_notes.md](docs/ingestion_notes.md).
-
-Tài liệu tham khảo triển khai: [model card E5](https://huggingface.co/intfloat/multilingual-e5-small), [pypdf](https://pypdf.readthedocs.io/en/stable/user/extract-text.html), [SentenceTransformer](https://www.sbert.net/docs/package_reference/sentence_transformer/model.html).
+- [Lệnh CLI, build index và cấu hình phát triển](docs/development.md)
+- [Hướng dẫn UI, ảnh desktop/mobile và giới hạn](docs/ui_workbench/README.md)
+- [Thiết kế pipeline RAG](docs/open_domain_rag.md)
+- [API retrieval cho Code 2](docs/code2_integration.md)
+- [Kết quả đánh giá chất lượng RAG](docs/upgrade_report.md)
+- [Cách chạy benchmark và định nghĩa chỉ số](evaluation/README.md)
+- [Những gì đã được dọn và cách khôi phục](docs/cleanup.md)
