@@ -1,0 +1,108 @@
+W1114 18:28:31.757000 45701 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 13726.94it/s]
+D01 baseline: retrieval 4.05s 
+D01 hybrid: retrieval 0.02s 
+D02 baseline: retrieval 0.01s 
+D02 hybrid: retrieval 0.01s 
+D03 baseline: retrieval 0.01s 
+D03 hybrid: retrieval 0.01s 
+D04 baseline: retrieval 0.01s 
+D04 hybrid: retrieval 0.01s 
+D05 baseline: retrieval 0.01s 
+D05 hybrid: retrieval 0.01s 
+D06 baseline: retrieval 0.01s 
+D06 hybrid: retrieval 0.01s 
+D07 baseline: retrieval 0.01s 
+D07 hybrid: retrieval 0.01s 
+D08 baseline: retrieval 0.01s 
+D08 hybrid: retrieval 0.01s 
+D09 baseline: retrieval 0.01s 
+D09 hybrid: retrieval 0.01s 
+D10 baseline: retrieval 0.01s 
+D10 hybrid: retrieval 0.01s 
+D11 baseline: retrieval 0.01s 
+D11 hybrid: retrieval 0.01s 
+D12 baseline: retrieval 0.01s 
+D12 hybrid: retrieval 0.01s 
+D13 baseline: retrieval 0.01s 
+D13 hybrid: retrieval 0.01s 
+D14 baseline: retrieval 0.01s 
+D14 hybrid: retrieval 0.03s 
+D15 baseline: retrieval 0.01s 
+D15 hybrid: retrieval 0.01s 
+D16 baseline: retrieval 0.01s 
+D16 hybrid: retrieval 0.01s 
+D17 baseline: retrieval 0.01s 
+D17 hybrid: retrieval 0.02s 
+D18 baseline: retrieval 0.01s 
+D18 hybrid: retrieval 0.02s 
+D19 baseline: retrieval 0.01s 
+D19 hybrid: retrieval 0.02s 
+D20 baseline: retrieval 0.01s 
+D20 hybrid: retrieval 0.02s 
+P01 baseline: retrieval 0.01s 
+P01 hybrid: retrieval 0.02s 
+P02 baseline: retrieval 0.01s 
+P02 hybrid: retrieval 0.03s 
+P03 baseline: retrieval 0.01s 
+P03 hybrid: retrieval 0.03s 
+P04 baseline: retrieval 0.01s 
+P04 hybrid: retrieval 0.03s 
+P05 baseline: retrieval 0.01s 
+P05 hybrid: retrieval 0.03s 
+C01 baseline: retrieval 0.01s 
+C01 hybrid: retrieval 0.02s 
+C02 baseline: retrieval 0.01s 
+C02 hybrid: retrieval 0.03s 
+C03 baseline: retrieval 0.01s 
+C03 hybrid: retrieval 0.03s 
+C04 baseline: retrieval 0.01s 
+C04 hybrid: retrieval 0.03s 
+C05 baseline: retrieval 0.01s 
+C05 hybrid: retrieval 0.03s 
+U01 baseline: retrieval 0.01s 
+U01 hybrid: retrieval 0.01s 
+U02 baseline: retrieval 0.01s 
+U02 hybrid: retrieval 0.01s 
+U03 baseline: retrieval 0.01s 
+U03 hybrid: retrieval 0.01s 
+U04 baseline: retrieval 0.01s 
+U04 hybrid: retrieval 0.01s 
+U05 baseline: retrieval 0.01s 
+U05 hybrid: retrieval 0.01s 
+{
+  "baseline": {
+    "recall_at_5": 0.5166666666666667,
+    "recall_at_10": 0.65,
+    "mrr_at_10": 0.45994708994708994,
+    "questions": 35,
+    "errors": 0,
+    "context_evidence_recall": 0.5166666666666667,
+    "response_seconds_mean": 0.1247305725476638,
+    "response_seconds_p95": 0.014291125012096017,
+    "correct_complete_rate": null,
+    "reviewed_full_answers": 0,
+    "supported_claim_rate": null,
+    "wrong_citation_rate": null,
+    "correct_refusal_rate": null,
+    "refusal_denominator": 0,
+    "peak_python_rss_mib": 1129.78125
+  },
+  "hybrid": {
+    "recall_at_5": 0.85,
+    "recall_at_10": 0.9722222222222222,
+    "mrr_at_10": 0.8047619047619048,
+    "questions": 35,
+    "errors": 0,
+    "context_evidence_recall": 0.9222222222222223,
+    "response_seconds_mean": 0.017750733400628504,
+    "response_seconds_p95": 0.029487442102981726,
+    "correct_complete_rate": null,
+    "reviewed_full_answers": 0,
+    "supported_claim_rate": null,
+    "wrong_citation_rate": null,
+    "correct_refusal_rate": null,
+    "refusal_denominator": 0,
+    "peak_python_rss_mib": 1129.78125
+  }
+}

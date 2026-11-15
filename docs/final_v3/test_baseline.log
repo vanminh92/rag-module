@@ -1,0 +1,57 @@
+W1114 21:39:20.296000 70794 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 23688.56it/s]
+D21 baseline: complete 5.76s 
+D22 baseline: complete 2.26s 
+D23 baseline: complete 1.99s 
+D24 baseline: complete 1.11s 
+D25 baseline: complete 1.43s 
+D26 baseline: complete 1.39s 
+D27 baseline: complete 1.78s 
+D28 baseline: complete 2.42s 
+D29 baseline: complete 2.21s 
+D30 baseline: complete 1.19s 
+D31 baseline: complete 1.03s 
+D32 baseline: complete 1.30s 
+D33 baseline: complete 2.14s 
+D34 baseline: complete 1.78s 
+D35 baseline: complete 1.16s 
+D36 baseline: complete 1.87s 
+D37 baseline: complete 1.99s 
+D38 baseline: complete 2.70s 
+D39 baseline: complete 1.55s 
+D40 baseline: complete 3.12s 
+P06 baseline: complete 1.18s 
+P07 baseline: complete 1.48s 
+P08 baseline: complete 1.56s 
+P09 baseline: complete 1.05s 
+P10 baseline: complete 1.56s 
+C06 baseline: complete 4.37s 
+C07 baseline: complete 2.16s 
+C08 baseline: complete 1.70s 
+C09 baseline: complete 1.51s 
+C10 baseline: complete 2.28s 
+U06 baseline: insufficient 1.16s 
+U07 baseline: insufficient 1.27s 
+U08 baseline: complete 0.83s 
+U09 baseline: insufficient 1.38s 
+U10 baseline: insufficient 1.30s 
+{
+  "baseline": {
+    "recall_at_5": 0.9545454545454546,
+    "recall_at_10": 0.9848484848484849,
+    "mrr_at_10": 0.8957431457431457,
+    "questions": 35,
+    "errors": 0,
+    "context_evidence_recall": 0.8636363636363636,
+    "response_seconds_mean": 1.855329754828043,
+    "response_seconds_p95": 3.49318036670738,
+    "correct_complete_rate": null,
+    "reviewed_full_answers": 0,
+    "supported_claim_rate": null,
+    "wrong_citation_rate": null,
+    "correct_refusal_rate": 1.0,
+    "refusal_denominator": 2,
+    "peak_python_rss_mib": 1044.828125,
+    "max_sampled_ollama_rss_mib": 2682.390625
+  }
+}

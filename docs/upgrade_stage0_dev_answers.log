@@ -1,0 +1,56 @@
+W1114 18:28:40.290000 45780 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 22086.38it/s]
+D01 baseline: complete 4.79s 
+D02 baseline: complete 0.74s 
+D03 baseline: complete 0.96s 
+D04 baseline: complete 1.00s 
+D05 baseline: complete 0.68s 
+D06 baseline: insufficient 0.75s 
+D07 baseline: complete 0.88s 
+D08 baseline: insufficient 0.84s 
+D09 baseline: insufficient 0.59s 
+D10 baseline: insufficient 0.81s 
+D11 baseline: complete 0.96s 
+D12 baseline: insufficient 0.70s 
+D13 baseline: insufficient 0.68s 
+D14 baseline: insufficient 0.69s 
+D15 baseline: complete 0.91s 
+D16 baseline: complete 1.07s 
+D17 baseline: complete 1.10s 
+D18 baseline: complete 0.81s 
+D19 baseline: complete 1.07s 
+D20 baseline: complete 1.47s 
+P01 baseline: complete 2.07s 
+P02 baseline: insufficient 0.64s 
+P03 baseline: insufficient 0.57s 
+P04 baseline: insufficient 0.77s 
+P05 baseline: insufficient 0.79s 
+C01 baseline: complete 1.84s 
+C02 baseline: insufficient 0.85s 
+C03 baseline: complete 2.43s 
+C04 baseline: insufficient 0.69s 
+C05 baseline: insufficient 0.67s 
+U01 baseline: insufficient 0.89s 
+U02 baseline: insufficient 0.88s 
+U03 baseline: insufficient 0.79s 
+U04 baseline: insufficient 0.77s 
+U05 baseline: insufficient 0.88s 
+{
+  "baseline": {
+    "recall_at_5": 0.5166666666666667,
+    "recall_at_10": 0.65,
+    "mrr_at_10": 0.45994708994708994,
+    "questions": 35,
+    "errors": 0,
+    "context_evidence_recall": 0.5166666666666667,
+    "response_seconds_mean": 1.0573326666581644,
+    "response_seconds_p95": 2.175682879285886,
+    "correct_complete_rate": null,
+    "reviewed_full_answers": 0,
+    "supported_claim_rate": null,
+    "wrong_citation_rate": null,
+    "correct_refusal_rate": 1.0,
+    "refusal_denominator": 5,
+    "peak_python_rss_mib": 1045.453125
+  }
+}

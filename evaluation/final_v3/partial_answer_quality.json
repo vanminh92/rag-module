@@ -1,0 +1,15 @@
+{
+  "baseline": {
+    "correct_complete": 0,
+    "total": 3,
+    "ids": []
+  },
+  "hybrid": {
+    "correct_complete": 2,
+    "total": 3,
+    "ids": [
+      "U09",
+      "U10"
+    ]
+  }
+}

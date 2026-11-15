@@ -1,0 +1,794 @@
+[
+  {
+    "id": "D01",
+    "question": "Trường Đại học Sư phạm Thành phố Hồ Chí Minh thành lập ngày nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D01"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 4,
+        "quote": "thành lập ngày 27/10/1976 theo Quyết định số 426-TTg",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p004-c001"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D02",
+    "question": "Triết lý giáo dục của Trường đặt ai ở vị trí trung tâm?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D02"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 5,
+        "quote": "hướng đến người học – nhân vật trung tâm của hoạt động giáo dục.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p005-c002",
+          "so_tay_sinh_vien_k50-p005-c003"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D03",
+    "question": "Theo quy chế đại học, một tín chỉ lý thuyết gồm bao nhiêu giờ trên lớp và tự học?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D03"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 8,
+        "quote": "15 giờ học lý thuyết và 30 giờ tự học, chuẩn bị cá nhân có hướng dẫn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p008-c006"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D04",
+    "question": "Ở trình độ đại học, học phần tiên quyết phải được tích lũy khi nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D04"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 9,
+        "quote": "Học phần tiên quyết: là học phần sinh viên phải tích lũy trước khi học các học phần khác có liên quan;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p009-c007"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D05",
+    "question": "Theo quy chế đào tạo đại học, một lớp sinh viên có tối đa bao nhiêu sinh viên?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D05"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 14,
+        "quote": "Mỗi lớp có không quá 50 sinh viên;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p014-c005"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D06",
+    "question": "Sinh viên đại học chính quy tự đăng ký học phần từ học kỳ nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D06"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 15,
+        "quote": "Từ học kỳ thứ hai của khóa học, sinh viên phải tự đăng ký các học phần trên hệ thống đăng ký học tập của Trường theo kế hoạch được ban hành.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p015-c011"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D07",
+    "question": "Sinh viên đại học học lại để cải thiện điểm thì lần điểm nào là chính thức?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D07"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 19,
+        "quote": "Sinh viên có điểm học phần đạt, được đăng ký học lại chính học phần đó để cải thiện điểm, điểm lần học cuối là điểm chính thức của học phần.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p019-c006"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D08",
+    "question": "Ngưỡng điểm trung bình học kỳ dẫn đến cảnh báo học tập của sinh viên đại học chính quy là bao nhiêu?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D08"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 21,
+        "quote": "Điểm trung bình học kỳ đạt dưới 0,8 đối với học kỳ đầu của khóa học, dưới 1,0 đối với các học kỳ tiếp theo;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p021-c012"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D09",
+    "question": "Sinh viên đại học chính quy bị cảnh báo học tập bao nhiêu lần thì thuộc diện buộc thôi học?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D09"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 22,
+        "quote": "Bị cảnh báo học tập 03 lần liên tiếp trong một khóa học;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p022-c003"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 22,
+        "quote": "Bị cảnh báo học tập đến lần thứ tư tính từ đầu khóa;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p022-c004"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D10",
+    "question": "Nghỉ học tạm thời vì nhu cầu cá nhân có tính vào thời gian học chính thức của sinh viên đại học không?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D10"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 25,
+        "quote": "Thời gian nghỉ học tạm thời vì nhu cầu cá nhân được tính vào thời gian học tập chính thức",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p025-c013"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D11",
+    "question": "Sinh viên đại học sớm nhất được đăng ký chương trình thứ hai khi nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D11"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 28,
+        "quote": "Sinh viên được đăng ký học chương trình thứ hai sớm nhất khi đã được xếp trình độ năm thứ hai của chương trình thứ nhất.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p028-c005"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D12",
+    "question": "Sinh viên cao đẳng Giáo dục Mầm non chính quy bắt đầu tự đăng ký học phần từ học kỳ nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D12"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 40,
+        "quote": "Từ học kỳ thứ hai của khóa học, sinh viên phải tự đăng ký các học phần trên hệ thống đăng ký học tập của Trường theo kế hoạch được ban hành.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p040-c011"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D13",
+    "question": "Sinh viên có nghĩa vụ gì về học phí và bảo hiểm y tế?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D13"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 60,
+        "quote": "Đóng học phí, bảo hiểm y tế đầy đủ và đúng thời hạn.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p060-c013"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D14",
+    "question": "Điều kiện học tập, rèn luyện, kỷ luật và số tín chỉ thông thường để xét học bổng khuyến khích học tập là gì?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D14"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 72,
+        "quote": "Trong học kỳ, sinh viên có kết quả học tập, rèn luyện từ loại khá trở lên, không bị kỷ luật từ mức khiển trách trở lên",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p072-c002"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 72,
+        "quote": "Tổng số tín chỉ sinh viên tích lũy trong một học kỳ phải lớn hơn hoặc bằng 15 tín chỉ theo kế hoạch trong CTĐT của khóa học",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p072-c003"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D15",
+    "question": "Học bổng khuyến khích học tập được cấp bao nhiêu tháng trong năm học?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D15"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 73,
+        "quote": "HBKKHT được cấp theo từng học kỳ chính và cấp 10 tháng trong năm học.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p073-c003"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D16",
+    "question": "Trường phải báo địa phương và gia đình khi sinh viên bị kỷ luật ở những mức nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D16"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 81,
+        "quote": "Trường hợp sinh viên bị kỷ luật mức đình chỉ học tập có thời hạn hoặc buộc thôi học, Trường gửi thông báo cho địa phương và gia đình sinh viên biết",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p081-c005"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D17",
+    "question": "Cố vấn học tập được hưởng chế độ và bố trí thời gian công tác như thế nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D17"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 87,
+        "quote": "Được hưởng các chế độ theo Quy chế chi tiêu nội bộ và bố trí thời gian thực hiện công tác CVHT theo quy định chế độ làm việc của giảng viên.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p087-c013"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D18",
+    "question": "Điểm rèn luyện được đánh giá trên thang điểm bao nhiêu?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D18"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 92,
+        "quote": "Điểm rèn luyện được đánh giá bằng thang điểm 100.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p092-c009"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D19",
+    "question": "Sinh viên không tự đánh giá kết quả rèn luyện thì nhận kết quả gì?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D19"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 95,
+        "quote": "Sinh viên không thực hiện tự đánh giá kết quả rèn luyện theo quy định sẽ nhận điểm 0 và xếp loại rèn luyện kém (xét theo từng học kỳ).",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p095-c007"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D20",
+    "question": "Sinh viên khiếu nại điểm rèn luyện ở đâu và trong thời hạn bao lâu?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D20"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 99,
+        "quote": "Sinh viên gửi đơn khiếu nại về Phòng CTCT&HSSV trong vòng 07 ngày kể từ ngày công bố kết quả điểm rèn luyện đã được Hội đồng cấp Trường thông qua.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p099-c010"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P01",
+    "question": "Em học đại học chính quy, mới vào thì khi nào phải tự chọn môn trên hệ thống?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D06"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 15,
+        "quote": "Từ học kỳ thứ hai của khóa học, sinh viên phải tự đăng ký các học phần trên hệ thống đăng ký học tập của Trường theo kế hoạch được ban hành.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p015-c011"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P02",
+    "question": "Đại học chính quy mà điểm học kỳ thấp cỡ nào thì bị cảnh báo vậy?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D08"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 21,
+        "quote": "Điểm trung bình học kỳ đạt dưới 0,8 đối với học kỳ đầu của khóa học, dưới 1,0 đối với các học kỳ tiếp theo;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p021-c012"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P03",
+    "question": "Đại học chính quy bị cảnh báo mấy lần thì bị đuổi học?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D09"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 22,
+        "quote": "Bị cảnh báo học tập 03 lần liên tiếp trong một khóa học;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p022-c003"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 22,
+        "quote": "Bị cảnh báo học tập đến lần thứ tư tính từ đầu khóa;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p022-c004"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P04",
+    "question": "Em học đại học, bảo lưu vì việc riêng có làm tốn thời gian được phép học không?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D10"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 25,
+        "quote": "Thời gian nghỉ học tạm thời vì nhu cầu cá nhân được tính vào thời gian học tập chính thức",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p025-c013"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P05",
+    "question": "Muốn có học bổng khuyến khích thì điểm học, điểm rèn luyện, nợ kỷ luật và số tín chỉ cần ra sao?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D14"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 72,
+        "quote": "Trong học kỳ, sinh viên có kết quả học tập, rèn luyện từ loại khá trở lên, không bị kỷ luật từ mức khiển trách trở lên",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p072-c002"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 72,
+        "quote": "Tổng số tín chỉ sinh viên tích lũy trong một học kỳ phải lớn hơn hoặc bằng 15 tín chỉ theo kế hoạch trong CTĐT của khóa học",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p072-c003"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C01",
+    "question": "Theo quy chế đại học, so sánh số giờ học và tự học của một tín chỉ lý thuyết với một tín chỉ thực hành.",
+    "category": "composite",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D03"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 8,
+        "quote": "15 giờ học lý thuyết và 30 giờ tự học, chuẩn bị cá nhân có hướng dẫn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p008-c006"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 8,
+        "quote": "30 giờ thực hành, thí nghiệm, thảo luận và 15 giờ tự học, chuẩn bị cá nhân có hướng dẫn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p008-c006"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C02",
+    "question": "Đại học chính quy: học kỳ đầu do ai xếp lịch và từ kỳ nào sinh viên phải tự đăng ký?",
+    "category": "composite",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D06"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 15,
+        "quote": "Từ học kỳ thứ hai của khóa học, sinh viên phải tự đăng ký các học phần trên hệ thống đăng ký học tập của Trường theo kế hoạch được ban hành.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p015-c011"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 15,
+        "quote": "Trong học kỳ đầu tiên của khóa học, sinh viên học tập theo thời khóa biểu do Trường ấn định",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p015-c010"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C03",
+    "question": "Đại học chính quy có ngưỡng điểm học kỳ cảnh báo nào và cảnh báo lặp lại bao nhiêu lần dẫn đến buộc thôi học?",
+    "category": "composite",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D08",
+      "D09"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 21,
+        "quote": "Điểm trung bình học kỳ đạt dưới 0,8 đối với học kỳ đầu của khóa học, dưới 1,0 đối với các học kỳ tiếp theo;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p021-c012"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 22,
+        "quote": "Bị cảnh báo học tập 03 lần liên tiếp trong một khóa học;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p022-c003"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 22,
+        "quote": "Bị cảnh báo học tập đến lần thứ tư tính từ đầu khóa;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p022-c004"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C04",
+    "question": "Tổng hợp điều kiện học tập, rèn luyện, kỷ luật, số tín chỉ xét học bổng khuyến khích và số tháng được cấp trong năm học.",
+    "category": "composite",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D14",
+      "D15"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 72,
+        "quote": "Trong học kỳ, sinh viên có kết quả học tập, rèn luyện từ loại khá trở lên, không bị kỷ luật từ mức khiển trách trở lên",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p072-c002"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 72,
+        "quote": "Tổng số tín chỉ sinh viên tích lũy trong một học kỳ phải lớn hơn hoặc bằng 15 tín chỉ theo kế hoạch trong CTĐT của khóa học",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p072-c003"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 73,
+        "quote": "HBKKHT được cấp theo từng học kỳ chính và cấp 10 tháng trong năm học.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p073-c003"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C05",
+    "question": "Sinh viên có nghĩa vụ đóng học phí, bảo hiểm thế nào và nếu bỏ tự đánh giá rèn luyện thì hậu quả gì?",
+    "category": "composite",
+    "answerability": "full",
+    "split": "dev",
+    "evidence_families": [
+      "D13",
+      "D19"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 60,
+        "quote": "Đóng học phí, bảo hiểm y tế đầy đủ và đúng thời hạn.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p060-c013"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 95,
+        "quote": "Sinh viên không thực hiện tự đánh giá kết quả rèn luyện theo quy định sẽ nhận điểm 0 và xếp loại rèn luyện kém (xét theo từng học kỳ).",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p095-c007"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "U01",
+    "question": "Điểm chuẩn trúng tuyển ngành Sư phạm Toán năm 2026 chính xác là bao nhiêu?",
+    "category": "unanswerable",
+    "answerability": "none",
+    "split": "dev",
+    "evidence_families": [
+      "U01"
+    ],
+    "evidence": [],
+    "missing_information": [
+      "Sổ tay không có điểm trúng tuyển năm 2026."
+    ]
+  },
+  {
+    "id": "U02",
+    "question": "Học phí chính xác một tín chỉ ngành Tâm lý học năm học 2026–2027 là bao nhiêu đồng?",
+    "category": "unanswerable",
+    "answerability": "none",
+    "split": "dev",
+    "evidence_families": [
+      "U02"
+    ],
+    "evidence": [],
+    "missing_information": [
+      "Không có bảng mức thu học phí của năm học 2026–2027."
+    ]
+  },
+  {
+    "id": "U03",
+    "question": "Mã sinh viên của tôi là 50.01.101.999, GPA cá nhân hiện tại là bao nhiêu?",
+    "category": "unanswerable",
+    "answerability": "none",
+    "split": "dev",
+    "evidence_families": [
+      "U03"
+    ],
+    "evidence": [],
+    "missing_information": [
+      "Không có hồ sơ điểm của cá nhân."
+    ]
+  },
+  {
+    "id": "U04",
+    "question": "Ngày mai ở Thành phố Hồ Chí Minh có mưa lúc 8 giờ không?",
+    "category": "unanswerable",
+    "answerability": "none",
+    "split": "dev",
+    "evidence_families": [
+      "U04"
+    ],
+    "evidence": [],
+    "missing_information": [
+      "PDF không cung cấp dự báo thời tiết."
+    ]
+  },
+  {
+    "id": "U05",
+    "question": "Cho tôi mật khẩu email sinh viên của bạn Nguyễn Văn An.",
+    "category": "unanswerable",
+    "answerability": "none",
+    "split": "dev",
+    "evidence_families": [
+      "U05"
+    ],
+    "evidence": [],
+    "missing_information": [
+      "PDF không có mật khẩu tài khoản cá nhân."
+    ]
+  }
+]

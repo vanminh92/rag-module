@@ -1,0 +1,122 @@
+[
+  {
+    "case": "semester_true",
+    "source_id": "so_tay_sinh_vien_k50-p021-c012",
+    "premise": "b) Điểm trung bình học kỳ đạt dưới 0,8 đối với học kỳ đầu của khóa học, dưới 1,0 đối với các học kỳ tiếp theo;",
+    "hypothesis": "Điểm trung bình học kỳ dưới 0,8 ở học kỳ đầu hoặc dưới 1,0 ở các học kỳ tiếp theo.",
+    "supported": true,
+    "scores": {
+      "entailment": 0.9985451698303223,
+      "neutral": 0.0012698768405243754,
+      "contradiction": 0.00018496335542295128
+    },
+    "reason": "NLI yêu cầu chứng cứ suy ra toàn bộ luận điểm",
+    "tokens": 102,
+    "seconds": 0.08922462500049733
+  },
+  {
+    "case": "semester_false",
+    "source_id": "so_tay_sinh_vien_k50-p021-c013",
+    "premise": "c) Điểm trung bình tích lũy đạt dưới 1,2 đối với sinh viên trình độ năm thứ nhất, dưới 1,4 đối với sinh viên trình độ năm thứ hai, dưới 1,6 đối với sinh viên trình độ năm thứ ba, dưới 1,8 đối với sinh viên các năm tiếp theo.",
+    "hypothesis": "Điểm trung bình học kỳ đạt dưới 1,4 đối với sinh viên năm thứ hai.",
+    "supported": true,
+    "scores": {
+      "entailment": 0.9971864819526672,
+      "neutral": 0.0023191857617348433,
+      "contradiction": 0.0004943099338561296
+    },
+    "reason": "NLI yêu cầu chứng cứ suy ra toàn bộ luận điểm",
+    "tokens": 130,
+    "seconds": 0.049784041999373585
+  },
+  {
+    "case": "procedure_count_false",
+    "source_id": "so_tay_sinh_vien_k50-p022-c007",
+    "premise": "4. Quy trình, thủ tục cảnh báo học tập, buộc thôi học; việc thông báo hình thức áp dụng tới sinh viên được thực hiện theo các quy định hiện hành của Trường.",
+    "hypothesis": "Sinh viên bị buộc thôi học sau 4 lần cảnh báo.",
+    "supported": false,
+    "scores": {
+      "entailment": 0.6743573546409607,
+      "neutral": 0.324779748916626,
+      "contradiction": 0.0008628892246633768
+    },
+    "reason": "NLI yêu cầu chứng cứ suy ra toàn bộ luận điểm",
+    "tokens": 99,
+    "seconds": 0.04294241702882573
+  },
+  {
+    "case": "count_true",
+    "source_id": "so_tay_sinh_vien_k50-p022-c004",
+    "premise": "b) Bị cảnh báo học tập đến lần thứ tư tính từ đầu khóa;",
+    "hypothesis": "Sinh viên bị buộc thôi học khi bị cảnh báo học tập đến lần thứ tư tính từ đầu khóa.",
+    "supported": false,
+    "scores": {
+      "entailment": 0.001177125028334558,
+      "neutral": 0.9985912442207336,
+      "contradiction": 0.0002317020553164184
+    },
+    "reason": "NLI yêu cầu chứng cứ suy ra toàn bộ luận điểm",
+    "tokens": 81,
+    "seconds": 0.038013000012142584
+  },
+  {
+    "case": "short_date",
+    "source_id": "so_tay_sinh_vien_k50-p004-c001",
+    "premise": "4 SỔ TAY SINH VIÊN KHÓA 50 Trường Đại học Sư phạm Thành phố Hồ Chí Minh Số 280 An Dương Vương, Phường 4, Quận 5, Thành phố Hồ Chí Minh Điện thoại: 028.38352020; Fax: 028.38398946; Website: www.hcmue.edu.vn\n\nTrường Đại học Sư phạm Thành phố Hồ Chí Minh thành lập ngày 27/10/1976 theo Quyết định số 426-TTg của Thủ tướng Chính phủ.",
+    "hypothesis": "27/10/1976",
+    "supported": true,
+    "scores": {
+      "entailment": 0.774314284324646,
+      "neutral": 0.22008895874023438,
+      "contradiction": 0.005596724804490805
+    },
+    "reason": "NLI yêu cầu chứng cứ suy ra toàn bộ luận điểm",
+    "tokens": 150,
+    "seconds": 0.05269204199430533
+  },
+  {
+    "case": "short_number",
+    "source_id": "so_tay_sinh_vien_k50-p014-c005",
+    "premise": "a) Lớp sinh viên và giảng viên phụ trách lớp − Lớp sinh viên được tổ chức theo khóa học đối với ngành đào tạo. Lớp sinh viên được duy trì trong cả khóa đào tạo, có mã số riêng, có hệ thống cán bộ lớp, cán bộ đoàn và hội sinh viên. Mỗi lớp có không quá 50 sinh viên; − Giảng viên phụ trách lớp sinh viên đồng thời giữ vai trò CVHT cho sinh viên trong lớp về đào tạo như: giúp đỡ sinh viên lập kế hoạch học tập cho toàn bộ khóa học và kế hoạch cho từng học kỳ;",
+    "hypothesis": "50",
+    "supported": false,
+    "scores": {
+      "entailment": 0.0006444050231948495,
+      "neutral": 0.9988006353378296,
+      "contradiction": 0.0005549347260966897
+    },
+    "reason": "NLI yêu cầu chứng cứ suy ra toàn bộ luận điểm",
+    "tokens": 230,
+    "seconds": 0.07505429198499769
+  },
+  {
+    "case": "wrong_audience",
+    "source_id": "so_tay_sinh_vien_k50-p072-c004",
+    "premise": "d) Đối với sinh viên năm cuối, học bổng được xét: – Quy định xét học bổng đối với học kỳ I thực hiện theo điểm a, b, c khoản 1 Điều này. – Quy định xét học bổng đối với học kỳ II: + Sinh viên đăng ký từ 6 tín chỉ trở lên; + Trình tự xét HBKKHT cho sinh viên năm cuối theo thứ tự các đối tượng như sau:  Sinh viên thực hiện khóa luận tốt nghiệp, có kết quả học tập xuất sắc và rèn luyện xuất sắc.  Sinh viên thực hiện khóa luận tốt nghiệp, có kết quả học tập xuất sắc và rèn luyện tốt.",
+    "hypothesis": "Tất cả sinh viên chỉ cần đăng ký từ 6 tín chỉ trở lên để được xét học bổng.",
+    "supported": false,
+    "scores": {
+      "entailment": 0.0026011215522885323,
+      "neutral": 0.9925252199172974,
+      "contradiction": 0.00487360218539834
+    },
+    "reason": "NLI yêu cầu chứng cứ suy ra toàn bộ luận điểm",
+    "tokens": 286,
+    "seconds": 0.08510074997320771
+  },
+  {
+    "case": "credit_true",
+    "source_id": "so_tay_sinh_vien_k50-p008-c006",
+    "premise": "1. Tín chỉ được sử dụng để tính khối lượng học tập của sinh viên. Một tín chỉ được quy định bằng 15 giờ học lý thuyết và 30 giờ tự học, chuẩn bị cá nhân có hướng dẫn; hoặc bằng 30 giờ thực hành, thí nghiệm, thảo luận và 15 giờ tự học, chuẩn bị cá nhân có hướng dẫn; hoặc bằng 45 giờ thực tập tại cơ sở, làm tiểu luận, bài tập lớn, làm đồ án, khóa luận tốt nghiệp. Một giờ học được tính bằng 50 phút.",
+    "hypothesis": "Một tín chỉ lý thuyết gồm 15 giờ học lý thuyết và 30 giờ tự học.",
+    "supported": true,
+    "scores": {
+      "entailment": 0.9856022000312805,
+      "neutral": 0.013660470023751259,
+      "contradiction": 0.0007374395499937236
+    },
+    "reason": "NLI yêu cầu chứng cứ suy ra toàn bộ luận điểm",
+    "tokens": 245,
+    "seconds": 0.07608370800153352
+  }
+]

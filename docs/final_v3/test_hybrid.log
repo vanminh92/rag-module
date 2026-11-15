@@ -1,0 +1,59 @@
+W1114 21:40:27.601000 71257 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 26312.74it/s]
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:   2%|▏         | 5/202 [00:00<00:14, 13.63it/s]Loading weights: 100%|██████████| 202/202 [00:00<00:00, 546.74it/s]
+[transformers] Token indices sequence length is longer than the specified maximum sequence length for this model (532 > 512). Running this sequence through the model will result in indexing errors
+D21 hybrid: insufficient 33.92s 
+D22 hybrid: complete 12.09s 
+D23 hybrid: insufficient 40.16s 
+D24 hybrid: complete 11.38s 
+D25 hybrid: complete 7.61s 
+D26 hybrid: complete 13.05s 
+D27 hybrid: complete 11.15s 
+D28 hybrid: complete 11.72s 
+D29 hybrid: complete 8.59s 
+D30 hybrid: complete 8.72s 
+D31 hybrid: complete 23.99s 
+D32 hybrid: complete 10.73s 
+D33 hybrid: insufficient 54.94s 
+D34 hybrid: complete 20.85s 
+D35 hybrid: complete 15.13s 
+D36 hybrid: complete 44.59s 
+D37 hybrid: complete 15.85s 
+D38 hybrid: complete 86.78s 
+D39 hybrid: complete 10.45s 
+D40 hybrid: complete 19.20s 
+P06 hybrid: complete 22.19s 
+P07 hybrid: complete 20.37s 
+P08 hybrid: complete 8.97s 
+P09 hybrid: complete 8.84s 
+P10 hybrid: complete 14.35s 
+C06 hybrid: insufficient 31.18s 
+C07 hybrid: complete 21.98s 
+C08 hybrid: complete 56.11s 
+C09 hybrid: complete 22.18s 
+C10 hybrid: complete 39.01s 
+U06 hybrid: insufficient 12.92s 
+U07 hybrid: insufficient 2.91s 
+U08 hybrid: complete 27.63s 
+U09 hybrid: partial 45.36s 
+U10 hybrid: partial 84.11s 
+{
+  "hybrid": {
+    "recall_at_5": 0.9090909090909091,
+    "recall_at_10": 0.9242424242424242,
+    "mrr_at_10": 0.7888888888888889,
+    "questions": 35,
+    "errors": 0,
+    "context_evidence_recall": 0.9242424242424242,
+    "response_seconds_mean": 25.114293645226695,
+    "response_seconds_p95": 64.5085073838126,
+    "correct_complete_rate": null,
+    "reviewed_full_answers": 0,
+    "supported_claim_rate": null,
+    "wrong_citation_rate": null,
+    "correct_refusal_rate": 1.0,
+    "refusal_denominator": 2,
+    "peak_python_rss_mib": 3056.984375,
+    "max_sampled_ollama_rss_mib": 4656.328125
+  }
+}
