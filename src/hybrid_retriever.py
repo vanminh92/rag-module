@@ -1,16 +1,18 @@
 """E5 + Vietnamese BM25, RRF, scoped expansion and bounded adaptive retrieval."""
 
 from dataclasses import dataclass, field
+import re
 
 import numpy as np
 
 from .bm25 import BM25
+from .answer_requirements import question_requirements
 from .document_structure import load_structure
 from .embeddings import get_embedder
 from .query_processing import QueryPlan, constraint_suffix
 from .reranking import passage_text, rerank
 from .settings import RAGSettings
-from .text_utils import canonical, content_terms
+from .text_utils import audience_qualifiers, canonical, content_terms, folded
 
 
 def scope_matches(metadata: dict, constraints: dict) -> bool:
@@ -18,7 +20,37 @@ def scope_matches(metadata: dict, constraints: dict) -> bool:
         requested, applies = set(constraints.get(key, [])), set(metadata.get(key, []))
         if requested and applies and not requested & applies:
             return False
+    tracks = set(constraints.get("program_tracks", []))
+    if tracks and not tracks & set(metadata.get("program_tracks", [])):
+        return False
     return True
+
+
+def annotate_program_tracks(chunks: list[dict]) -> list[dict]:
+    """Keep numbered joint programs separate using verbatim heading boundaries.
+
+    Enrich only RAM metadata; never alter stored chunks, vectors or sidecars.
+    A chunk can straddle two programs, so retain exact ranges for each track.
+    """
+    heading = re.compile(r"CHƯƠNG TRÌNH[A-ZĐÀ-Ỹ\s]{0,150}?(\d+\s*\+\s*\d+)|\bNGÀNH\s+([^\W\d_]+)")
+    active, previous_source, result = None, None, []
+    for chunk in chunks:
+        if chunk["source"] != previous_source:
+            active = None
+        previous_source = chunk["source"]
+        ranges, start = {}, 0
+        for match in heading.finditer(chunk["text"]):
+            if match[2] and not match[2].isupper():
+                continue
+            if active and match.start() > start:
+                ranges.setdefault(active, []).append([start, match.start()])
+            active = re.sub(r"\s+", "", match[1]) if match[1] else None
+            start = match.start()
+        if active and start < len(chunk["text"]):
+            ranges.setdefault(active, []).append([start, len(chunk["text"])])
+        result.append({**chunk, "metadata": {**chunk.get("metadata", {}),
+                       "program_tracks": sorted(ranges), "program_ranges": ranges}})
+    return result
 
 
 def reciprocal_rank_fusion(rankings: list[list[int]], k: int = 60) -> dict[int, float]:
@@ -34,7 +66,7 @@ def deduplicate(candidates: list[dict]) -> list[dict]:
     for candidate in candidates:
         metadata = candidate["metadata"]
         scope = (metadata.get("document_id"), metadata.get("article"), metadata.get("clause"), metadata.get("item_title"),
-                 tuple(metadata.get("levels", [])), tuple(metadata.get("modes", [])))
+                 tuple(metadata.get("levels", [])), tuple(metadata.get("modes", [])), tuple(metadata.get("program_tracks", [])))
         key = (canonical(candidate["text"]).casefold(), scope)
         if key in seen:
             continue
@@ -80,7 +112,7 @@ class HybridRetriever:
         signature = (self.index.meta["chunks_sha256"], self.index.meta["source_sha256"])
         if signature != self._signature:
             self.metadata = load_structure(self.index)
-            self.chunks = [{**c, "metadata": self.metadata[c["chunk_id"]]} for c in self.index.chunks]
+            self.chunks = annotate_program_tracks([{**c, "metadata": self.metadata[c["chunk_id"]]} for c in self.index.chunks])
             self.by_id = {c["chunk_id"]: c for c in self.chunks}
             self.bm25 = BM25([passage_text(c) for c in self.chunks])
             self._signature = signature
@@ -129,6 +161,19 @@ class HybridRetriever:
             return True
 
         # Cover explicit subquestions before filling by global rank.
+        def generality(chunk):
+            meta = chunk.get("metadata", {})
+            qualifiers = audience_qualifiers(chunk["text"] + " " + meta.get("item_title", "") + " " + meta.get("regulation", ""))
+            return sum(folded(q) not in folded(plan.original) for q in qualifiers)
+
+        for requirement in question_requirements(plan.original):
+            if requirement.key not in {"months", "credits", "money", "times", "discipline", "conduct", "academic", "language_exit", "earliest", "registration_first", "registration_later", "email", "website"}:
+                continue
+            matching = [c for c in candidates if requirement.matches(c["text"])]
+            attribute_scores = self.bm25.scores(requirement.query)
+            best = min(matching, key=lambda c: (generality(c), -float(attribute_scores[c["order"]]), -c["rerank_score"]), default=None)
+            if best:
+                add(best, "requested_attribute:" + requirement.key)
         for subquestion in plan.subquestions[:3]:
             terms = content_terms(subquestion)
             best = max(candidates, key=lambda c: (len(terms & content_terms(passage_text(c))) / max(len(terms), 1), c["rerank_score"]), default=None)

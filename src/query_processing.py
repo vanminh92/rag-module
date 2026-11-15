@@ -9,6 +9,7 @@ from ollama import ResponseError
 from pydantic import BaseModel, ConfigDict, Field
 
 from .text_utils import canonical, folded
+from .answer_requirements import question_requirements
 
 # Search vocabulary only: these are neither answers nor document/page shortcuts.
 ALIASES = {
@@ -20,6 +21,8 @@ ALIASES = {
     "học hai ngành": "học cùng lúc hai chương trình", "đổi ngành": "chuyển ngành",
     "ở trọ": "ngoại trú", "tiền sinh hoạt": "hỗ trợ chi phí sinh hoạt",
     "cố vấn": "cố vấn học tập", "phúc khảo": "xem xét lại kết quả thi phúc khảo",
+    "ra trường": "tốt nghiệp chuẩn đầu ra", "cỡ nào": "mức yêu cầu",
+    "cntt": "công nghệ thông tin",
 }
 
 
@@ -57,7 +60,8 @@ def explicit_constraints(question: str) -> dict:
     times = re.findall(r"\b(?:19|20)\d{2}(?:\s*[–-]\s*(?:19|20)\d{2})?\b", question)
     subjects = re.findall(r"(?i)\b(?:sinh viên sư phạm|sinh viên năm cuối|người khuyết tật|hộ cận nghèo|hộ nghèo|dân tộc thiểu số)\b", question)
     time_phrases = re.findall(r"(?i)\b(?:học kỳ|năm học|năm thứ)\s+(?:đầu(?: tiên)?|thứ (?:nhất|hai|ba|tư)|tiếp theo|cuối|[IVX\d]+)\b", question)
-    return {"levels": levels, "modes": modes, "years": times,
+    tracks = [re.sub(r"\s+", "", value) for value in re.findall(r"\b\d+\s*\+\s*\d+\b", question)] if re.search(r"(?i)(?:chương trình|ngành|liên kết)", question) else []
+    return {"levels": levels, "modes": modes, "years": times, "program_tracks": tracks,
             "numbers": re.findall(r"\b\d+(?:[,.]\d+)?\b", question), "subjects": subjects, "time_phrases": time_phrases}
 
 
@@ -90,11 +94,17 @@ def plan_query(question: str, *, llm=None, max_queries: int = 4) -> QueryPlan:
         queries.append(" ".join(expansions))
     subquestions = []
     if intent in {"compare", "synthesize", "conditions"}:
-        parts = re.split(r"(?i)\s*;\s*|\s*,?\s*đồng thời\s+|\s+và\s+(?=(?:nếu|từ|số|mức|thời|điều kiện|thủ tục|chuẩn|email|website|văn phòng|khi|cảnh báo|phòng|trung tâm)\b)", normalized)
+        parts = re.split(r"(?i)\s*;\s*|\s*,?\s*đồng thời\s+|\s+và\s+(?=(?:nếu|từ|số|mức|thời|điều kiện|thủ tục|chuẩn|email|website|văn phòng|khi|cảnh báo|phòng|trung tâm|tối đa|bao nhiêu|tiền|mật khẩu)\b)", normalized)
         if len(parts) > 1:
             suffix = constraint_suffix(constraints)
             subquestions = [canonical(part + " " + suffix) for part in parts if part.strip()][:3]
             queries.extend(subquestions)
+    # Multi-attribute questions must search the easily omitted attributes too.
+    # A query is only search vocabulary, never an asserted answer or threshold.
+    requirements = [r for r in question_requirements(normalized) if r.key != "main" and not r.unavailable]
+    if requirements:
+        focused = [r.query for r in requirements if r.key in {"months", "credits", "money", "times", "language_exit"}]
+        queries = [queries[0], *focused[:3], *queries[1:]]
     warnings = []
     if llm is not None:
         try:
@@ -119,7 +129,7 @@ def plan_query(question: str, *, llm=None, max_queries: int = 4) -> QueryPlan:
         if not query:
             continue
         generated = explicit_constraints(query)
-        if any(set(generated[key]) - set(constraints[key]) for key in ("levels", "modes", "years", "numbers")):
+        if any(set(generated[key]) - set(constraints[key]) for key in ("levels", "modes", "years", "numbers", "program_tracks")):
             warnings.append("Bỏ biến thể tự thêm đối tượng, loại hình, thời điểm hoặc số liệu ngoài câu hỏi.")
             continue
         if suffix:
