@@ -1,0 +1,57 @@
+W1114 21:28:32.614000 68545 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 20170.28it/s]
+D01 baseline: complete 5.42s 
+D02 baseline: complete 0.73s 
+D03 baseline: complete 0.93s 
+D04 baseline: complete 0.99s 
+D05 baseline: complete 0.68s 
+D06 baseline: insufficient 0.76s 
+D07 baseline: complete 0.86s 
+D08 baseline: insufficient 0.84s 
+D09 baseline: insufficient 0.59s 
+D10 baseline: insufficient 0.80s 
+D11 baseline: complete 0.95s 
+D12 baseline: insufficient 0.68s 
+D13 baseline: insufficient 0.76s 
+D14 baseline: insufficient 0.69s 
+D15 baseline: complete 0.91s 
+D16 baseline: complete 1.07s 
+D17 baseline: complete 1.08s 
+D18 baseline: complete 0.80s 
+D19 baseline: complete 1.04s 
+D20 baseline: complete 1.43s 
+P01 baseline: complete 2.05s 
+P02 baseline: insufficient 0.66s 
+P03 baseline: insufficient 0.56s 
+P04 baseline: insufficient 0.76s 
+P05 baseline: insufficient 0.82s 
+C01 baseline: complete 1.95s 
+C02 baseline: insufficient 0.86s 
+C03 baseline: complete 2.47s 
+C04 baseline: insufficient 0.68s 
+C05 baseline: insufficient 0.66s 
+U01 baseline: insufficient 0.87s 
+U02 baseline: insufficient 0.87s 
+U03 baseline: insufficient 0.78s 
+U04 baseline: insufficient 0.75s 
+U05 baseline: insufficient 0.90s 
+{
+  "baseline": {
+    "recall_at_5": 0.5166666666666667,
+    "recall_at_10": 0.65,
+    "mrr_at_10": 0.45994708994708994,
+    "questions": 35,
+    "errors": 0,
+    "context_evidence_recall": 0.5166666666666667,
+    "response_seconds_mean": 1.0750836439480607,
+    "response_seconds_p95": 2.1762657794228275,
+    "correct_complete_rate": null,
+    "reviewed_full_answers": 0,
+    "supported_claim_rate": null,
+    "wrong_citation_rate": null,
+    "correct_refusal_rate": 1.0,
+    "refusal_denominator": 5,
+    "peak_python_rss_mib": 1030.703125,
+    "max_sampled_ollama_rss_mib": 2602.75
+  }
+}

@@ -4,3 +4,6 @@ sentence-transformers==5.7.0
 pytest==9.2.0
 streamlit>=1.40,<2
 ollama>=0.6.3,<1
+pydantic>=2.9,<3
+transformers==5.23.0
+huggingface-hub==2.4.0

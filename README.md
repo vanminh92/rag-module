@@ -1,8 +1,55 @@
-# RAG Code 1 — Module truy xuất tài liệu sinh viên
+# RAG — Hỏi đáp tự do trên Sổ tay sinh viên Khóa 50
 
 Module Python tìm các đoạn liên quan đến câu hỏi tiếng Việt trong **Sổ tay sinh viên Khóa 50 — Trường Đại học Sư phạm Thành phố Hồ Chí Minh**.
 
-Ứng dụng Streamlit `streamlit_qa_app.py` ghép phần truy xuất với Qwen chạy qua Ollama. Khi người dùng hỏi, ứng dụng lấy ba đoạn liên quan, gửi chúng cùng câu hỏi đến mô hình và hiển thị câu trả lời kèm nguồn.
+Ứng dụng Streamlit sử dụng E5 + BM25 tiếng Việt, hợp nhất RRF, chọn 4–8 đoạn theo câu hỏi và kiểm tra từng luận điểm với trích dẫn nguyên văn. Qwen2.5 3B chạy qua Ollama; mô hình E5, PDF và API Code 2 được giữ nguyên. Đây là hỏi đáp trong phạm vi tài liệu, không phải tra cứu kiến thức ngoài sổ tay.
+
+## Chạy bản nâng cấp trên macOS
+
+Giữ Ollama chạy ở máy cục bộ. Từ thư mục repository:
+
+```bash
+.venv/bin/python -m pip install -r requirements.txt
+.venv/bin/python -m src.entailment --download
+ollama pull qwen2.5:3b
+.venv/bin/python -m streamlit run streamlit_qa_app.py
+```
+
+Không cần build lại index đã có. Model NLI được chuẩn bị một lần để kiểm chứng cục bộ; không đổi E5 hoặc Qwen. Metadata cấu trúc được tạo một lần tại `data/processed/structure.json`, có kiểm tra hash; không thay đổi ba artifact index gốc. Nếu chưa có `.venv`, tạo bằng Python 3.11+ như mục cài đặt bên dưới.
+
+```bash
+# Chỉ truy xuất, không cần Ollama; đầu ra có plan, RRF, reranking và ngữ cảnh.
+.venv/bin/python -m src.pipeline --retrieve-only --question "Điểm thấp quá có bị đuổi học không?"
+
+# Hỏi đáp, trích dẫn và nhật ký kiểm chứng.
+.venv/bin/python -m src.pipeline --question "Sinh viên đại học chính quy tự đăng ký học phần từ học kỳ nào?" --debug
+
+# Tùy chọn: dùng thêm Qwen để phân tích/viết lại truy vấn.
+RAG_QUERY_REWRITE=llm .venv/bin/python -m streamlit run streamlit_qa_app.py
+
+# Tắt reranking để thử nghiệm; mặc định là lexical, không tải thêm model.
+RAG_RERANKER=none .venv/bin/python -m streamlit run streamlit_qa_app.py
+
+# Chế độ nhẹ hơn để đối chiếu, bỏ NLI nhưng vẫn kiểm tra trích dẫn và Qwen.
+RAG_SUPPORT_CHECK=llm .venv/bin/python -m streamlit run streamlit_qa_app.py
+```
+
+Giao diện phân biệt trả lời đầy đủ, một phần và chưa đủ bằng chứng. Mỗi nguồn có tên tệp, trang vật lý PDF, trích đoạn và toàn văn chunk. Bật **Debug dành cho nhà phát triển** để xem truy vấn, ứng viên E5/BM25, RRF, reranking, ngữ cảnh, phản hồi LLM và kiểm tra chứng cứ.
+
+API cũ vẫn giữ nguyên chữ ký, năm trường và score cosine:
+
+```python
+from src.retriever import retrieve  # API Code 2, dense baseline, không đổi
+chunks = retrieve("Học phần tiên quyết là gì?", top_k=3)
+
+from src.pipeline import RAGPipeline  # API nâng cao mới
+result = RAGPipeline().ask("Câu hỏi tự nhiên liên quan đến sổ tay")
+print(result.status, result.answer, result.sources)
+```
+
+Chi tiết thiết kế, cấu hình, giới hạn và rollback: [docs/open_domain_rag.md](docs/open_domain_rag.md). Kết quả đo thật và các giai đoạn: [docs/upgrade_report.md](docs/upgrade_report.md). Cách đánh giá: [evaluation/README.md](evaluation/README.md). Các mục CV12–CV14 bên dưới là hợp đồng và lịch sử bàn giao, vẫn có thể tái chạy.
+
+Lượt đánh giá cuối dùng 70 câu, chia 35 dev/35 test. Trên test, bản mới trả lời đúng và đủ 22/30 câu có đủ thông tin, baseline 21/30; Recall@10 giảm từ 98,48% xuống 92,42%. Thời gian trung bình bản mới khoảng 25 giây/câu trên M5 16GB. Trích dẫn và độ đầy đủ vẫn có lỗi; xem báo cáo trước khi suy rộng kết quả.
 
 ## Chạy ứng dụng hỏi đáp trên Windows
 
@@ -11,6 +58,7 @@ Mở PowerShell tại thư mục gốc dự án và giữ Ollama chạy. Tạo m
 ```powershell
 py -3.11 -m venv .venv
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
+.\.venv\Scripts\python.exe -m src.entailment --download
 ollama pull qwen2.5:3b
 .\.venv\Scripts\python.exe -m streamlit run streamlit_qa_app.py
 ```

@@ -1,0 +1,191 @@
+{
+  "baseline_commit": "6be6f89",
+  "source": "so_tay_sinh_vien_k50.pdf",
+  "legacy_cv14": "Historical page-window baseline failed Q03 (2/3); current unmodified dense API passes CV14 3/3. These three questions are insufficient for open-ended QA.",
+  "cases": [
+    {
+      "id": "D06",
+      "question": "Sinh viên đại học chính quy tự đăng ký học phần từ học kỳ nào?",
+      "observation": "Top-3 không chứa chứng cứ đúng về thời điểm tự đăng ký; high cosine không đủ chứng minh.",
+      "retrieval_metrics": {
+        "recall_at_5": 0.0,
+        "recall_at_10": 1.0,
+        "mrr_at_10": 0.14285714285714285
+      },
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p011-c008",
+          "text": "c) Sinh viên không đạt một học phần tự chọn bắt buộc sẽ phải đăng ký học lại chính học phần đó hoặc một học phần khác thuộc cùng nhóm học phần tự chọn bắt buộc theo quy định trong CTĐT, hoặc một học phần thay thế nếu học phần đó không còn được giảng dạy;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 11,
+          "score": 0.8899751901626587
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p035-c006",
+          "text": "c) Sinh viên không đạt một học phần tự chọn bắt buộc sẽ phải đăng ký học lại chính học phần đó hoặc một học phần khác thuộc cùng nhóm học phần tự chọn bắt buộc theo quy định trong CTĐT, hoặc một học phần thay thế nếu học phần đó không còn được giảng dạy;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 35,
+          "score": 0.8899751901626587
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p011-c009",
+          "text": "d) Sinh viên không đạt một học phần tự chọn tự do sẽ phải đăng ký học lại học phần đó hoặc có thể chọn đăng ký học một học phần khác theo quy định trong CTĐT.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 11,
+          "score": 0.8886040449142456
+        }
+      ],
+      "answer": "Tài liệu được cung cấp chưa đủ thông tin để trả lời.",
+      "sources": [],
+      "raw_responses": [
+        "{ \"answer\": \"Sinh viên đại học chính quy tự đăng ký học phần từ học kỳ 2.\", \"source_ids\": [] }"
+      ]
+    },
+    {
+      "id": "D15",
+      "question": "Học bổng khuyến khích học tập được cấp bao nhiêu tháng trong năm học?",
+      "observation": "Cùng số 10 tháng nhưng dẫn chính sách hỗ trợ người khuyết tật thay cho học bổng khuyến khích học tập.",
+      "retrieval_metrics": {
+        "recall_at_5": 1.0,
+        "recall_at_10": 1.0,
+        "mrr_at_10": 0.5
+      },
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p160-c006",
+          "text": "2. Mức hỗ trợ Mức hỗ trợ về học bổng bằng 80% mức lương cơ sở, mức hỗ trợ phương tiện đồ dùng học tập 100.000 đ/tháng và được hưởng không quá 10 tháng/năm học/sinh viên; số năm được hưởng hỗ trợ chi phí học tập theo thời gian đào tạo chính thức.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 160,
+          "score": 0.8936344981193542
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p073-c003",
+          "text": "2. Mức học bổng: Mức học bổng sẽ được tính hằng năm và theo quy định của Nhà nước và thực tế của Trường quy định. HBKKHT được cấp theo từng học kỳ chính và cấp 10 tháng trong năm học. Cụ thể: + Học bổng loại Khá: Số tín chỉ x định mức học phí 1 tín chỉ x 1,0; + Học bổng loại Giỏi: Số tín chỉ x định mức học phí 1 tín chỉ x 1,25; + Học bổng loại Xuất sắc: Số tín chỉ x định mức học phí 1 tín chỉ x 1,5.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 73,
+          "score": 0.8841516375541687
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p071-c006",
+          "text": "1. Học bổng khuyến khích học tập",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 71,
+          "score": 0.8800845146179199
+        }
+      ],
+      "answer": "Học bổng khuyến khích học tập được cấp 10 tháng trong năm học.",
+      "sources": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p160-c006",
+          "text": "2. Mức hỗ trợ Mức hỗ trợ về học bổng bằng 80% mức lương cơ sở, mức hỗ trợ phương tiện đồ dùng học tập 100.000 đ/tháng và được hưởng không quá 10 tháng/năm học/sinh viên; số năm được hưởng hỗ trợ chi phí học tập theo thời gian đào tạo chính thức.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 160,
+          "score": 0.8936344981193542
+        }
+      ],
+      "raw_responses": [
+        "{\n  \"answer\": \"Học bổng khuyến khích học tập được cấp 10 tháng trong năm học.\",\n  \"source_ids\": [1]\n}"
+      ]
+    },
+    {
+      "id": "P01",
+      "question": "Em học đại học chính quy, mới vào thì khi nào phải tự chọn môn trên hệ thống?",
+      "observation": "Trả định nghĩa học phần tự chọn thay vì thời điểm tự đăng ký; thiếu kiểm tra tính liên quan từng luận điểm.",
+      "retrieval_metrics": {
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr_at_10": 0.0
+      },
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p009-c006",
+          "text": "c) Học phần tự chọn tự do: là học phần sinh viên có thể chọn bất kỳ trong số những học phần Trường tổ chức đào tạo để tích lũy đủ số tín chỉ quy định, trừ các học phần không tính vào điểm trung bình chung như: học phần chung về giáo dục thể chất và giáo dục quốc phòng – an ninh, tin học cơ bản, ngoại ngữ không chuyên…;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 9,
+          "score": 0.8661239147186279
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p076-c002",
+          "text": "c) Về kết quả học tập: Sinh viên phải hoàn thành ít nhất một học kỳ; riêng đối với sinh viên đào tạo trình độ đại học hệ chính quy trúng tuyển từ năm 2020 trở về trước thì phải có điểm trung bình chung tích lũy từ 2.00 trở lên;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 76,
+          "score": 0.8660389184951782
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p033-c006",
+          "text": "c) Học phần tự chọn tự do: là học phần sinh viên có thể chọn bất kỳ trong số những học phần Trường tổ chức đào tạo để tích lũy đủ số tín chỉ quy định, trừ các học phần không tính vào điểm trung bình chung như: học phần chung về giáo dục thể chất và giáo dục quốc phòng – an ninh, tin học cơ bản, ngoại ngữ không chuyên,…;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 33,
+          "score": 0.8655456304550171
+        }
+      ],
+      "answer": "Học phần tự chọn tự do: là học phần sinh viên có thể chọn bất kỳ trong số những học phần Trường tổ chức đào tạo để tích lũy đủ số tín chỉ quy định, trừ các học phần không tính vào điểm trung bình chung như: học phần chung về giáo dục thể chất và giáo dục quốc phòng – an ninh, tin học cơ bản, ngoại ngữ không chuyên…",
+      "sources": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p009-c006",
+          "text": "c) Học phần tự chọn tự do: là học phần sinh viên có thể chọn bất kỳ trong số những học phần Trường tổ chức đào tạo để tích lũy đủ số tín chỉ quy định, trừ các học phần không tính vào điểm trung bình chung như: học phần chung về giáo dục thể chất và giáo dục quốc phòng – an ninh, tin học cơ bản, ngoại ngữ không chuyên…;",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 9,
+          "score": 0.8661239147186279
+        }
+      ],
+      "raw_responses": [
+        "{ \"answer\": \"Học phần tự chọn tự do: là học phần sinh viên có thể chọn bất kỳ trong số những học phần Trường tổ chức đào tạo để tích lũy đủ số tín chỉ quy định, trừ các học phần không tính vào điểm trung bình chung như: học phần chung về giáo dục thể chất và giáo dục quốc phòng – an ninh, tin học cơ bản, ngoại ngữ không chuyên…\", \"source_ids\": [1] }"
+      ]
+    },
+    {
+      "id": "C03",
+      "question": "Đại học chính quy có ngưỡng điểm học kỳ cảnh báo nào và cảnh báo lặp lại bao nhiêu lần dẫn đến buộc thôi học?",
+      "observation": "Trộn cảnh báo học tập với cảnh báo ở chương trình thứ hai và kỷ luật/rèn luyện.",
+      "retrieval_metrics": {
+        "recall_at_5": 0.0,
+        "recall_at_10": 0.0,
+        "mrr_at_10": 0.0
+      },
+      "top_3": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p028-c008",
+          "text": "3. Trong quá trình sinh viên học cùng lúc hai chương trình, nếu điểm trung bình tích luỹ của chương trình thứ nhất đạt dưới điểm trung bình hoặc thuộc diện cảnh báo kết quả học tập thì bị buộc thôi học chương trình thứ hai ở học kỳ tiếp theo.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 28,
+          "score": 0.8847465515136719
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p099-c007",
+          "text": "5. Sinh viên trình độ đại học bị xếp loại rèn luyện yếu, kém trong hai học kỳ liên tiếp thì phải tạm ngừng học ít nhất một học kỳ ở học kỳ tiếp theo và nếu bị xếp loại rèn luyện yếu, kém hai học kỳ liên tiếp lần thứ hai thì sẽ bị buộc thôi học.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 99,
+          "score": 0.884261965751648
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p021-c010",
+          "text": "1. Cuối mỗi học kỳ chính, sinh viên bị cảnh báo học tập nếu vi phạm một trong các điều kiện sau:",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 21,
+          "score": 0.8797824382781982
+        }
+      ],
+      "answer": "Đại học chính quy không có ngưỡng điểm học kỳ cảnh báo cụ thể được nêu trong tài liệu. Tuy nhiên, nếu điểm trung bình tích luỹ của chương trình thứ nhất đạt dưới điểm trung bình hoặc thuộc diện cảnh báo kết quả học tập thì sinh viên sẽ bị buộc thôi học chương trình thứ hai ở học kỳ tiếp theo. Về phần cảnh báo lặp lại, nếu sinh viên bị xếp loại rèn luyện yếu, kém hai học kỳ liên tiếp lần thứ hai thì sẽ bị buộc thôi học.",
+      "sources": [
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p028-c008",
+          "text": "3. Trong quá trình sinh viên học cùng lúc hai chương trình, nếu điểm trung bình tích luỹ của chương trình thứ nhất đạt dưới điểm trung bình hoặc thuộc diện cảnh báo kết quả học tập thì bị buộc thôi học chương trình thứ hai ở học kỳ tiếp theo.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 28,
+          "score": 0.8847465515136719
+        },
+        {
+          "chunk_id": "so_tay_sinh_vien_k50-p099-c007",
+          "text": "5. Sinh viên trình độ đại học bị xếp loại rèn luyện yếu, kém trong hai học kỳ liên tiếp thì phải tạm ngừng học ít nhất một học kỳ ở học kỳ tiếp theo và nếu bị xếp loại rèn luyện yếu, kém hai học kỳ liên tiếp lần thứ hai thì sẽ bị buộc thôi học.",
+          "source": "so_tay_sinh_vien_k50.pdf",
+          "page": 99,
+          "score": 0.884261965751648
+        }
+      ],
+      "raw_responses": [
+        "{ \"answer\": \"Đại học chính quy không có ngưỡng điểm học kỳ cảnh báo cụ thể được nêu trong tài liệu. Tuy nhiên, nếu điểm trung bình tích luỹ của chương trình thứ nhất đạt dưới điểm trung bình hoặc thuộc diện cảnh báo kết quả học tập thì sinh viên sẽ bị buộc thôi học chương trình thứ hai ở học kỳ tiếp theo. Về phần cảnh báo lặp lại, nếu sinh viên bị xếp loại rèn luyện yếu, kém hai học kỳ liên tiếp lần thứ hai thì sẽ bị buộc thôi học.\", \"source_ids\": [1, 2]}"
+      ]
+    }
+  ],
+  "missing_ids_reproduction": "Original generate_answer returns NO_ANSWER immediately for an empty source_ids list. Regression tests now supply a supported response lacking citations, verify one repair, and verify no invented sources when both attempts lack citations."
+}

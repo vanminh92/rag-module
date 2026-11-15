@@ -1,0 +1,774 @@
+[
+  {
+    "id": "D21",
+    "question": "Sinh viên đại học bị rèn luyện yếu hoặc kém hai học kỳ liên tiếp bị xử lý thế nào, kể cả khi lặp lại lần thứ hai?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D21"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 99,
+        "quote": "Sinh viên trình độ đại học bị xếp loại rèn luyện yếu, kém trong hai học kỳ liên tiếp thì phải tạm ngừng học ít nhất một học kỳ ở học kỳ tiếp theo và nếu bị xếp loại rèn luyện yếu, kém hai học kỳ liên tiếp lần thứ hai thì sẽ bị buộc thôi học.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p099-c007"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D22",
+    "question": "Sinh viên cao đẳng sư phạm có rèn luyện kém cả năm và lặp lại lần hai bị xử lý thế nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D22"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 99,
+        "quote": "Sinh viên trình độ cao đẳng sư phạm bị xếp loại rèn luyện kém trong cả năm học thì phải tạm ngừng học một năm học ở năm học tiếp theo và nếu bị xếp loại rèn luyện kém cả năm lần thứ hai thì sẽ bị buộc thôi học.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p099-c008"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D23",
+    "question": "Bài kiểm tra ngoại ngữ đầu vào gồm những kỹ năng nào và theo cấu trúc trình độ nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D23"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 110,
+        "quote": "Bài kiểm tra trình độ ngoại ngữ đầu vào gồm kỹ năng nghe và kỹ năng đọc được xây dựng dựa trên cấu trúc đề thi tương đương trình độ bậc 3/6.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p110-c005"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D24",
+    "question": "Chuẩn đầu ra ngoại ngữ tối thiểu của sinh viên đại học thuộc Điều 1 quy định ngoại ngữ là bậc nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D24"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 111,
+        "quote": "Sinh viên theo quy định Điều 1 tốt nghiệp trình độ đại học phải đạt tối thiểu bậc 3/6 theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam hoặc tương đương để được công nhận tốt nghiệp.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p111-c006"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D25",
+    "question": "Sinh viên ngoại trú được Trường hỗ trợ việc đăng ký ngoại trú không?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D25"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 117,
+        "quote": "được Trường và các bên liên quan hỗ trợ và giúp đỡ trong việc đăng ký ngoại trú.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p117-c011"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D26",
+    "question": "Nguồn ngân sách Nhà nước cho nghiên cứu khoa học sinh viên được trích từ kinh phí nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D26"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 123,
+        "quote": "Ngân sách Nhà nước trích từ kinh phí hoạt động khoa học và công nghệ.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p123-c018"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D27",
+    "question": "Mỗi sinh viên có thể tham gia và chịu trách nhiệm chính bao nhiêu đề tài nghiên cứu khoa học trong một năm học?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D27"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 130,
+        "quote": "Mỗi sinh viên có thể tham gia nhiều đề tài, chịu trách nhiệm chính thực hiện một đề tài NCKH trong một năm học;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p130-c011"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D28",
+    "question": "Trang phục của người học trong giờ học tại Trường cần đáp ứng yêu cầu gì?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D28"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 137,
+        "quote": "trang phục của người học phải gọn gàng, lịch sự, kín đáo, phù hợp với thuần phong mỹ tục, môi trường giáo dục, bảo đảm nghiêm túc, thẩm mỹ.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p137-c007"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D29",
+    "question": "Quy tắc trách nhiệm khi ứng xử trên mạng xã hội yêu cầu điều gì?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D29"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 139,
+        "quote": "Chịu trách nhiệm về các hành vi, ứng xử trên mạng xã hội; phối hợp với các cơ quan chức năng để xử lý hành vi, nội dung thông tin vi phạm pháp luật.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p139-c003"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D30",
+    "question": "Theo nghị định được in trong sổ tay, mức hỗ trợ chi phí sinh hoạt hằng tháng cho sinh viên sư phạm là bao nhiêu?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D30"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 144,
+        "quote": "Sinh viên sư phạm được Nhà nước hỗ trợ 3,63 triệu đồng/tháng để chi trả chi phí sinh hoạt trong thời gian học tập tại trường.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p144-c006"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D31",
+    "question": "Thời gian hỗ trợ học phí và chi phí sinh hoạt cho sinh viên sư phạm tối đa bao nhiêu tháng mỗi năm học?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D31"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 144,
+        "quote": "Thời gian hỗ trợ tiền đóng học phí và chi phí sinh hoạt được xác định theo số tháng thực tế học tập tại trường theo quy định, nhưng không quá 10 tháng/năm học.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p144-c007"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D32",
+    "question": "Sau bao lâu kể từ quyết định công nhận tốt nghiệp mà sinh viên sư phạm hưởng hỗ trợ không công tác trong ngành giáo dục thì thuộc diện bồi hoàn?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D32"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 145,
+        "quote": "Sinh viên sư phạm đã hưởng chính sách không công tác trong ngành giáo dục sau 02 năm kể từ ngày có quyết định công nhận tốt nghiệp;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p145-c011"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D33",
+    "question": "Ký túc xá tiếp nhận hồ sơ đăng ký nội trú ở đâu và khi nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D33"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 170,
+        "quote": "Viên chức thuộc Ban Quản lý KTX được phân công tiếp nhận hồ sơ trong thời hạn được thông báo chính thức tại Văn phòng KTX.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p170-c003"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D34",
+    "question": "Theo sổ tay, email liên hệ Phòng Công nghệ Thông tin là gì?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D34"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 173,
+        "quote": "Email : phongcntt@hcmue.edu.vn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p173-c002"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D35",
+    "question": "Theo sổ tay, email Phòng Công tác chính trị và Học sinh, sinh viên là gì?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D35"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 173,
+        "quote": "Email : hopthusinhvien@hcmue.edu.vn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p173-c004"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D36",
+    "question": "Theo sổ tay, email và website của Thư viện là gì?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D36"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 178,
+        "quote": "Email : thuvien@hcmue.edu.vn Website : lib.hcmue.edu.vn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p178-c004"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D37",
+    "question": "Theo sổ tay, văn phòng Ký túc xá ở địa chỉ nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D37"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 180,
+        "quote": "351A Lạc Long Quân, Phường 5, Quận 11, TP. HCM.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p180-c002"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D38",
+    "question": "Chương trình quốc tế song ngành 2+2 Ngôn ngữ Trung Quốc và Giáo dục Hán ngữ Quốc tế có cơ hội nghề nghiệp gì tại doanh nghiệp sử dụng tiếng Trung?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D38"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 198,
+        "quote": "Người học sau khi tốt nghiệp có thể làm biên – phiên dịch, trợ lý, thương mại,… tại các cơ quan nhà nước, doanh nghiệp trong nước và nước ngoài có sử dụng tiếng Trung Quốc;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p198-c002"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D39",
+    "question": "Theo danh sách trong sổ tay, Bảo tàng Chứng tích Chiến tranh ở địa chỉ nào?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D39"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 210,
+        "quote": "Bảo tàng Chứng tích Chiến tranh Số 28 Võ Văn Tần, Phường 6, Quận 3",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p210-c004"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "D40",
+    "question": "Ngành Tâm lý học giáo dục có cơ hội làm chuyên viên tâm lý học đường ở đâu?",
+    "category": "direct",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D40"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 201,
+        "quote": "Chuyên viên tâm lý học đường thực hiện công tác dự phòng tâm lý (giảng dạy kỹ năng sống và các chuyên đề Tâm lý học giáo dục có liên quan, sàng lọc các vấn đề sức khỏe tâm thần, tư vấn – tham vấn học đường) tại các trường phổ thông và cơ sở giáo dục nghề nghiệp;",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p201-c003"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P06",
+    "question": "Đại học mà rèn luyện yếu hai kỳ liền rồi tái diễn lần nữa thì có bị đuổi không?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D21"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 99,
+        "quote": "Sinh viên trình độ đại học bị xếp loại rèn luyện yếu, kém trong hai học kỳ liên tiếp thì phải tạm ngừng học ít nhất một học kỳ ở học kỳ tiếp theo và nếu bị xếp loại rèn luyện yếu, kém hai học kỳ liên tiếp lần thứ hai thì sẽ bị buộc thôi học.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p099-c007"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P07",
+    "question": "Sinh viên đại học thuộc diện áp dụng quy định ngoại ngữ cần ngoại ngữ cỡ nào mới ra trường?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D24"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 111,
+        "quote": "Sinh viên theo quy định Điều 1 tốt nghiệp trình độ đại học phải đạt tối thiểu bậc 3/6 theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam hoặc tương đương để được công nhận tốt nghiệp.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p111-c006"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P08",
+    "question": "Em ở trọ ngoài trường, nhà trường có giúp đăng ký ngoại trú không?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D25"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 117,
+        "quote": "được Trường và các bên liên quan hỗ trợ và giúp đỡ trong việc đăng ký ngoại trú.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p117-c011"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P09",
+    "question": "Theo sổ tay, học sư phạm được Nhà nước cho bao nhiêu tiền sinh hoạt mỗi tháng?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D30"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 144,
+        "quote": "Sinh viên sư phạm được Nhà nước hỗ trợ 3,63 triệu đồng/tháng để chi trả chi phí sinh hoạt trong thời gian học tập tại trường.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p144-c006"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "P10",
+    "question": "Trong sổ tay, muốn gửi mail cho phòng CNTT thì gửi địa chỉ nào?",
+    "category": "paraphrase",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D34"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 173,
+        "quote": "Email : phongcntt@hcmue.edu.vn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p173-c002"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C06",
+    "question": "So sánh cách xử lý kết quả rèn luyện yếu, kém của sinh viên đại học với rèn luyện kém của sinh viên cao đẳng sư phạm, gồm cả tái diễn lần hai.",
+    "category": "composite",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D21",
+      "D22"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 99,
+        "quote": "Sinh viên trình độ đại học bị xếp loại rèn luyện yếu, kém trong hai học kỳ liên tiếp thì phải tạm ngừng học ít nhất một học kỳ ở học kỳ tiếp theo và nếu bị xếp loại rèn luyện yếu, kém hai học kỳ liên tiếp lần thứ hai thì sẽ bị buộc thôi học.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p099-c007"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 99,
+        "quote": "Sinh viên trình độ cao đẳng sư phạm bị xếp loại rèn luyện kém trong cả năm học thì phải tạm ngừng học một năm học ở năm học tiếp theo và nếu bị xếp loại rèn luyện kém cả năm lần thứ hai thì sẽ bị buộc thôi học.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p099-c008"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C07",
+    "question": "Bài kiểm tra ngoại ngữ đầu vào kiểm tra kỹ năng gì và chuẩn đầu ra tối thiểu cho sinh viên đại học thuộc Điều 1 quy định ngoại ngữ là gì?",
+    "category": "composite",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D23",
+      "D24"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 110,
+        "quote": "Bài kiểm tra trình độ ngoại ngữ đầu vào gồm kỹ năng nghe và kỹ năng đọc được xây dựng dựa trên cấu trúc đề thi tương đương trình độ bậc 3/6.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p110-c005"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 111,
+        "quote": "Sinh viên theo quy định Điều 1 tốt nghiệp trình độ đại học phải đạt tối thiểu bậc 3/6 theo Khung năng lực ngoại ngữ 6 bậc dùng cho Việt Nam hoặc tương đương để được công nhận tốt nghiệp.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p111-c006"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C08",
+    "question": "Theo sổ tay, cho tôi email của Phòng Công nghệ Thông tin và Phòng Công tác chính trị và Học sinh, sinh viên.",
+    "category": "composite",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D34",
+      "D35"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 173,
+        "quote": "Email : phongcntt@hcmue.edu.vn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p173-c002"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 173,
+        "quote": "Email : hopthusinhvien@hcmue.edu.vn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p173-c004"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C09",
+    "question": "Theo nghị định trong sổ tay, sinh viên sư phạm được hỗ trợ sinh hoạt bao nhiêu mỗi tháng và tối đa mấy tháng mỗi năm học?",
+    "category": "composite",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D30",
+      "D31"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 144,
+        "quote": "Sinh viên sư phạm được Nhà nước hỗ trợ 3,63 triệu đồng/tháng để chi trả chi phí sinh hoạt trong thời gian học tập tại trường.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p144-c006"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 144,
+        "quote": "Thời gian hỗ trợ tiền đóng học phí và chi phí sinh hoạt được xác định theo số tháng thực tế học tập tại trường theo quy định, nhưng không quá 10 tháng/năm học.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p144-c007"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "C10",
+    "question": "Theo sổ tay, email và website Thư viện là gì, đồng thời văn phòng Ký túc xá ở đâu?",
+    "category": "composite",
+    "answerability": "full",
+    "split": "test",
+    "evidence_families": [
+      "D36",
+      "D37"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 178,
+        "quote": "Email : thuvien@hcmue.edu.vn Website : lib.hcmue.edu.vn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p178-c004"
+        ]
+      },
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 180,
+        "quote": "351A Lạc Long Quân, Phường 5, Quận 11, TP. HCM.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p180-c002"
+        ]
+      }
+    ],
+    "missing_information": []
+  },
+  {
+    "id": "U06",
+    "question": "Số chỗ ký túc xá còn trống ngay hôm nay là bao nhiêu?",
+    "category": "unanswerable",
+    "answerability": "none",
+    "split": "test",
+    "evidence_families": [
+      "U06"
+    ],
+    "evidence": [],
+    "missing_information": [
+      "Không có dữ liệu chỗ trống theo thời gian thực."
+    ]
+  },
+  {
+    "id": "U07",
+    "question": "Giá vé máy bay từ Thành phố Hồ Chí Minh ra Hà Nội ngày mai là bao nhiêu?",
+    "category": "unanswerable",
+    "answerability": "none",
+    "split": "test",
+    "evidence_families": [
+      "U07"
+    ],
+    "evidence": [],
+    "missing_information": [
+      "Không có giá vé máy bay."
+    ]
+  },
+  {
+    "id": "U08",
+    "question": "Theo nghị định trong sổ tay, mức hỗ trợ sinh hoạt cho sinh viên sư phạm là bao nhiêu mỗi tháng và tiền của cá nhân tôi tháng 11/2026 đã chuyển chưa?",
+    "category": "unanswerable",
+    "answerability": "partial",
+    "split": "test",
+    "evidence_families": [
+      "D30"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 144,
+        "quote": "Sinh viên sư phạm được Nhà nước hỗ trợ 3,63 triệu đồng/tháng để chi trả chi phí sinh hoạt trong thời gian học tập tại trường.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p144-c006"
+        ]
+      }
+    ],
+    "missing_information": [
+      "Không có trạng thái chuyển tiền của cá nhân tháng 11/2026."
+    ]
+  },
+  {
+    "id": "U09",
+    "question": "Theo sổ tay, địa chỉ văn phòng Ký túc xá ở đâu và hôm nay còn chính xác bao nhiêu giường trống?",
+    "category": "unanswerable",
+    "answerability": "partial",
+    "split": "test",
+    "evidence_families": [
+      "D37"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 180,
+        "quote": "351A Lạc Long Quân, Phường 5, Quận 11, TP. HCM.",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p180-c002"
+        ]
+      }
+    ],
+    "missing_information": [
+      "Không có số giường trống hôm nay."
+    ]
+  },
+  {
+    "id": "U10",
+    "question": "Email Phòng Công nghệ Thông tin trong sổ tay là gì và mật khẩu email sinh viên của tôi là gì?",
+    "category": "unanswerable",
+    "answerability": "partial",
+    "split": "test",
+    "evidence_families": [
+      "D34"
+    ],
+    "evidence": [
+      {
+        "source": "so_tay_sinh_vien_k50.pdf",
+        "page": 173,
+        "quote": "Email : phongcntt@hcmue.edu.vn",
+        "gold_chunk_ids": [
+          "so_tay_sinh_vien_k50-p173-c002"
+        ]
+      }
+    ],
+    "missing_information": [
+      "Không có mật khẩu cá nhân."
+    ]
+  }
+]

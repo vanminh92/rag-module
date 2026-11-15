@@ -1,0 +1,25 @@
+W1114 21:18:44.276000 67947 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 26156.07it/s]
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:   2%|▏         | 5/202 [00:00<00:20,  9.46it/s]Loading weights: 100%|██████████| 202/202 [00:00<00:00, 380.30it/s]
+P01 hybrid: complete 10.86s 
+P04 hybrid: complete 5.98s 
+{
+  "hybrid": {
+    "recall_at_5": 1.0,
+    "recall_at_10": 1.0,
+    "mrr_at_10": 1.0,
+    "questions": 2,
+    "errors": 0,
+    "context_evidence_recall": 1.0,
+    "response_seconds_mean": 8.418779437502963,
+    "response_seconds_p95": 10.616335181558679,
+    "correct_complete_rate": null,
+    "reviewed_full_answers": 0,
+    "supported_claim_rate": null,
+    "wrong_citation_rate": null,
+    "correct_refusal_rate": null,
+    "refusal_denominator": 0,
+    "peak_python_rss_mib": 1965.921875,
+    "max_sampled_ollama_rss_mib": 1933.921875
+  }
+}

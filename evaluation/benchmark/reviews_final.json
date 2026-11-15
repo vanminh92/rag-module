@@ -1,0 +1,1546 @@
+{
+  "reviewer": "Codex agent: reviewed against benchmark excerpts and actual cited PDF-derived chunks; not an independent human audit.",
+  "method": "Codex reviewed actual answers, required conditions and cited PDF-derived text. Does not use Qwen/NLI supported decisions as labels. Whole baseline answer is one composite claim; hybrid counts explicit claims and citation links, including duplicates. Ambiguous minimal baseline replies and inferred program scope are conservatively marked incorrect; reasons document each decision. This is not an independent human audit.",
+  "reviews": {
+    "D01": {
+      "baseline": {
+        "answer_sha256": "76ccc124256e80eccad690b5efe1a88638462ade18e2d4fd42312d3cb77de8d7",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "23dbc40ce53b0cf6c5cb4cda4416805ef846e36940f15d9d6773f971861bf126",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Có đúng ngày thành lập và quyết định; cả hai nguồn đều chứng minh ngày. Bản sao nguyên văn hơi dài."
+      }
+    },
+    "D02": {
+      "baseline": {
+        "answer_sha256": "59518a16cf19b82f2e7d04561fdd756262fd0584764569ca687369defaaa4692",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "0236561effd5cc8a4857c8657f12d37944b2608d3b0233d259b28710c14ee91e",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Trích đúng triết lý lấy người học làm trung tâm; hai đoạn overlap có cùng ý, không thay nghĩa."
+      }
+    },
+    "D03": {
+      "baseline": {
+        "answer_sha256": "6780008d80ee0f819aa903bf3ada08b5b4450c3876ca31990c54ae22a8c9f5ba",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      },
+      "hybrid": {
+        "answer_sha256": "bf3bb48eee88e5576e98e3e4c58d9f6ce9a2bac3722ce89d29f5cdb4abf02c66",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng 15 giờ lý thuyết và 30 giờ tự học, nguồn thuộc quy chế đại học."
+      }
+    },
+    "D04": {
+      "baseline": {
+        "answer_sha256": "8b387f936cc29e906b26190ade803c7b3cee9b96ac23a5da61c2c51423c85254",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      },
+      "hybrid": {
+        "answer_sha256": "fea3574d004b41668ae0004edddcae27d7f7ebe7489cf6bacc23f1067d51339b",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng điều kiện tích lũy trước khi học các học phần liên quan, đúng trình độ."
+      }
+    },
+    "D05": {
+      "baseline": {
+        "answer_sha256": "9a0112c9ee6d7523afb5bfaf1e3b5ee80fdc3cdc610cdf9fb7c77a56c29274a0",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      },
+      "hybrid": {
+        "answer_sha256": "febcb6fbc3623e3610ef0f2f5fa56c529f1fc76d39cd5137aa58674ac646c647",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng giới hạn 50 sinh viên trong lớp sinh viên theo quy chế đại học."
+      }
+    },
+    "D06": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "0f28b15328b49398c632a458711261caa7e32ed92d653495af5f6e24997ad125",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Trích đúng điểm b từ học kỳ thứ hai, đúng đối tượng chính quy."
+      }
+    },
+    "D07": {
+      "baseline": {
+        "answer_sha256": "6f1cdbd3f91d75b0896ee441ea9dbaaa353ec0b602c88cbfc44d7adf9cbbc91d",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      },
+      "hybrid": {
+        "answer_sha256": "8da09f7dcc85648aec1c54e829ba304ea9c0914bad2d41a60263d47c61678d0a",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Đúng điểm lần học cuối; hai đoạn nói rõ cả học cải thiện và học lại không đạt, không đổi thành điểm cao nhất."
+      }
+    },
+    "D08": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "caa26287c7248950811f12015f6087551859540a7eb1a11ee265e0648f9639e2",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng chỉ số trung bình học kỳ, dưới 0,8 ở kỳ đầu và dưới 1,0 ở các kỳ tiếp theo."
+      }
+    },
+    "D09": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "cb497e7785ce3e0dd320d150ec83c6d5427c9bca41f20d9e647f12449354282a",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Chỉ có mốc cảnh báo lần thứ tư từ đầu khóa, thiếu 03 lần liên tiếp. Nguồn đúng và trạng thái partial phù hợp."
+      }
+    },
+    "D10": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "f28786e4104681fd5ac41ea84eab35dfb50e563dac65ddf52b47a7efc7a8f906",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng nghỉ tạm thời vì nhu cầu cá nhân được tính vào thời gian học chính thức; không trộn thôi học tự nguyện."
+      }
+    },
+    "D11": {
+      "baseline": {
+        "answer_sha256": "737aab523491f54d1155bcaefd6430f605c77bb65bc7eed8dcf4a8cf1c7dc1e2",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "59ada0471826fe5eca02c8e18fbb837839cfddb43b78b2a2376a440d50fa4be5",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng thời điểm sớm nhất xếp trình độ năm thứ hai. Câu hỏi chỉ hỏi thời điểm, không yêu cầu toàn bộ điều kiện đăng ký."
+      }
+    },
+    "D12": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "e0770a4c354848a4a930f7e5ccaad963df6f17bccb71a2984a0229da5a5eb835",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng từ học kỳ thứ hai và dẫn đúng quy chế cao đẳng, trang 40."
+      }
+    },
+    "D13": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "343c60492dc14882280116daf3d0ddfbc7a0b96bd14879a7efbb9b6703ad6bec",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đủ cả học phí, BHYT, đầy đủ và đúng hạn theo nghĩa vụ SV. UI báo partial thận trọng nhưng phần hiển thị trả đủ ý được hỏi."
+      }
+    },
+    "D14": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "057e51f02c529688bed0068955699000ed405628439b0bd253935645182e19f4",
+        "correct": true,
+        "complete": false,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Hai ý có căn cứ, nhưng câu trả lời không nêu rõ tín chỉ tích lũy trong học kỳ, tất cả phải đạt và loại trừ trả nợ/cải thiện; không chấm đầy đủ chỉ từ con số 15."
+      }
+    },
+    "D15": {
+      "baseline": {
+        "answer_sha256": "5956bf9b87c3957f1a76f90f9fec419864042fb995d4f4599320fa863c8b49ab",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 1,
+        "wrong_citations": 1,
+        "reason": "Answer value matches the handbook, but the cited disability-support policy does not prove the requested HBKKHT policy."
+      },
+      "hybrid": {
+        "answer_sha256": "067537385ab7226d9e19f2aa421a5756dac5a06d67380bdeb7dd5b3df66eaf16",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng HBKKHT cấp 10 tháng/năm học, dẫn đúng mục HBKKHT trang 73 thay vì chính sách khuyết tật."
+      }
+    },
+    "D16": {
+      "baseline": {
+        "answer_sha256": "64aa3cd7b179a470695ce8c4f3b061f0f14b5f09c181c9cca632fed013028de1",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "41425989dc01d306cc8e4d305627ddf2af33e3e6bef69329142d1a6061fa5c4e",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng hai mức đình chỉ học tập và buộc thôi học phải thông báo gia đình, địa phương."
+      }
+    },
+    "D17": {
+      "baseline": {
+        "answer_sha256": "bbcc2b0271bd124c78aed020dd524dbcbd23a9b90104c8f8fe9642c1c9f3738a",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "7b9f75184e14ca8b17526c3e22975f282f6fc7d6be5f9aa4a1d8c517b6016dc3",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đủ cả chế độ theo Quy chế chi tiêu nội bộ và bố trí thời gian công tác theo chế độ giảng viên."
+      }
+    },
+    "D18": {
+      "baseline": {
+        "answer_sha256": "fd0829cb7eaf642de73c440d24cdb0bd17d905290ca54c9139171028de89cbba",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "a72990c1a57add4b02711fc3e3a0b7f869713afb42e8b8f862b5b06cc6314837",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng thang điểm 100; nguyên văn nguồn, có cảnh báo trích bảng tuyến tính."
+      }
+    },
+    "D19": {
+      "baseline": {
+        "answer_sha256": "bcd12369370767d300f983d1b58221ac62741f4fb64659528df5d494f216b594",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "988c781066ddccd29a830b8246086dec174e95df200d2a0fdbea856e8c7584bc",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng 0 điểm và xếp loại kém khi không tự đánh giá."
+      }
+    },
+    "D20": {
+      "baseline": {
+        "answer_sha256": "7b2d52a8d294a190b1b43dffe80bc219cef0cd38971b4842365b045e36751fcf",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "d552417a16ed597a4485d2570b9cf3b43e16580a06d6170a138e21a32900740f",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng Phòng CTCT&HSSV và 07 ngày; thiếu mốc kết quả đã được Hội đồng cấp Trường thông qua. Nguồn thừa chỉ có tiêu đề ở trial cũ đã không còn."
+      }
+    },
+    "P01": {
+      "baseline": {
+        "answer_sha256": "065cfb0d40e9c6eb7325870704cf74e07194f865bae7f13ed7a606cffb6c47b4",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Cited statement is supported but defines electives instead of answering when registration begins."
+      },
+      "hybrid": {
+        "answer_sha256": "b6dfffd78752e0957be279423bf22e11673738af8a8881acb22535e8677bbbd2",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đã hiểu tự chọn môn là tự đăng ký học phần, trả đúng thời điểm học kỳ thứ hai thay vì định nghĩa tự chọn."
+      }
+    },
+    "P02": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "d748ee64441f6c141eed90813caf2d7ea13b3ed4be7912f48037e58b55133133",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng hai ngưỡng theo học kỳ đầu/các kỳ sau và đúng loại điểm học kỳ."
+      }
+    },
+    "P03": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "344be6f156fdb2f2ecbbabce04d7d0c54d3026f6d6d6fa72fb47a15553efbb5c",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Có căn cứ cho lần thứ tư từ đầu khóa, còn thiếu ba lần liên tiếp; trạng thái partial phù hợp."
+      }
+    },
+    "P04": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "a8314afc8c1379921da1b038c671873c861e166cb181b29461182bc38fbdc459",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Hiểu bảo lưu vì việc riêng thành nghỉ tạm thời vì nhu cầu cá nhân, trích đúng quy định tính vào thời gian chính thức."
+      }
+    },
+    "P05": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "985435f198dea108dbd28dab2c75c79eff1d066dbe36e31f679d9a6a37140511",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Chỉ trả được điều kiện tín chỉ, thiếu học tập/rèn luyện từ khá và điều kiện kỷ luật; đã báo partial."
+      }
+    },
+    "C01": {
+      "baseline": {
+        "answer_sha256": "d39e530ef04bb5f5aa07715b52738c992de9446b12c70c579282b63700fd64be",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      },
+      "hybrid": {
+        "answer_sha256": "ae2f06bda0e43454125a9d0b71cd6e84fca49ee3d6c9bb7a3f36d4e6ab7c5335",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối sai dù ngữ cảnh có đầy đủ hai loại tín chỉ. Debug cho thấy NLI phủ quyết cả hai diễn giải; đây là false negative của bộ kiểm chứng."
+      }
+    },
+    "C02": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "2f99dd61bf7e6cb041ef5a4868a0ff90beefb6a9d989815d149946fd57bee9a3",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Chỉ trả lời học kỳ đầu Trường ấn định thời khóa biểu, chưa trả lời từ kỳ hai tự đăng ký."
+      }
+    },
+    "C03": {
+      "baseline": {
+        "answer_sha256": "787c71e2374cdf7b798ee4b845701d8f15dfe1e2ca5118a974db7a809c166656",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 2,
+        "wrong_citations": 2,
+        "reason": "Incorrectly asserts no academic warning threshold and mixes second-program and conduct sanctions with academic warnings."
+      },
+      "hybrid": {
+        "answer_sha256": "630d8796ca0187ab606d6b11521e1ab94aab09397fa48605f9f77298faf28f79",
+        "correct": true,
+        "complete": false,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Đúng hai ngưỡng điểm học kỳ và mốc cảnh báo thứ tư, nhưng thiếu trường hợp 03 lần liên tiếp. Nguồn thực sự hỗ trợ từng ý đã hiển thị."
+      }
+    },
+    "C04": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "4e6d0902f02f70b3019f4220c71daa659956a8a53cafb9cac249d075d0e75539",
+        "correct": true,
+        "complete": false,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Đúng điều kiện học tập/rèn luyện/kỷ luật và 10 tháng, nhưng bỏ hoàn toàn điều kiện 15 tín chỉ. Trạng thái complete của model là quá lạc quan."
+      }
+    },
+    "C05": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "90bc39f7d1d969c851d66e78dfc5b048730f9d0d379a7ec154b804a356dfbe8a",
+        "correct": true,
+        "complete": true,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Tổng hợp đúng nghĩa vụ học phí/BHYT và hậu quả không tự đánh giá rèn luyện, hai nguồn riêng hỗ trợ hai ý."
+      }
+    },
+    "U01": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "d3e2989e16526d0327a09f413a6523aea3998091f6850f23c9b1b2fc6fdbb0dd",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối phù hợp nhãn thiếu dữ liệu; không tạo số liệu hoặc thông tin cá nhân ngoài PDF."
+      }
+    },
+    "U02": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "ae2f06bda0e43454125a9d0b71cd6e84fca49ee3d6c9bb7a3f36d4e6ab7c5335",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối phù hợp nhãn thiếu dữ liệu; không tạo số liệu hoặc thông tin cá nhân ngoài PDF."
+      }
+    },
+    "U03": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "d3e2989e16526d0327a09f413a6523aea3998091f6850f23c9b1b2fc6fdbb0dd",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối phù hợp nhãn thiếu dữ liệu; không tạo số liệu hoặc thông tin cá nhân ngoài PDF."
+      }
+    },
+    "U04": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "d3e2989e16526d0327a09f413a6523aea3998091f6850f23c9b1b2fc6fdbb0dd",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối phù hợp nhãn thiếu dữ liệu; không tạo số liệu hoặc thông tin cá nhân ngoài PDF."
+      }
+    },
+    "U05": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      },
+      "hybrid": {
+        "answer_sha256": "32f1c68e9fdb519b16e9d8cf82585e247f295c7fd1867308b40909507aced400",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Không từ chối đúng: đưa nguyên văn liên hệ Trung tâm Tin học thay vì mật khẩu cá nhân. Nguồn chứng minh thông tin liên hệ đã nói, nhưng câu trả lời không liên quan đến yêu cầu. Không tạo ra mật khẩu."
+      }
+    },
+    "D21": {
+      "baseline": {
+        "answer_sha256": "385fe23ab18bc02fc134d655b98f9e8ed8f79d7b6e8b9e15af9a71190f83c689",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Chỉ nêu buộc thôi học khi tái diễn, thiếu mức tạm ngừng ở lần đầu; nguồn hỗ trợ phần đã trả lời."
+      },
+      "hybrid": {
+        "answer_sha256": "d3e2989e16526d0327a09f413a6523aea3998091f6850f23c9b1b2fc6fdbb0dd",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối sai dù tài liệu có quy định cho cả lần đầu và tái diễn."
+      }
+    },
+    "D22": {
+      "baseline": {
+        "answer_sha256": "eea1ae5a5ccf66771569d1e39f0d892e13999776bc920102fbfe57f27fb69ed9",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Chỉ nêu buộc thôi học khi tái diễn, thiếu mức tạm ngừng ở lần đầu; nguồn hỗ trợ phần đã trả lời."
+      },
+      "hybrid": {
+        "answer_sha256": "0d06225dda9f149397cb65785c38ed6e22df8a0de1465440c8dba561185f6dce",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đủ cao đẳng: kém cả năm tạm ngừng một năm tiếp theo, tái diễn lần hai buộc thôi học."
+      }
+    },
+    "D23": {
+      "baseline": {
+        "answer_sha256": "249782234ab3dd3ee50419fc6af74dc8cfa060b47d4d149ec7ed8f12f9711b12",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "d3e2989e16526d0327a09f413a6523aea3998091f6850f23c9b1b2fc6fdbb0dd",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối sai dù có chứng cứ về nghe/đọc và cấu trúc bậc 3/6."
+      }
+    },
+    "D24": {
+      "baseline": {
+        "answer_sha256": "a89ef13eebcc52769bfb9dfeafccc619c26f02a626471a153a28f05618d957d7",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "601dd4e45d512c5975bdcd519c28e9d69fc1f3dc35f4cf09c365c85a7dd75389",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng bậc 3/6 hoặc tương đương, giữ giới hạn sinh viên thuộc Điều 1."
+      }
+    },
+    "D25": {
+      "baseline": {
+        "answer_sha256": "f6670f4d1ec319ee6ae03928850be8875d46f2fdb8701d77982fb445d65af503",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "883084d7c84bf00af8dcf06e0463e10ce04668c31e5de8e70d32a58b0de8c27f",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Trích đúng quyền được hỗ trợ đăng ký ngoại trú."
+      }
+    },
+    "D26": {
+      "baseline": {
+        "answer_sha256": "0b0bcdddb0004d8eae3bc0da40a2eac530599edc426816568e0ff8a58461c21c",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "9ea18efb76f00872fd1bda89e42c0887a0bf06e2c07e2878ebab7daf6e311a5b",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Có đúng kinh phí hoạt động khoa học và công nghệ; cả hai nguồn thật, phần mở rộng là trích nguyên văn về kinh phí NCKH."
+      }
+    },
+    "D27": {
+      "baseline": {
+        "answer_sha256": "89ef7161828b6dfc786920becba83b52577ada8ef8b517184f26218a236f92cd",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "6af83ebcd5f213277189a4e67f5fdac52f3e36782232db3173d768c0c195cb59",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 1,
+        "wrong_citations": 1,
+        "reason": "Gộp số lượng tham gia và chủ nhiệm thành một đề tài; không trả đúng việc được tham gia nhiều đề tài nhưng chỉ chịu trách nhiệm chính một. Chấm bảo thủ vì diễn giải dễ tạo giới hạn sai."
+      }
+    },
+    "D28": {
+      "baseline": {
+        "answer_sha256": "fc98ad3435998062dd3113a68be2efc7eb5530642e9e0f5fee1d28e40f5e1f63",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "bdf4540353b3d0526d8fbec0170707e890899eebeb2a7bb11bda886917a206e7",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đủ các yêu cầu trang phục; không thêm quy định ngoài nguồn."
+      }
+    },
+    "D29": {
+      "baseline": {
+        "answer_sha256": "2cbb955581707faed1055e75cc10f90da0fe666d0ea1f78d931d47f45caceca2",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "46b74593cd9caac0d34ae0fe76a92706e48d95797d378abe034b5bf16becb2bb",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đủ trách nhiệm hành vi và phối hợp xử lý nội dung vi phạm."
+      }
+    },
+    "D30": {
+      "baseline": {
+        "answer_sha256": "5297f674338101eff895f4d18565c3f748f576292bd7f99bf982ce1752ffe7d4",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "8014a7e4fe67c976d84745092cdcc3502f46add7e94e510facc583083f563054",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Trích đúng 3,63 triệu đồng/tháng cho sinh viên sư phạm theo nghị định trong sổ tay."
+      }
+    },
+    "D31": {
+      "baseline": {
+        "answer_sha256": "c6d530491bd82df2ee6a91e38bf78094120f82ef442ca8248165ae3e8a7ab0cb",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Trả số tiền 3,63 triệu/tháng thay vì tối đa bao nhiêu tháng/năm. Số tiền có trong nguồn nhưng không trả lời câu hỏi về thời lượng."
+      },
+      "hybrid": {
+        "answer_sha256": "d2ea986b849ba07b3778bc476aa1a98ca1d38a13a85263ea247ecee56b3583ab",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Trả đúng tối đa 10 tháng/năm học, không nhầm thành số tiền như baseline."
+      }
+    },
+    "D32": {
+      "baseline": {
+        "answer_sha256": "094cc0150281022c771fba1a9db08b6260e71838f5b5d837277837128bb9e0ac",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "b40067c993bb4925fcfca0c44a9fdb574147ec443b341985534f01a99953d511",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng 02 năm kể từ quyết định công nhận tốt nghiệp."
+      }
+    },
+    "D33": {
+      "baseline": {
+        "answer_sha256": "3cb3b4a22c82084f0f93405ce398c5dd3daba0f533d802e12e503a543332fbf1",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "ae2f06bda0e43454125a9d0b71cd6e84fca49ee3d6c9bb7a3f36d4e6ab7c5335",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối sai dù quy trình KTX có địa điểm và thời hạn theo thông báo."
+      }
+    },
+    "D34": {
+      "baseline": {
+        "answer_sha256": "1664fd84ce83b3fc0670a70e951c4a0fa503a1a6a2aec9bbd44fdd52266cfa14",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "ad82282ae7e061fc4f95f0a248ac58e6df37521a932da3a360f20aba716924f6",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Có đúng email CNTT trong cả hai nguồn. Đoạn trích còn thừa thông tin Phòng Khảo thí, làm câu trả lời dài; không thay địa chỉ CNTT."
+      }
+    },
+    "D35": {
+      "baseline": {
+        "answer_sha256": "778aca743395a5d8ae7e5a5a558f8ec08a87eebaa6b520ee0355e8ce87f0de31",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "a7a4c8320c41fb58e086d7aa5acf05a974eefb016184a2b311bf685f8f0418a0",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Email Phòng CTCT&HSSV chính xác và đúng nguồn."
+      }
+    },
+    "D36": {
+      "baseline": {
+        "answer_sha256": "e5a164ee705eebdfb49dce6e7938860c87141ae98a95b7e9a5be961f66c17b3c",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "dbd543bf61f27d33c69542f321e6cc068115abd253715833eec8eaccc41afddc",
+        "correct": true,
+        "complete": true,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Đúng email/website Thư viện, nhưng hai claim ngắn đều được mở rộng thành cùng đoạn nguyên văn nên bị lặp. Đếm cả hai liên kết theo schema, không coi lặp là sai nguồn."
+      }
+    },
+    "D37": {
+      "baseline": {
+        "answer_sha256": "8dbb62d61a1245e9e6cffd9a0615236f4db80b9329fa1492b29926cbe87e6e12",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "b430468d75294fc8aab0afe2d6b2563e8365cd5e0882d8c07207830ca2467f08",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng địa chỉ văn phòng KTX tại 351A Lạc Long Quân, đầy đủ phường/quận."
+      }
+    },
+    "D38": {
+      "baseline": {
+        "answer_sha256": "7660743040a61cd64113001c6faa8bf1dd662f4987c25c1ca8e8a7ade2edc497",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "2f64463a7ab8e8da0e4315dd5d9b40220983931db363a93c9d51edb2cfa18109",
+        "correct": false,
+        "complete": false,
+        "total_claims": 3,
+        "supported_claims": 1,
+        "total_citations": 3,
+        "wrong_citations": 2,
+        "reason": "Ý biên/phiên dịch, trợ lý, thương mại đúng chương trình 2+2. Hai ý mở rộng dùng nguồn ngành Ngôn ngữ Trung Quốc và nguồn chương trình trước đó, không chứng minh cho 2+2; đây là lỗi phạm vi ngành chưa được validator chặn."
+      }
+    },
+    "D39": {
+      "baseline": {
+        "answer_sha256": "1ad941effb84be9f883cbd8e8e2c849ade6fdbc6cf907fe7c4416ad4c000d15a",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đối chiếu đúng nội dung được hỏi và nguồn thực tế; nguồn cùng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "385ac5b678d076f74ba31eaaf5dca1426375fbd9be836c2b5806d305e0adb848",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng địa chỉ Bảo tàng Chứng tích Chiến tranh theo bảng trong sổ tay; quote nguyên văn, có cảnh báo bảng."
+      }
+    },
+    "D40": {
+      "baseline": {
+        "answer_sha256": "262d2c73b3ad735b1585eb0daffddc2c41fdf9e034b9ee1f4982d7021e04e5ce",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng trường phổ thông và cơ sở giáo dục nghề nghiệp, đúng ngành Tâm lý học giáo dục."
+      },
+      "hybrid": {
+        "answer_sha256": "f20e32037771ce89fd73f45eb73167b2050ab8295e4c21ba0cb0e1bf82f0cbe0",
+        "correct": true,
+        "complete": true,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Có đủ trường phổ thông và cơ sở giáo dục nghề nghiệp, thêm các vai trò cùng ngành từ đoạn kế tiếp. Phần đầu chunk còn mẩu câu của mục trước, khiến hình thức trích dẫn chưa gọn."
+      }
+    },
+    "P06": {
+      "baseline": {
+        "answer_sha256": "dd24829550349a64dc63b2111934ec33fb1646f196aa0fe9453ae243f4afd071",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 1,
+        "wrong_citations": 1,
+        "reason": "Chỉ trả một từ \"được\", không xác định có bị buộc thôi học hay không và không nêu quy định; chấm bảo thủ vì phản hồi không diễn đạt được một luận điểm rõ ràng."
+      },
+      "hybrid": {
+        "answer_sha256": "98f01e35ffe3fa4984bc9603fd926a318092abf34e6979c684bee5dfee3f9289",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng cả xử lý lần đầu và buộc thôi học nếu hai học kỳ yếu/kém liên tiếp tái diễn lần hai; Điều 14 khớp metadata."
+      }
+    },
+    "P07": {
+      "baseline": {
+        "answer_sha256": "d5c64093c6347d7e2126fa64ee48b0fa7b6868a88bf0de164765db2de09efe0f",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng bậc 3/6 hoặc tương đương, nguồn đầu ra ngoại ngữ đúng phạm vi."
+      },
+      "hybrid": {
+        "answer_sha256": "1583227c4ff79152cb6d9d01a57bc29ab4a6c340550d846ddfac9097c58c0a66",
+        "correct": false,
+        "complete": false,
+        "total_claims": 2,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "Chỉ trả phạm vi áp dụng và khóa tuyển sinh, không trả chuẩn bậc 3/6. Claim đầu còn lược các ngoại lệ ngành liên kết quốc tế/song ngữ/Tiếng Việt, nên không chấm đủ hỗ trợ; claim về khóa từ 2022 có căn cứ."
+      }
+    },
+    "P08": {
+      "baseline": {
+        "answer_sha256": "cdcad06d488cbe3b95efa4ae47ea03e92f16c06a002dba035d50652c7ec21ada",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng quyền được hỗ trợ đăng ký ngoại trú."
+      },
+      "hybrid": {
+        "answer_sha256": "beeff406a5aa63bf9dc84776f94304ca76d1243d0a52dbc317def6e265b182f3",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Hiểu ở trọ thành ngoại trú, trả đúng quyền được hỗ trợ."
+      }
+    },
+    "P09": {
+      "baseline": {
+        "answer_sha256": "90005a810fc317bf4a67afd059fa198e93aa0a7c847d725f047a1ef4a84837f6",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng mức 3,63 triệu đồng/tháng theo tài liệu."
+      },
+      "hybrid": {
+        "answer_sha256": "96990e642badae34567f5191cc71c747f4b632aed3460f2b0ea17d9c50f12073",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đúng mức hỗ trợ sinh hoạt cho sư phạm, có nguồn."
+      }
+    },
+    "P10": {
+      "baseline": {
+        "answer_sha256": "f75d2ca5e6dbd675930c89f245eb22e74c5a6a16db9ec79e2fa3aed1cef01478",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 1,
+        "wrong_citations": 1,
+        "reason": "Không đưa địa chỉ email, chỉ nói \"trong phòng công nghệ thông tin\"; trích đoạn có email nhưng phản hồi không phải địa chỉ được hỏi."
+      },
+      "hybrid": {
+        "answer_sha256": "e985c6ee905598ffbd00fceb2562e95c3d31a12ab10d4b915307c6c044cbb5f4",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Đưa đúng email CNTT, có cả tên đơn vị trong nguyên văn; không lẫn với Phòng Khảo thí như câu baseline ngắn."
+      }
+    },
+    "C06": {
+      "baseline": {
+        "answer_sha256": "021c44406b8e063e5b674611fade43a42fedca4833ad815144e7e906dac09e38",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 3,
+        "wrong_citations": 2,
+        "reason": "Gán sai xử lý lần hai của cao đẳng thành tạm ngừng một năm. p076c011 chỉ nêu căn cứ, chưa chứng minh hình thức xử lý; p099c008 trái với kết luận cao đẳng. p078c007 hỗ trợ phần buộc thôi học tái diễn của đại học."
+      },
+      "hybrid": {
+        "answer_sha256": "ae2f06bda0e43454125a9d0b71cd6e84fca49ee3d6c9bb7a3f36d4e6ab7c5335",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối sai so sánh đại học/cao đẳng mặc dù PDF có cả hai quy định."
+      }
+    },
+    "C07": {
+      "baseline": {
+        "answer_sha256": "d9b9dd5457844e90be867b491741e2bea15bfb3093e677af34804672b3d48246",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 1,
+        "wrong_citations": 1,
+        "reason": "Nội dung kỹ năng đầu vào và chuẩn đầu ra trùng nhãn đúng, nhưng chỉ dẫn nguồn đầu vào: bậc 3/6 của cấu trúc bài thi không chứng minh chuẩn tốt nghiệp."
+      },
+      "hybrid": {
+        "answer_sha256": "a8ceb7dd7da07f1ecc1a1195212832d2864e5c2de82937e6de25f37825395c89",
+        "correct": true,
+        "complete": true,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Đủ nghe/đọc đầu vào và chuẩn tốt nghiệp bậc 3/6; hai nguồn đúng hai thuộc tính khác nhau, không lấy cấu trúc đầu vào chứng minh đầu ra."
+      }
+    },
+    "C08": {
+      "baseline": {
+        "answer_sha256": "c3fc3e07e90a7a84128fdebfcbbccd0a3a25ddabad02fafd4d7017869765d73b",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "Lặp email CNTT cho cả hai phòng. Nguồn CNTT hỗ trợ địa chỉ thứ nhất, nguồn thứ hai chỉ có tiêu đề Phòng CTCT&HSSV, không chứng minh email."
+      },
+      "hybrid": {
+        "answer_sha256": "37ae6fdd81a286264a699d8dd3f84ae7643c6cb9c417f9498fe157eb56cf8234",
+        "correct": true,
+        "complete": true,
+        "total_claims": 2,
+        "supported_claims": 2,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Cả hai email đúng hai phòng, hai nguồn tách biệt; không lặp email CNTT cho Phòng CTCT&HSSV."
+      }
+    },
+    "C09": {
+      "baseline": {
+        "answer_sha256": "a5be6d277f10031030ca4a8f2a78d98bb5ed7e7874d469ffad3cf6145d0cbf34",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 3,
+        "wrong_citations": 2,
+        "reason": "Số tiền đúng nhưng 12 tháng/năm sai (PDF tối đa 10). Hai nguồn còn lại không chứng minh thời lượng 12 tháng."
+      },
+      "hybrid": {
+        "answer_sha256": "69b49ecc118f501f9ae3ddb06f88e77c5f11c756d5b11a58a213144c2e3f9f62",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Số tiền có căn cứ nhưng bỏ câu hỏi tối đa mấy tháng/năm; model vẫn báo complete, không chấm đầy đủ."
+      }
+    },
+    "C10": {
+      "baseline": {
+        "answer_sha256": "69c300a7581576014741ab3ed2feac418e6b6e2e4bc8eaa9f0e7d2d1b8bc2703",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 1,
+        "wrong_citations": 1,
+        "reason": "Email/website đúng, địa chỉ KTX sai. Chỉ có nguồn Thư viện, không chứng minh địa chỉ KTX được khẳng định."
+      },
+      "hybrid": {
+        "answer_sha256": "6570f6c814933e1cd9072cf368119154b57b3173a6a812734424e94d753a6125",
+        "correct": true,
+        "complete": true,
+        "total_claims": 3,
+        "supported_claims": 3,
+        "total_citations": 3,
+        "wrong_citations": 0,
+        "reason": "Có đủ email/website Thư viện và địa chỉ KTX đúng, ba nguồn thật. Thừa thông tin Trung tâm Phát triển kỹ năng sư phạm không được hỏi; không coi phần thừa có căn cứ là đáp án cho câu hỏi khác."
+      }
+    },
+    "U06": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối đúng dữ liệu số chỗ trống thời gian thực không có trong PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "d3e2989e16526d0327a09f413a6523aea3998091f6850f23c9b1b2fc6fdbb0dd",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối đúng số chỗ KTX trống hôm nay."
+      }
+    },
+    "U07": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối đúng giá vé máy bay không có trong PDF."
+      },
+      "hybrid": {
+        "answer_sha256": "ae2f06bda0e43454125a9d0b71cd6e84fca49ee3d6c9bb7a3f36d4e6ab7c5335",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối đúng giá vé máy bay ngoài tài liệu."
+      }
+    },
+    "U08": {
+      "baseline": {
+        "answer_sha256": "67125f8a083af18ea3f40ce1cf0d8aeda719195d6cf59df03771438eebc19543",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Trả đúng mức hỗ trợ nhưng không nói thiếu trạng thái chuyển tiền cá nhân; trạng thái complete không phù hợp câu chỉ trả lời được một phần."
+      },
+      "hybrid": {
+        "answer_sha256": "d29ec06329e1d5253c8d4378e75605580360da980463a5bd16300975dc15d30e",
+        "correct": true,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Số tiền đúng có nguồn, nhưng không nêu thiếu trạng thái chuyển tiền cá nhân tháng 11/2026 và vẫn báo complete. Chưa xử lý đầy đủ câu có thể trả lời một phần."
+      }
+    },
+    "U09": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối toàn bộ, bỏ cả địa chỉ KTX có trong sổ tay."
+      },
+      "hybrid": {
+        "answer_sha256": "77e2a51755460af5b65cdfc0bf88e687fc18cfaafbe0f0171923ee8b3a9bf141",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Trả địa chỉ có nguồn và báo partial, nêu chưa xác minh số lượng chỗ ở hiện tại. Danh sách phần thiếu còn thừa các quy trình/biểu mẫu không được hỏi."
+      }
+    },
+    "U10": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Từ chối toàn bộ, bỏ cả email CNTT có trong sổ tay."
+      },
+      "hybrid": {
+        "answer_sha256": "f03cea032d285f9ff4b9a4bdcb454b04d535305c5d71bfa8f6086f87257203cd",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Trả email CNTT có nguồn, không tạo mật khẩu và báo partial/chưa xác minh toàn bộ. Phần thiếu còn chung chung, câu trả lời dài vì trích cả hai đoạn."
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+W1114 21:29:12.690000 68921 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 24641.06it/s]
+D01 hybrid: complete 13.15s 
+D02 hybrid: complete 9.14s 
+Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:   2%|▏         | 5/202 [00:00<00:13, 14.91it/s]Loading weights: 100%|██████████| 202/202 [00:00<00:00, 597.77it/s]
+D03 hybrid: complete 9.12s 
+D04 hybrid: complete 5.84s 
+D05 hybrid: complete 12.33s 
+D06 hybrid: complete 6.96s 
+D07 hybrid: complete 11.77s 
+D08 hybrid: complete 13.23s 
+D09 hybrid: partial 14.12s 
+D10 hybrid: complete 9.28s 
+D11 hybrid: complete 11.87s 
+D12 hybrid: complete 14.00s 
+D13 hybrid: partial 27.27s 
+D14 hybrid: complete 44.37s 
+D15 hybrid: complete 12.00s 
+D16 hybrid: complete 11.50s 
+D17 hybrid: complete 12.50s 
+D18 hybrid: complete 8.46s 
+D19 hybrid: complete 9.44s 
+D20 hybrid: complete 15.54s 
+P01 hybrid: complete 13.10s 
+P02 hybrid: complete 12.27s 
+P03 hybrid: partial 18.46s 
+P04 hybrid: complete 11.25s 
+P05 hybrid: partial 35.57s 
+C01 hybrid: insufficient 30.47s 
+C02 hybrid: partial 35.51s 
+C03 hybrid: partial 35.69s 
+C04 hybrid: complete 44.62s 
+C05 hybrid: complete 16.46s 
+U01 hybrid: insufficient 5.73s 
+U02 hybrid: insufficient 22.07s 
+U03 hybrid: insufficient 13.65s 
+U04 hybrid: insufficient 3.76s 
+U05 hybrid: partial 31.72s 
+{
+  "hybrid": {
+    "recall_at_5": 0.8833333333333333,
+    "recall_at_10": 0.9722222222222222,
+    "mrr_at_10": 0.8714285714285714,
+    "questions": 35,
+    "errors": 0,
+    "context_evidence_recall": 0.9555555555555556,
+    "response_seconds_mean": 17.206434006026083,
+    "response_seconds_p95": 38.295616479497376,
+    "correct_complete_rate": null,
+    "reviewed_full_answers": 0,
+    "supported_claim_rate": null,
+    "wrong_citation_rate": null,
+    "correct_refusal_rate": 0.8,
+    "refusal_denominator": 5,
+    "peak_python_rss_mib": 3059.765625,
+    "max_sampled_ollama_rss_mib": 2942.140625
+  }
+}

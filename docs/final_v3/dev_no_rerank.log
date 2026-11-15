@@ -1,0 +1,57 @@
+W1114 21:56:21.378000 73381 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
+Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 26550.45it/s]
+D01 hybrid: retrieval 3.60s 
+D02 hybrid: retrieval 0.01s 
+D03 hybrid: retrieval 0.01s 
+D04 hybrid: retrieval 0.01s 
+D05 hybrid: retrieval 0.01s 
+D06 hybrid: retrieval 0.01s 
+D07 hybrid: retrieval 0.01s 
+D08 hybrid: retrieval 0.01s 
+D09 hybrid: retrieval 0.01s 
+D10 hybrid: retrieval 0.01s 
+D11 hybrid: retrieval 0.01s 
+D12 hybrid: retrieval 0.01s 
+D13 hybrid: retrieval 0.01s 
+D14 hybrid: retrieval 0.02s 
+D15 hybrid: retrieval 0.01s 
+D16 hybrid: retrieval 0.01s 
+D17 hybrid: retrieval 0.02s 
+D18 hybrid: retrieval 0.01s 
+D19 hybrid: retrieval 0.01s 
+D20 hybrid: retrieval 0.01s 
+P01 hybrid: retrieval 0.02s 
+P02 hybrid: retrieval 0.01s 
+P03 hybrid: retrieval 0.01s 
+P04 hybrid: retrieval 0.02s 
+P05 hybrid: retrieval 0.04s 
+C01 hybrid: retrieval 0.01s 
+C02 hybrid: retrieval 0.02s 
+C03 hybrid: retrieval 0.02s 
+C04 hybrid: retrieval 0.02s 
+C05 hybrid: retrieval 0.02s 
+U01 hybrid: retrieval 0.01s 
+U02 hybrid: retrieval 0.01s 
+U03 hybrid: retrieval 0.01s 
+U04 hybrid: retrieval 0.01s 
+U05 hybrid: retrieval 0.01s 
+{
+  "hybrid": {
+    "recall_at_5": 0.9,
+    "recall_at_10": 0.9444444444444444,
+    "mrr_at_10": 0.7663888888888889,
+    "questions": 35,
+    "errors": 0,
+    "context_evidence_recall": 0.9277777777777778,
+    "response_seconds_mean": 0.11512556437269918,
+    "response_seconds_p95": 0.02644278770312663,
+    "correct_complete_rate": null,
+    "reviewed_full_answers": 0,
+    "supported_claim_rate": null,
+    "wrong_citation_rate": null,
+    "correct_refusal_rate": null,
+    "refusal_denominator": 0,
+    "peak_python_rss_mib": 1290.5,
+    "max_sampled_ollama_rss_mib": null
+  }
+}

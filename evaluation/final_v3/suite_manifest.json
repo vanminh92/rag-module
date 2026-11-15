@@ -1,0 +1,37 @@
+{
+  "started_at": "2026-11-14T14:28:30.429636+00:00",
+  "completed_at": "2026-11-14T14:55:09.918679+00:00",
+  "implementation_sha256": "a11c54800bb99e6ad148cd3cf8051cfc1255631d697f7e724d93b8e8cc8734b6",
+  "frozen_config": {
+    "frozen_at": "2026-11-14T14:28:26.678920+00:00",
+    "implementation_sha256": "a11c54800bb99e6ad148cd3cf8051cfc1255631d697f7e724d93b8e8cc8734b6",
+    "settings": {
+      "model": "qwen2.5:3b",
+      "ollama_host": "http://127.0.0.1:11434",
+      "rewrite": "rules",
+      "reranker": "lexical",
+      "support_check": "nli",
+      "reranker_model": "cross-encoder/mmarco-mMiniLMv2-L12-H384-v1",
+      "candidates_per_method": 20,
+      "max_queries": 4,
+      "max_rounds": 2,
+      "simple_contexts": 4,
+      "complex_contexts": 8,
+      "context_tokens": 2200,
+      "rrf_k": 60,
+      "timeout": 180
+    },
+    "nli_model": "MoritzLaurer/mDeBERTa-v3-base-mnli-xnli",
+    "nli_revision": "8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c",
+    "nli_threshold": 0.7,
+    "tests_passed": 100,
+    "decision": "Chốt từ dev trước lượt final_v3: aliases chỉ phục vụ retrieval; kiểm tra số, loại chỉ số, đối tượng, vai trò, tính bắt buộc và hành vi đào tạo; kiểm tra lại toàn bộ bằng chứng sau khi bỏ nguồn thừa. P01/P04 smoke đúng. Không điều chỉnh từ kết quả test."
+  },
+  "complete": true,
+  "reports": [
+    "dev_baseline.json",
+    "dev_hybrid.json",
+    "test_baseline.json",
+    "test_hybrid.json"
+  ]
+}

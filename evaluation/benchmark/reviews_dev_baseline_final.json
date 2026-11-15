@@ -1,0 +1,426 @@
+{
+  "reviewer": "Codex agent: reviewed against benchmark excerpts and actual cited PDF-derived chunks; not an independent human audit.",
+  "method": "Review answer, conditions and every claim/citation against PDF-derived text; whole baseline answer is one composite claim.",
+  "reviews": {
+    "D01": {
+      "baseline": {
+        "answer_sha256": "76ccc124256e80eccad690b5efe1a88638462ade18e2d4fd42312d3cb77de8d7",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "D02": {
+      "baseline": {
+        "answer_sha256": "59518a16cf19b82f2e7d04561fdd756262fd0584764569ca687369defaaa4692",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "D03": {
+      "baseline": {
+        "answer_sha256": "6780008d80ee0f819aa903bf3ada08b5b4450c3876ca31990c54ae22a8c9f5ba",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      }
+    },
+    "D04": {
+      "baseline": {
+        "answer_sha256": "8b387f936cc29e906b26190ade803c7b3cee9b96ac23a5da61c2c51423c85254",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      }
+    },
+    "D05": {
+      "baseline": {
+        "answer_sha256": "9a0112c9ee6d7523afb5bfaf1e3b5ee80fdc3cdc610cdf9fb7c77a56c29274a0",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      }
+    },
+    "D06": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "D07": {
+      "baseline": {
+        "answer_sha256": "6f1cdbd3f91d75b0896ee441ea9dbaaa353ec0b602c88cbfc44d7adf9cbbc91d",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      }
+    },
+    "D08": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "D09": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "D10": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "D11": {
+      "baseline": {
+        "answer_sha256": "737aab523491f54d1155bcaefd6430f605c77bb65bc7eed8dcf4a8cf1c7dc1e2",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "D12": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "D13": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "D14": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "D15": {
+      "baseline": {
+        "answer_sha256": "5956bf9b87c3957f1a76f90f9fec419864042fb995d4f4599320fa863c8b49ab",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 1,
+        "wrong_citations": 1,
+        "reason": "Answer value matches the handbook, but the cited disability-support policy does not prove the requested HBKKHT policy."
+      }
+    },
+    "D16": {
+      "baseline": {
+        "answer_sha256": "64aa3cd7b179a470695ce8c4f3b061f0f14b5f09c181c9cca632fed013028de1",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "D17": {
+      "baseline": {
+        "answer_sha256": "bbcc2b0271bd124c78aed020dd524dbcbd23a9b90104c8f8fe9642c1c9f3738a",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "D18": {
+      "baseline": {
+        "answer_sha256": "fd0829cb7eaf642de73c440d24cdb0bd17d905290ca54c9139171028de89cbba",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "D19": {
+      "baseline": {
+        "answer_sha256": "bcd12369370767d300f983d1b58221ac62741f4fb64659528df5d494f216b594",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "D20": {
+      "baseline": {
+        "answer_sha256": "7b2d52a8d294a190b1b43dffe80bc219cef0cd38971b4842365b045e36751fcf",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "P01": {
+      "baseline": {
+        "answer_sha256": "065cfb0d40e9c6eb7325870704cf74e07194f865bae7f13ed7a606cffb6c47b4",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 1,
+        "wrong_citations": 0,
+        "reason": "Cited statement is supported but defines electives instead of answering when registration begins."
+      }
+    },
+    "P02": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "P03": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "P04": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "P05": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "C01": {
+      "baseline": {
+        "answer_sha256": "d39e530ef04bb5f5aa07715b52738c992de9446b12c70c579282b63700fd64be",
+        "correct": true,
+        "complete": true,
+        "total_claims": 1,
+        "supported_claims": 1,
+        "total_citations": 2,
+        "wrong_citations": 1,
+        "reason": "The university source supports the answer; the additional college-regulation citation has the wrong academic scope."
+      }
+    },
+    "C02": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "C03": {
+      "baseline": {
+        "answer_sha256": "787c71e2374cdf7b798ee4b845701d8f15dfe1e2ca5118a974db7a809c166656",
+        "correct": false,
+        "complete": false,
+        "total_claims": 1,
+        "supported_claims": 0,
+        "total_citations": 2,
+        "wrong_citations": 2,
+        "reason": "Incorrectly asserts no academic warning threshold and mixes second-program and conduct sanctions with academic warnings."
+      }
+    },
+    "C04": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "C05": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": false,
+        "complete": false,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Refused although reference evidence exists in the PDF."
+      }
+    },
+    "U01": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "U02": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "U03": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "U04": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    },
+    "U05": {
+      "baseline": {
+        "answer_sha256": "bb25c227f07e10bc23db0c54880013131f0a73ec19d9cc9173340566ea1f2402",
+        "correct": true,
+        "complete": true,
+        "total_claims": 0,
+        "supported_claims": 0,
+        "total_citations": 0,
+        "wrong_citations": 0,
+        "reason": "Checked against the requested fact and cited source text."
+      }
+    }
+  }
+}
