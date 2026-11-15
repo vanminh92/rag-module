@@ -23,7 +23,7 @@ Câu hỏi tiếng Việt
     ↓
 Phân tích câu hỏi → Tìm nguồn trong PDF → Chọn đoạn liên quan
     ↓
-Qwen tạo câu trả lời → Kiểm tra bằng chứng → Chat + trang PDF nguồn
+Qwen chọn đủ đoạn trả lời → Kiểm tra từng ý → Chat + trang PDF nguồn
 ```
 
 | Thành phần | Vai trò |
@@ -31,11 +31,13 @@ Qwen tạo câu trả lời → Kiểm tra bằng chứng → Chat + trang PDF n
 | Streamlit | Giao diện chat và panel PDF. |
 | Multilingual E5-small + BM25 | Tìm đoạn văn theo ý nghĩa và từ khóa. |
 | RRF và reranking | Kết hợp và sắp xếp kết quả tìm kiếm. |
-| Qwen2.5 3B qua Ollama | Tạo câu trả lời tiếng Việt trên máy local. |
-| NLI và các kiểm tra trích dẫn | Hỗ trợ kiểm tra bằng chứng cho câu trả lời. |
+| Qwen2.5 3B qua Ollama | Chọn các đoạn trả lời và kiểm tra độ đầy đủ trên máy local. |
+| Checklist, kiểm tra trích dẫn và NLI | Kiểm tra ý được hỏi, chứng cứ và các câu diễn giải. |
 | PDF và index có sẵn | Nguồn kiến thức của ứng dụng. |
 
 Không cần API key để chạy cấu hình local này. Internet cần cho lần đầu cài thư viện/tải model; sau khi đã đủ cache, ứng dụng xử lý câu hỏi cục bộ. Các model kiểm chứng cũng có thể đánh giá sai, nên nguồn trích dẫn vẫn cần được người dùng kiểm tra.
+
+Để tránh model nhỏ làm mất điều kiện khi viết lại, câu trả lời mặc định sử dụng **các đoạn trích đã được chọn và kiểm chứng**. Hệ thống kiểm tra riêng những ý như mức tiền, số tháng, tín chỉ và thông tin cá nhân; khi còn thiếu sẽ hiển thị phần chưa xác minh. Chi tiết đợt sửa chất lượng: [báo cáo](docs/answer_quality.md).
 
 ## Hướng dẫn cài đặt trên Windows
 
@@ -155,9 +157,9 @@ requirements-ui-test.txt  Thư viện bổ sung để kiểm thử browser
 
 ## Kiểm chứng và giới hạn
 
-Bản bàn giao đã đạt **112 tests**, CV14 **3/3**, browser live **10/10** trên môi trường macOS/Edge. **Chưa chạy kiểm thử trực tiếp trên Windows trong phiên phát triển này**; hướng dẫn Windows dùng các entrypoint Python hiện có. Script chạy trọn bộ benchmark `run_final_suite` dùng `fcntl`, chỉ dành cho macOS/Linux; Windows có thể chạy từng lệnh benchmark theo tài liệu đánh giá.
+Đợt sửa chất lượng đã đạt **140 tests** gồm E5/NLI thật và CV14 **3/3**. Bản giao diện trước đó đã đạt browser live **10/10** trên môi trường macOS/Edge. **Chưa chạy kiểm thử trực tiếp trên Windows trong phiên phát triển này**; hướng dẫn Windows dùng các entrypoint Python hiện có. Script chạy trọn bộ benchmark `run_final_suite` dùng `fcntl`, chỉ dành cho macOS/Linux; Windows có thể chạy từng lệnh benchmark theo tài liệu đánh giá.
 
-Bộ đánh giá có 70 câu, chia dev/test. Trên 30 câu test có đủ thông tin, bản mới trả lời đúng và đủ **22/30**. Vẫn có ca thiếu điều kiện, từ chối sai hoặc lẫn phạm vi quy định. Ứng dụng không có dữ liệu cá nhân/thời gian thực ngoài PDF, chưa có history bền vững, memory trong prompt hoặc highlight tọa độ thật trên PDF.
+Bộ đánh giá có 70 câu, chia dev/test. Kết quả **22/30** câu test đúng và đủ trong `evaluation/final_v3/` thuộc bản trước khi sửa chất lượng; kết quả chạy lại được ghi riêng trong [báo cáo mới](docs/answer_quality.md). Bộ cũ hiện được dùng để kiểm tra hồi quy, không phải kiểm định độc lập. Ứng dụng không có dữ liệu cá nhân/thời gian thực ngoài PDF, chưa có history bền vững, memory trong prompt hoặc highlight tọa độ thật trên PDF.
 
 ## Đọc thêm
 

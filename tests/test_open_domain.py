@@ -52,7 +52,10 @@ class ScriptedLLM:
                                             "decision": "supported" if self.supported and self.relevant else "unsupported" if self.relevant else "irrelevant",
                                             "supported_source_ids": list(dict.fromkeys(q["source_id"] for q in c["citations"])),
                                             "reason": "test verdict"} for c in payload["claims"]],
-                               "coverage": "full", "missing_information": []}, ensure_ascii=False)
+                               "coverage": "full", "missing_information": [],
+                               "requirements": [{"requirement_id": r["id"], "covered": True,
+                                                 "claim_ids": [c["claim_id"] for c in payload["claims"]],
+                                                 "reason": "test coverage"} for r in payload["question_analysis"]["requirements"]]}, ensure_ascii=False)
         return json.dumps(next(self.answers), ensure_ascii=False)
 
 
@@ -273,9 +276,17 @@ def test_sibling_conditions_trigger_partial_coverage(real_index, metadata):
     assert any(sources[0]["text"] in gap for gap in gaps)
 
 
-def test_nli_can_veto_chat_verifier(credit_chunk):
+def test_nli_uncertainty_uses_verbatim_evidence_instead_of_false_refusal(credit_chunk):
     reply = draft("Một tín chỉ lý thuyết gồm 15 giờ trên lớp và 30 giờ tự học có hướng dẫn.", credit_chunk["text"])
     checker = lambda *a: {"supported": False, "scores": {"neutral": 0.9}}
+    result = AnswerGenerator(ScriptedLLM([reply] * 2), entailment=checker).generate("Tín chỉ lý thuyết được tính ra sao?", [credit_chunk])
+    assert result.claims and result.claims[0]["text"] == credit_chunk["text"]
+    assert result.debug["generation_attempts"][0]["extractive_fallbacks"]
+
+
+def test_nli_contradiction_still_vetoes_chat_verifier(credit_chunk):
+    reply = draft("Một tín chỉ lý thuyết không cần tự học có hướng dẫn.", credit_chunk["text"])
+    checker = lambda *a: {"supported": False, "scores": {"contradiction": 0.95}}
     result = AnswerGenerator(ScriptedLLM([reply] * 2), entailment=checker).generate("Tín chỉ lý thuyết được tính ra sao?", [credit_chunk])
     assert not result.claims
 

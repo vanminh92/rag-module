@@ -1,5 +1,7 @@
 # Đánh giá bản nâng cấp
 
+Kết quả sửa chất lượng ngày 15/11/2026 được lưu riêng và giải thích trong [báo cáo](../docs/answer_quality.md). Bộ 70 câu đã được xem trong quá trình phát triển: ở đợt này nó là **bộ hồi quy đã biết**, không còn là tập test độc lập chưa được xem. Không đổi các nhãn, PDF hoặc báo cáo `final_v3/` để làm đẹp kết quả.
+
 `questions.json` và `run_evaluation.py` vẫn là ba câu CV14, không sửa nhãn hoặc tiêu chí cũ. `baseline_streamlit.py` là bản chụp nguyên gốc của app tại commit `6be6f89`; evaluator gọi đúng hàm sinh cũ, Top-3, prompt cũ và 256 token, không sửa để làm baseline yếu hơn.
 
 ## Bộ 70 câu
