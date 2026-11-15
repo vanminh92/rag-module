@@ -49,7 +49,7 @@ Không khuyến nghị bật neural reranker cho bản bàn giao trước khi đ
 
 NLI sử dụng `MoritzLaurer/mDeBERTa-v3-base-mnli-xnli`, revision `8adb042d524ecd5c26d3e3ba0e3fbcf7e2d0864c`, CPU float32. Chuẩn bị bằng `python -m src.entailment --download`; lúc hỏi chỉ đọc cache. NLI có giới hạn 512 token, không âm thầm cắt chứng cứ. Ngưỡng entailment 0,7 là cổng kiểm tra thử nghiệm, không phải xác suất trả lời đúng. Model này bổ sung kiểm tra, không thay Qwen2.5 3B hoặc E5.
 
-Các probe dev tại `evaluation/nli_development_probes.json` và `evaluation/nli_structured_probes.json` cho thấy cần tiêu đề điều/khoản để kiểm chứng đúng, đồng thời NLI vẫn có thể nhầm học kỳ với tích lũy. Vì vậy còn cần kiểm tra tên chỉ số và kiểm tra cơ học; không tuyên bố NLI tự bảo đảm tính đúng. Thông tin và giới hạn của model có trong [model card NLI](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli).
+Các trường hợp hồi quy trong `tests/test_open_domain.py` và báo cáo đánh giá cho thấy NLI vẫn có thể nhầm loại chỉ số hoặc từ chối sai. Vì vậy còn cần kiểm tra cơ học; không coi NLI là oracle. Xem [model card NLI](https://huggingface.co/MoritzLaurer/mDeBERTa-v3-base-mnli-xnli).
 
 SDK/schema tham chiếu: [Ollama structured outputs](https://docs.ollama.com/capabilities/structured-outputs), [Sentence Transformers CrossEncoder](https://sbert.net/docs/package_reference/cross_encoder/model.html), [model card của reranker tùy chọn](https://huggingface.co/cross-encoder/mmarco-mMiniLMv2-L12-H384-v1).
 

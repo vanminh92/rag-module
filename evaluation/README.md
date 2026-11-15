@@ -41,7 +41,7 @@ Các nhãn được viết từ chunks trích xuất thực: nguồn, trang vậ
 
 Mặc định `--support-check nli` bổ sung bộ kiểm chứng local; dùng `--support-check llm` để đo chế độ nhẹ hơn. Không được lấy việc Qwen/NLI chấm supported làm ground truth. Tập test chỉ chạy sau khi chốt cấu hình từ dev; các report thử trước đó có hash code khác là lịch sử phát triển.
 
-Bộ bàn giao cuối ở `final_v3/`, logs `../docs/final_v3/`; cấu hình khóa trong `benchmark/frozen_config.json`. Lịch sử phát triển ở `history/*.gz` kèm manifest và hash nguyên byte. Các report dừng, hash cũ hoặc `discarded_concurrent_*` không tham gia số liệu cuối. Runner suite dùng `fcntl` trên macOS/Linux; Windows có thể chạy lần lượt bốn lệnh end-to-end bên trên.
+Bộ bàn giao cuối ở `final_v3/`, logs `../docs/final_v3/`; cấu hình khóa trong `benchmark/frozen_config.json`. Các report lịch sử/trial đã được dọn khỏi phiên bản hiện tại; có thể tìm lại trong Git theo [bản ghi dọn repo](../docs/cleanup.md). Chúng không tham gia số liệu cuối. Runner suite dùng `fcntl` trên macOS/Linux; Windows có thể chạy lần lượt bốn lệnh end-to-end bên trên.
 
 Muốn tạo phiên bản nhãn mới sau rebuild, chạy `python -m evaluation.prepare_benchmark --out evaluation/benchmark_v2`; không ghi đè bộ đã đóng băng. Không dùng script này trong serving.
 

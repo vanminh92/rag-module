@@ -73,16 +73,6 @@
       "bytes": 692
     },
     {
-      "path": "evaluation/benchmark/reviews_dev_baseline.json",
-      "sha256": "de7f539817267c4605b9187e5295ac82d2a9cc9fb61d462cd039aee8f4a2e6bf",
-      "bytes": 14319
-    },
-    {
-      "path": "evaluation/benchmark/reviews_dev_baseline_final.json",
-      "sha256": "de7f539817267c4605b9187e5295ac82d2a9cc9fb61d462cd039aee8f4a2e6bf",
-      "bytes": 14319
-    },
-    {
       "path": "evaluation/benchmark/reviews_final.json",
       "sha256": "70fb073e214ada881763ef93fd165d479d1cede20b869961c460475bf9304b9c",
       "bytes": 61384
@@ -101,11 +91,6 @@
       "path": "docs/upgrade_final_cv14.log",
       "sha256": "bbd7b7f1ec4b0aa40f6d77edf8b5a0cb584be05f8dc9970912770467af818a2f",
       "bytes": 1323
-    },
-    {
-      "path": "docs/upgrade_preservation.log",
-      "sha256": "d3e2e2e272e0af46a1c137050dfbf9f5e98ce4bf8884b4631b680f76e409a060",
-      "bytes": 478
     },
     {
       "path": "docs/final_v3/dev_baseline.log",
@@ -137,5 +122,6 @@
       "sha256": "5d54c1d9f1cf466881167ac5612ed289c82e7fd17a66ca1f7c66bbf4792e779a",
       "bytes": 2370
     }
-  ]
+  ],
+  "cleanup_note": "Only entries for retained artifacts remain. Removed development/duplicate artifacts can be recovered from Git commit 00764410004ac07e57a54e7e3794e5ac6faafff5. Final raw result files and scores were not changed."
 }

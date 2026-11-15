@@ -1,10 +1,0 @@
-2026-11-15 11:42:17.133 Uvicorn server started on 127.0.0.1:8504
-
-  You can now view your Streamlit app in your browser.
-
-  URL: http://127.0.0.1:8504
-
-W1115 11:42:21.847000 81931 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 24646.15it/s]
-Loading weights:   0%|          | 0/202 [00:00<?, ?it/s]Loading weights:   2%|▏         | 5/202 [00:00<00:20,  9.58it/s]Loading weights: 100%|██████████| 202/202 [00:00<00:00, 385.00it/s]
-  Stopping...

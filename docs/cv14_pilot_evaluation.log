@@ -1,16 +1,0 @@
-W1114 11:44:09.389000 27525 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 10554.71it/s]
-Chưa đạt mục tiêu 3/3; kết quả thật đã được lưu
-Q01 | Hit@3=1 | Một tín chỉ học lý thuyết được quy định bao nhiêu giờ, và cần bao nhiêu giờ tự học có hướng dẫn?
-  1. so_tay_sinh_vien_k50-p008-c004 | trang=8 | cosine=0.916009
-  2. so_tay_sinh_vien_k50-p008-c003 | trang=8 | cosine=0.907254
-  3. so_tay_sinh_vien_k50-p011-c001 | trang=11 | cosine=0.878271
-Q02 | Hit@3=1 | Sinh viên cần hoàn thành học phần tiên quyết vào thời điểm nào?
-  1. so_tay_sinh_vien_k50-p009-c004 | trang=9 | cosine=0.882445
-  2. so_tay_sinh_vien_k50-p014-c004 | trang=14 | cosine=0.878501
-  3. so_tay_sinh_vien_k50-p019-c002 | trang=19 | cosine=0.877988
-Q03 | Hit@3=0 | Sinh viên chính quy bắt đầu tự đăng ký học phần từ học kỳ nào?
-  1. so_tay_sinh_vien_k50-p011-c005 | trang=11 | cosine=0.897704
-  2. so_tay_sinh_vien_k50-p011-c004 | trang=11 | cosine=0.896191
-  3. so_tay_sinh_vien_k50-p009-c004 | trang=9 | cosine=0.894065
-Hit@3 = 2/3 = 0.666667; report=/Users/vanminh/Documents/Subject/Software Engineering/rag-demo/evaluation/retrieval_report.json

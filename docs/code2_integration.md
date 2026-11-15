@@ -70,4 +70,4 @@ Không thay model, tiền tố, normalization hoặc chiến lược chia đoạ
 
 ## Phạm vi kiểm chứng
 
-Đọc báo cáo pilot và full trong `evaluation/`, cùng lịch sử thử nghiệm trong `docs/ingestion_notes.md`. Ba câu benchmark là kiểm tra hồi quy nhỏ, không chứng minh mọi câu hỏi hoặc bảng biểu đều truy xuất chính xác. Sổ tay có nhiều phần quy chế; Code 2 cần giữ nguồn/trang khi hiển thị và tránh diễn giải các quy chế khác nhau như cùng một quy định.
+Đọc [báo cáo đánh giá](upgrade_report.md) và [cách chạy benchmark](../evaluation/README.md). Ba câu benchmark là kiểm tra hồi quy nhỏ, không chứng minh mọi câu hỏi hoặc bảng biểu đều truy xuất chính xác. Sổ tay có nhiều phần quy chế; Code 2 cần giữ nguồn/trang khi hiển thị và tránh diễn giải các quy chế khác nhau như cùng một quy định.

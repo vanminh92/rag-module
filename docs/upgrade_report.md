@@ -1,59 +1,6 @@
-# Báo cáo nâng cấp hỏi đáp tự do
+# Kết quả đánh giá RAG
 
-Ngày thực hiện: 14/11/2026, giờ Việt Nam. Nhánh làm việc: `codex/open-domain-rag`, xuất phát từ `6be6f89`. Không push hoặc commit lên main.
-
-## Phạm vi và dữ liệu được bảo toàn
-
-- PDF chính thức: `data/so_tay_sinh_vien_k50.pdf`, 220 trang, SHA-256 `bbae270b9821c71eeede660e3168c868bde07f458f07b648645c14584bdeb8b0`.
-- Giữ nguyên ba artifact gốc của index 1.907 chunks, revision multilingual-E5-small, thuật toán chunking và API `retrieve(question, top_k=3)` với đúng năm trường/cosine.
-- Giữ nguyên câu hỏi, nhãn, evaluator CV14 và toàn bộ các tests cũ. Thêm sidecar cấu trúc riêng, pipeline mới và các tests hồi quy.
-- Môi trường được xác minh thực: Apple M5, RAM 16 GiB, Python 3.11.18. Qwen2.5 3B Q4_K_M qua Ollama; không gọi dịch vụ LLM bên ngoài. Phiên bản và model digests tại `upgrade_environment.json`.
-
-Kiểm tra bảo toàn cuối: [upgrade_preservation.log](upgrade_preservation.log). Hash các báo cáo, nhãn và log cuối: [artifact_manifest.json](../evaluation/final_v3/artifact_manifest.json). Core SHA-256 `a11c54800bb99e6ad148cd3cf8051cfc1255631d697f7e724d93b8e8cc8734b6` khớp cấu hình đã khóa.
-
-## Các giai đoạn, lệnh và bằng chứng
-
-| Giai đoạn | File chính | Lệnh / kết quả thực |
-|---|---|---|
-| 0. Kiểm tra và baseline | `evaluation/baseline_streamlit.py`, `baseline_failure_analysis.json` | Tests gốc **59 passed**; CV14 **3/3**. Logs `upgrade_stage0_*`. Bản chụp app cũ giữ nguyên prompt/Top-3/256 token. |
-| 1. Phân tích truy vấn và cấu trúc | `src/query_processing.py`, `text_utils.py`, `document_structure.py`, `settings.py`; `data/processed/structure.json` | Chuẩn hóa, ràng buộc, từ đồng nghĩa/tách truy vấn; metadata điều/khoản/điểm và phạm vi; artifact gốc không đổi. |
-| 2. Retrieval/context | `src/bm25.py`, `hybrid_retriever.py`, `reranking.py` | 20 ứng viên/method/truy vấn, RRF, lọc trùng, chọn 4–8 đoạn và hai lượt có giới hạn. Báo cáo dev và ablation có trong `evaluation/upgrade_dev_*.json`. |
-| 3. Câu trả lời và trích dẫn | `src/llm.py`, `answering.py`, `pipeline.py` | Luận điểm + trích đoạn thực; ID/nguyên văn/số/đối tượng; một lần sửa. Tests và logs `upgrade_stage3_*`, `upgrade_stage4_*`, `upgrade_stage5_tests.log`. |
-| 4. Kiểm chứng bổ sung | `src/entailment.py`, các kiểm tra chỉ số/phạm vi/độ phủ trong `answering.py` | NLI local được thử trên chứng cứ thật. Probe cho thấy model cũng có lỗi; bổ sung kiểm tra tên chỉ số và dùng cấu trúc để nhận ra mục điều kiện còn thiếu. Không coi NLI là oracle. `upgrade_nli_tests.log`: **90 passed**. |
-| 5. Giao diện và đánh giá | `streamlit_qa_app.py`; `evaluation/prepare_benchmark.py`, `run_benchmark.py`, `review_results.py`, `run_final_suite.py`; `tests/test_open_domain.py`, `test_streamlit_app.py`, `test_suite_runner.py` | Giao diện nhập tự do, partial, nguồn/trang, debug bền qua rerun; 70 câu gán nhãn từ PDF, chia dev/test, khóa hash; review gắn hash phản hồi. Kiểm thử cuối **100 passed**, CV14 vẫn **3/3**. |
-
-Các lỗi baseline quan sát được, không chỉ suy đoán:
-
-- Câu đăng ký học phần từng trượt trong baseline cửa sổ trang; CV14 hiện tại đạt 3/3 nhưng diễn đạt lại vẫn có thể trượt.
-- `P01` cũ trả định nghĩa học phần tự chọn thay cho thời điểm tự chọn môn.
-- `D15` cũ trả đúng con số tình cờ nhưng dẫn chính sách người khuyết tật thay cho học bổng khuyến khích.
-- `C03` cũ trộn xử lý học vụ với chương trình thứ hai và điểm rèn luyện.
-- Model có thể lấy số thứ tự khoản làm số lần cảnh báo; kiểm tra mới loại số thứ tự trước khi so số liệu.
-- Model có thể đổi điểm tích lũy thành học kỳ dù số khớp. Cả Qwen và NLI từng chấp nhận sai; kiểm tra tên chỉ số độc lập chặn việc đổi thuộc tính này.
-
-Chi tiết các ca và raw responses: `evaluation/baseline_failure_analysis.json`, các report trial, và `evaluation/nli_*probes.json`. Các report phát triển được nén nguyên byte trong `evaluation/history/`; `archive_manifest.json` ghi đường dẫn cũ và SHA-256. Report có `complete=false` là lượt thử dừng, không phải kết quả cuối. Một số trial hoàn tất nhưng có hash code cũ; chúng là lịch sử phát triển, không dùng thay báo cáo final. Hai lượt đo từng bị chạy chồng đã bị loại riêng với tiền tố `discarded_concurrent_`.
-
-Các lệnh theo giai đoạn (chạy từ gốc repository):
-
-```bash
-# Giai đoạn 0: trước khi đổi app; log ghi 59 passed và CV14 3/3.
-.venv/bin/python -m pytest -q --run-model
-.venv/bin/python -m evaluation.run_evaluation --out evaluation/upgrade_baseline_cv14.json
-.venv/bin/python -m evaluation.run_benchmark --split dev --system baseline --answers --out evaluation/upgrade_dev_baseline_answers.json
-
-# Giai đoạn 1–2: retrieval và ablation, chưa chấm câu trả lời.
-.venv/bin/python -m pytest -q
-.venv/bin/python -m evaluation.run_benchmark --split dev --out evaluation/upgrade_dev_retrieval.json
-.venv/bin/python -m evaluation.run_benchmark --split dev --system hybrid --reranker none --out evaluation/upgrade_dev_no_rerank.json
-
-# Giai đoạn 3–5: sinh, sửa một lần, kiểm chứng, NLI và giao diện.
-.venv/bin/python -m src.entailment --download
-.venv/bin/python -m evaluation.run_benchmark --split dev --system hybrid --answers --out evaluation/upgrade_dev_hybrid_final.json
-.venv/bin/python -m pytest -q --run-model
-.venv/bin/python -m evaluation.run_evaluation --out evaluation/upgrade_final_cv14.json
-```
-
-Log tương ứng: `docs/upgrade_stage0_*`, `upgrade_stage1_tests.log`, `upgrade_stage2_*`, `upgrade_stage3_*`, `upgrade_stage4_*`, `upgrade_stage5_tests.log`, `upgrade_final_tests.log`, `upgrade_final_cv14.log`. Các log trial/dev cũ cũng được nén trong `evaluation/history/`, có ánh xạ đường dẫn ở manifest. Tên `final` trong các report phát triển cũ không làm chúng trở thành số liệu bàn giao; chỉ bộ `evaluation/final_v3/` bên dưới là kết quả cuối.
+Đo trên MacBook Air M5 16GB ngày 14/11/2026, dùng Qwen2.5 3B và E5 hiện tại. Môi trường: [upgrade_environment.json](upgrade_environment.json). Các báo cáo cuối và nhãn vẫn được giữ nguyên; log/trial trước đó có thể tìm lại trong Git.
 
 ## Kết quả cuối
 
@@ -137,19 +84,9 @@ Các giới hạn quan sát trực tiếp trong lượt cuối:
 
 Không diễn giải tỷ lệ hỗ trợ cao thành độ chính xác tuyệt đối: nguồn có thể chứng minh một thông tin liên hệ nhưng thông tin đó không trả lời câu hỏi (`U05`). Bộ test nhỏ, do người triển khai soạn; cần kiểm định độc lập và bổ sung câu hỏi thực tế trước khi dùng làm thước đo rộng hơn. Trích xuất bảng/ảnh và ranh giới chunk qua tiêu đề vẫn có giới hạn. Mặc định ưu tiên các kiểm tra nguồn; có thể đo chế độ `RAG_SUPPORT_CHECK=llm` riêng để đánh giá đánh đổi của NLI, không coi đó là cấu hình đã được chứng minh tốt hơn.
 
-Các file bàn giao thêm ngoài các module trong bảng giai đoạn: `requirements.txt` khai báo Pydantic/Transformers/Hugging Face Hub; `.gitignore` giữ logs lượt cuối; `README.md`, `docs/open_domain_rag.md`, báo cáo này, môi trường xác minh, dữ liệu benchmark, nhãn review và raw reports. Cache trọng số nằm ngoài Git. Các module `src/` cũ, toàn bộ tests cũ, PDF, ba artifact index và evaluator CV14 không đổi.
 
-## Tái chạy và rollback
+## Tái chạy
 
-```bash
-.venv/bin/python -m pip install -r requirements.txt
-.venv/bin/python -m src.entailment --download
-.venv/bin/python -m pytest -q --run-model
-.venv/bin/python -m evaluation.run_evaluation --out evaluation/cv14_recheck.json
-.venv/bin/python -m streamlit run streamlit_qa_app.py
+Cách đo, review và định nghĩa chỉ số: [evaluation/README.md](../evaluation/README.md). Thiết kế/cấu hình: [open_domain_rag.md](open_domain_rag.md). Hướng dẫn cài/chạy: [README](../README.md).
 
-# Giao diện baseline, không rebuild index/PDF:
-.venv/bin/python -m streamlit run evaluation/baseline_streamlit.py
-```
-
-Hướng dẫn cấu hình và giới hạn: `docs/open_domain_rag.md`; định nghĩa chỉ số và cách review: `evaluation/README.md`. Không suy rộng một benchmark 70 câu thành khả năng trả lời mọi câu hỏi. Thông tin nằm trong ảnh, quan hệ ô bảng, quy định hiện hành ngoài PDF và dữ liệu cá nhân/thời gian thực vẫn có giới hạn.
+Bản baseline phục vụ đối chiếu vẫn ở `evaluation/baseline_streamlit.py`; không xóa file này vì evaluator còn dùng.

@@ -1,33 +1,0 @@
-INFO src.document_loader: PDF so_tay_sinh_vien_k50.pdf | total_pages=220 range=1-220 selected=220 text_pages=220 empty_pages=[] chars=376208
-W1114 11:49:00.171000 27654 .venv/lib/python3.11/site-packages/torch/distributed/elastic/multiprocessing/redirects.py:35] NOTE: Redirects are currently not supported in MacOs.
-INFO sentence_transformers.base.model: Loading SentenceTransformer model from intfloat/multilingual-e5-small.
-Loading weights:   0%|          | 0/199 [00:00<?, ?it/s]Loading weights: 100%|██████████| 199/199 [00:00<00:00, 23915.26it/s]
-Batches:   0%|          | 0/60 [00:00<?, ?it/s]Batches:   2%|▏         | 1/60 [00:00<00:14,  4.17it/s]Batches:   3%|▎         | 2/60 [00:00<00:17,  3.30it/s]Batches:   5%|▌         | 3/60 [00:00<00:17,  3.31it/s]Batches:   7%|▋         | 4/60 [00:01<00:16,  3.38it/s]Batches:   8%|▊         | 5/60 [00:01<00:15,  3.53it/s]Batches:  10%|█         | 6/60 [00:01<00:14,  3.68it/s]Batches:  12%|█▏        | 7/60 [00:01<00:13,  3.81it/s]Batches:  13%|█▎        | 8/60 [00:02<00:13,  3.88it/s]Batches:  15%|█▌        | 9/60 [00:02<00:12,  3.94it/s]Batches:  17%|█▋        | 10/60 [00:02<00:11,  4.37it/s]Batches:  18%|█▊        | 11/60 [00:02<00:11,  4.42it/s]Batches:  20%|██        | 12/60 [00:03<00:10,  4.63it/s]Batches:  22%|██▏       | 13/60 [00:03<00:09,  4.78it/s]Batches:  23%|██▎       | 14/60 [00:03<00:09,  4.98it/s]Batches:  25%|██▌       | 15/60 [00:03<00:08,  5.01it/s]Batches:  27%|██▋       | 16/60 [00:03<00:08,  5.25it/s]Batches:  28%|██▊       | 17/60 [00:03<00:07,  5.65it/s]Batches:  30%|███       | 18/60 [00:04<00:07,  5.94it/s]Batches:  32%|███▏      | 19/60 [00:04<00:06,  6.30it/s]Batches:  33%|███▎      | 20/60 [00:04<00:05,  6.86it/s]Batches:  35%|███▌      | 21/60 [00:04<00:05,  7.50it/s]Batches:  37%|███▋      | 22/60 [00:04<00:05,  7.55it/s]Batches:  40%|████      | 24/60 [00:04<00:04,  7.92it/s]Batches:  42%|████▏     | 25/60 [00:04<00:04,  8.29it/s]Batches:  45%|████▌     | 27/60 [00:05<00:03,  9.38it/s]Batches:  47%|████▋     | 28/60 [00:05<00:03,  8.99it/s]Batches:  50%|█████     | 30/60 [00:05<00:02, 10.08it/s]Batches:  53%|█████▎    | 32/60 [00:05<00:02, 11.04it/s]Batches:  57%|█████▋    | 34/60 [00:05<00:02, 11.52it/s]Batches:  60%|██████    | 36/60 [00:05<00:01, 12.28it/s]Batches:  63%|██████▎   | 38/60 [00:05<00:01, 12.39it/s]Batches:  67%|██████▋   | 40/60 [00:06<00:01, 12.31it/s]Batches:  70%|███████   | 42/60 [00:06<00:01, 12.59it/s]Batches:  73%|███████▎  | 44/60 [00:06<00:01, 13.11it/s]Batches:  78%|███████▊  | 47/60 [00:06<00:00, 16.19it/s]Batches:  83%|████████▎ | 50/60 [00:06<00:00, 17.75it/s]Batches:  90%|█████████ | 54/60 [00:06<00:00, 21.73it/s]Batches:  97%|█████████▋| 58/60 [00:06<00:00, 25.41it/s]Batches: 100%|██████████| 60/60 [00:06<00:00,  8.66it/s]
-INFO __main__: CV13 index: {"source": "so_tay_sinh_vien_k50.pdf", "source_sha256": "bbae270b9821c71eeede660e3168c868bde07f458f07b648645c14584bdeb8b0", "source_path": "../so_tay_sinh_vien_k50.pdf", "page_range": [1, 220], "total_pdf_pages": 220, "text_pages": 220, "empty_pages": [], "raw_chars": 376208, "normalized_chars": 346180, "model_name": "intfloat/multilingual-e5-small", "model_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3", "embedding_dim": 384, "num_chunks": 1907, "chunk_size_chars": 500, "chunk_overlap_chars": 100, "chunk_strategy": "pdf-clause-windows-v1", "max_model_tokens": 512, "max_passage_tokens": 200, "index_version": 2, "build_timestamp": "2026-11-14T04:49:08.394609+00:00", "chunks_sha256": "b659d0d065b8a4d8a47e44cc6bdb9be4cea1dce96cfd602eb6ebd478b6f2d999", "embeddings_sha256": "65721ffa3e184d2dfd523ab692eb71fe9cc82ad0bd443908ed9eaf45ef1d6521"}
-{
-  "source": "so_tay_sinh_vien_k50.pdf",
-  "source_sha256": "bbae270b9821c71eeede660e3168c868bde07f458f07b648645c14584bdeb8b0",
-  "source_path": "../so_tay_sinh_vien_k50.pdf",
-  "page_range": [
-    1,
-    220
-  ],
-  "total_pdf_pages": 220,
-  "text_pages": 220,
-  "empty_pages": [],
-  "raw_chars": 376208,
-  "normalized_chars": 346180,
-  "model_name": "intfloat/multilingual-e5-small",
-  "model_revision": "614241f622f53c4eeff9890bdc4f31cfecc418b3",
-  "embedding_dim": 384,
-  "num_chunks": 1907,
-  "chunk_size_chars": 500,
-  "chunk_overlap_chars": 100,
-  "chunk_strategy": "pdf-clause-windows-v1",
-  "max_model_tokens": 512,
-  "max_passage_tokens": 200,
-  "index_version": 2,
-  "build_timestamp": "2026-11-14T04:49:08.394609+00:00",
-  "chunks_sha256": "b659d0d065b8a4d8a47e44cc6bdb9be4cea1dce96cfd602eb6ebd478b6f2d999",
-  "embeddings_sha256": "65721ffa3e184d2dfd523ab692eb71fe9cc82ad0bd443908ed9eaf45ef1d6521"
-}

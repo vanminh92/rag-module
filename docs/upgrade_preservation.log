@@ -1,7 +1,0 @@
-Core hash matches frozen configuration: a11c54800bb99e6ad148cd3cf8051cfc1255631d697f7e724d93b8e8cc8734b6
-All original tracked src/tests/data/evaluation files unchanged.
-Frozen baseline app matches HEAD byte-for-byte.
-70 labels match original PDF/chunks and disjoint evidence families.
-Four complete reports, 140 rows, zero execution errors.
-100 tests passed (docs/upgrade_final_tests.log); CV14 3/3 (docs/upgrade_final_cv14.log).
-No commit or push; branch codex/open-domain-rag
