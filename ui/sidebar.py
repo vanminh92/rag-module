@@ -24,6 +24,7 @@ def render():
             with st.container(horizontal=True, vertical_alignment="center"):
                 st.button(chat["title"], icon=":material/chat_bubble_outline:", key=f'chat_{chat["id"]}',
                           type="secondary" if chat["id"] == s["active_chat_id"] else "tertiary",
+                          wrap=True,
                           width="stretch", disabled=busy, on_click=state.switch_chat, args=(s, chat["id"]))
         st.button("Xóa cuộc trò chuyện này", icon=":material/delete_outline:", key="delete_chat", disabled=busy,
                   type="tertiary", on_click=lambda: s.update(delete_chat_id=s["active_chat_id"]))
@@ -40,6 +41,11 @@ def render():
                       disabled=busy, on_click=state.enqueue, args=(s, question))
         st.divider()
         st.toggle("Developer mode", key="debug_enabled", disabled=busy)
-        st.caption("Sáng / tối: chọn Theme trong menu ⋮ phía trên.")
+        if s["debug_enabled"]:
+            st.caption(f'Số lần gửi đến backend trong phiên: {s["backend_invocations"]}')
+        from .app_service import health
+        st.button("Kiểm tra lại Ollama", icon=":material/refresh:", key="refresh_health", type="tertiary",
+                  on_click=health.clear, disabled=busy)
+        st.caption("Sáng / tối: chọn Light hoặc Dark trong menu ⋮ phía trên.")
         st.caption("Lịch sử chỉ lưu trong phiên trình duyệt. Tải lại trang hoặc khởi động lại app có thể làm mất hội thoại.")
         st.caption("Demo tra cứu Sổ tay sinh viên K50 · Không phải sản phẩm chính thức của nhà trường.")

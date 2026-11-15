@@ -3,8 +3,8 @@
 import streamlit as st
 
 _viewport = st.components.v2.component("k50_viewport", js="""
-export default function({setStateValue}) {
-  let previous = '';
+export default function({setStateValue, data}) {
+  let previous = JSON.stringify(data);
   function update() {
     const value = {mode: window.innerWidth >= 1280 ? 'desktop' :
       window.innerWidth >= 768 ? 'tablet' : 'mobile', height: Math.round(window.innerHeight / 50) * 50};
@@ -39,10 +39,13 @@ export default function({parentElement, data}) {
 
 
 def viewport():
-    result = _viewport(key="viewport", default={"viewport": {"mode": "desktop", "height": 900}},
+    current = st.session_state.get("ui_viewport", {"mode": "desktop", "height": 900})
+    result = _viewport(key="viewport", data=current, default={"viewport": current},
                        height=0, on_viewport_change=lambda: None)
-    return result.viewport or {"mode": "desktop", "height": 900}
+    value = result.viewport or current
+    st.session_state["ui_viewport"] = value
+    return value
 
 
 def copy_answer(text, key):
-    _copy(data={"text": text}, key=key, height="content")
+    _copy(data={"text": text}, key=key, height="content", width=180)

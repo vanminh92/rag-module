@@ -18,7 +18,7 @@ def empty_state():
             for index in range(start, start + 2):
                 title, question = SUGGESTIONS[index]
                 with columns[index - start]:
-                    st.button(f"{title}  \n{question}", key=f"suggest_{index}", width="stretch",
+                    st.button(f"{title}  \n{question}", key=f"suggest_{index}", width="stretch", wrap=True,
                               on_click=state.enqueue, args=(st.session_state, question),
                               disabled=st.session_state["is_generating"])
 
@@ -46,6 +46,8 @@ def assistant_message(message):
             st.markdown(claim["text"])
             chips(message["id"], links, f'{message["id"]}_claim_{i}')
     else:
+        if any(c.get("citations") for c in claims):
+            st.warning("Chưa đối chiếu được nguồn cho từng ý; chỉ hiển thị nguồn ở mức toàn bộ phản hồi.")
         st.markdown(result["answer"])
         if sources:
             st.caption("Nguồn được sử dụng")
@@ -77,7 +79,7 @@ def assistant_message(message):
 def render(height):
     s = st.session_state
     with st.container(key="chat_region"):
-        with st.container(height=height, border=False, key="chat_transcript", autoscroll=True):
+        with st.container(height=height, border=False, key="chat_transcript", autoscroll=False):
             messages = state.active_chat(s)["messages"]
             if not messages:
                 empty_state()

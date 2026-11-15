@@ -1,0 +1,51 @@
+{
+  "app": "streamlit_qa_app.py",
+  "backend": "actual local RAG + Ollama; no seeded replies",
+  "checks": [
+    {
+      "check": "desktop_1440x900_empty_composer_visible",
+      "passed": true
+    },
+    {
+      "check": "citation_opens_original_physical_page_15",
+      "passed": true,
+      "question": "Sinh viên đại học chính quy tự đăng ký học phần từ học kỳ nào?"
+    },
+    {
+      "check": "fallback_and_download_contain_actual_page_15",
+      "passed": true
+    },
+    {
+      "check": "copy_answer_uses_real_clipboard",
+      "passed": true,
+      "characters": 348
+    },
+    {
+      "check": "pdf_page_zoom_fallback_copy_debug_did_not_repeat_backend",
+      "passed": true
+    },
+    {
+      "check": "native_dark_theme",
+      "passed": true,
+      "background": "rgb(11, 18, 32)"
+    },
+    {
+      "check": "mobile_390px_separate_evidence_screen",
+      "passed": true
+    },
+    {
+      "check": "tablet_1024px_pdf_dialog_rendered",
+      "passed": true
+    },
+    {
+      "check": "two_real_chats_and_history_switch_preserve_answers_without_inference",
+      "passed": true
+    },
+    {
+      "check": "no_browser_page_errors",
+      "passed": true
+    }
+  ],
+  "complete": true,
+  "checks_passed": 10
+}

@@ -49,6 +49,8 @@ def ask(question):
             meta = json.loads((config.INDEX_DIR / "index_meta.json").read_text(encoding="utf-8"))
             result["ui_sources"], result["ui_warnings"] = validated_sources(
                 result["sources"], index, config.INPUT_PATH.name, meta["page_range"][1])
+            for source in result["ui_sources"]:
+                source["ui_document_sha256"] = meta["source_sha256"]
         except (OSError, ValueError, KeyError) as exc:
             # Never discard a saved answer just because the PDF viewer failed.
             result["ui_warnings"] = [f"Không xác minh được liên kết PDF: {exc}"]
@@ -78,6 +80,7 @@ def process_pending(state):
     if not request or request["status"] != "queued":
         return False
     request["status"] = "running"  # consume before any work; never retry on UI reruns
+    state["backend_invocations"] += 1
     try:
         result = ask(request["question"])
         complete_request(state, request, result=result)

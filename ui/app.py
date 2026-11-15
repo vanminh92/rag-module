@@ -11,15 +11,12 @@ def header():
     settings = RAGSettings.from_env()
     with st.container(key="app_header"):
         with st.container(horizontal=True, vertical_alignment="center"):
-            st.markdown("### Trợ lý Sổ tay sinh viên K50")
+            st.markdown("### Trợ lý Sổ tay sinh viên K50", width="stretch")
             st.button("Nguồn PDF", icon=":material/menu_book:", key="open_pdf",
                       disabled=s["is_generating"], on_click=state.open_panel, args=(s,))
-        with st.container(horizontal=True, vertical_alignment="center"):
-            connection = app_service.health(settings.ollama_host, settings.model)
-            labels = {"ready": "● Đã kết nối Ollama", "missing_model": "◌ Chưa tải model", "offline": "◌ Ollama chưa kết nối"}
-            st.caption(f'{labels[connection["status"]]} · {settings.model}')
-            st.button("Kiểm tra lại", icon=":material/refresh:", key="refresh_health", type="tertiary",
-                      on_click=app_service.health.clear, disabled=s["is_generating"])
+        connection = app_service.health(settings.ollama_host, settings.model)
+        labels = {"ready": "● Đã kết nối Ollama", "missing_model": "◌ Chưa tải model", "offline": "◌ Ollama chưa kết nối"}
+        st.caption(f'{labels[connection["status"]]} · {settings.model}')
         st.caption("Câu trả lời được tổng hợp từ tài liệu. Hãy đối chiếu nguồn khi sử dụng thông tin học vụ.")
 
 
@@ -46,7 +43,7 @@ def main():
             with chat:
                 chat_view.render(max(330, height - 340))
             with pdf:
-                pdf_panel.render()
+                pdf_panel.render(height=max(480, height - 200))
         else:
             chat_view.render(max(330, height - 340))
             if mode == "tablet" and st.session_state["pdf_focus"]:

@@ -1,5 +1,7 @@
 # RAG — Hỏi đáp tự do trên Sổ tay sinh viên Khóa 50
 
+Giao diện Modern Chat + PDF Workbench: [hướng dẫn chạy và sử dụng](README_UI.md).
+
 Module Python tìm các đoạn liên quan đến câu hỏi tiếng Việt trong **Sổ tay sinh viên Khóa 50 — Trường Đại học Sư phạm Thành phố Hồ Chí Minh**.
 
 Ứng dụng Streamlit sử dụng E5 + BM25 tiếng Việt, hợp nhất RRF, chọn 4–8 đoạn theo câu hỏi và kiểm tra từng luận điểm với trích dẫn nguyên văn. Qwen2.5 3B chạy qua Ollama; mô hình E5, PDF và API Code 2 được giữ nguyên. Đây là hỏi đáp trong phạm vi tài liệu, không phải tra cứu kiến thức ngoài sổ tay.

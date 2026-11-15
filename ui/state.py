@@ -7,7 +7,7 @@ from uuid import uuid4
 def initialize(state):
     for key, value in {"chats": {}, "active_chat_id": None, "pdf_panel_open": True,
                        "pdf_focus": False, "debug_enabled": False, "is_generating": False,
-                       "request": None, "delete_chat_id": None}.items():
+                       "request": None, "delete_chat_id": None, "backend_invocations": 0}.items():
         if key not in state:
             state[key] = value
     if not state["chats"]:

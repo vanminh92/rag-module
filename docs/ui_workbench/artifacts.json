@@ -1,0 +1,200 @@
+{
+  "note": "Final UI handoff. Screenshots are unmodified browser captures of the live Streamlit/RAG/Ollama app. RAG/data integrity is recorded in preservation.json.",
+  "artifacts": [
+    {
+      "path": ".streamlit/config.toml",
+      "sha256": "0a7ba1eb11c6620cfe3722dcc6fefb970d067d60dd449f08cb1d53d07978be79",
+      "bytes": 722
+    },
+    {
+      "path": "README.md",
+      "sha256": "caacb1eaf043b5743fe32a2e26e570e168557c1b743e89679d5fc89f5d7ac215",
+      "bytes": 20992
+    },
+    {
+      "path": "README_UI.md",
+      "sha256": "911116e3b942fa0d37e9662108c92559836e05b4c5f1e503ef437c8470d4c920",
+      "bytes": 9579
+    },
+    {
+      "path": "docs/ui_workbench/browser_checks.json",
+      "sha256": "7a43bc5c1e77c7d4ca710d700f0ed0fec5394d577645ffd1e69f946a41cc8115",
+      "bytes": 1245
+    },
+    {
+      "path": "docs/ui_workbench/browser_checks.log",
+      "sha256": "da57547792a2785b59bf6885e6e58e70db76f530e47d09ac7186459c89388e99",
+      "bytes": 738
+    },
+    {
+      "path": "docs/ui_workbench/cv14.json",
+      "sha256": "f24b27a34ffb3b7457cc54d030f331246670587734a54f3a8911750ba0c30a99",
+      "bytes": 8230
+    },
+    {
+      "path": "docs/ui_workbench/cv14.log",
+      "sha256": "9dece6f47052774530b56e2bd15afbdd1b3b8e679b9d6f45c51c9f756dad28e8",
+      "bytes": 1316
+    },
+    {
+      "path": "docs/ui_workbench/preservation.json",
+      "sha256": "9f8d153473b4f2ee1cae616fc68c0c1099a2c32016b96d27ddff4390cbedcc50",
+      "bytes": 19035
+    },
+    {
+      "path": "docs/ui_workbench/regression_tests.log",
+      "sha256": "bd6e8c77797763863f8fe76e075e0df6fa935ab8b93c65b16ccd09a48fa542ea",
+      "bytes": 181
+    },
+    {
+      "path": "docs/ui_workbench/report.md",
+      "sha256": "58509dbaf3a1764e01c305b3d95bfcd19accc4377cf91dd92f8cec578a0586a9",
+      "bytes": 10027
+    },
+    {
+      "path": "docs/ui_workbench/retrieve_smoke.json",
+      "sha256": "241effac0b1ed747a36ae53dc3a5fee881cd4a558897ddee256475dad7e86b6e",
+      "bytes": 1196
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/desktop_dark.png",
+      "sha256": "803c10a35a29ec7b3b71002d70232905e45502e835289083ed012481acaa56dc",
+      "bytes": 255788
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/desktop_empty.png",
+      "sha256": "d12581fc7cbcc7e1641f74b8bb5dc487932ffff01eb7a235a298e3a66d9eaa78",
+      "bytes": 183123
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/desktop_evidence_excerpt.png",
+      "sha256": "77d2c1d10a5b0b51e6865d566a2765bb9d6c0e9a85bd6af4124bf7060af07885",
+      "bytes": 253729
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/desktop_fallback.png",
+      "sha256": "7266ff062838a7797ce245a372518d48a2331f10c829ea378b1408c3768c8690",
+      "bytes": 247044
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/desktop_light.png",
+      "sha256": "bc7962764eefe9b69d645885914481c28de42c1b60ce74666ef9597738baa865",
+      "bytes": 260570
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/history.png",
+      "sha256": "178a4ff1aa82f30020f3313efda55f331706ae71c62a29922755dd804532cd83",
+      "bytes": 138577
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/loading.png",
+      "sha256": "76301b51c81a15c239edd7226608643ceb82d0c0e492d6d308786d219e3b9038",
+      "bytes": 165794
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/mobile_chat.png",
+      "sha256": "f86c7cda618d428e772ce925751a817cf49bfa9e7d35cd4c25be1219f2f83539",
+      "bytes": 73627
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/mobile_evidence.png",
+      "sha256": "abb6690201995e947ebdc4cf4cf4afeb1d06cfa0ac295e22db1146557538ce9a",
+      "bytes": 101460
+    },
+    {
+      "path": "docs/ui_workbench/screenshots/tablet_evidence.png",
+      "sha256": "b818ae90de1e8ab5002e8f2aec946a1bc917eca2415b756e75b9c90830afdf4e",
+      "bytes": 154730
+    },
+    {
+      "path": "requirements-ui-test.txt",
+      "sha256": "2b38b23d8ecd377c6bee1ea93ad60e7522d781878daa0ea6a4b324228d4289d1",
+      "bytes": 39
+    },
+    {
+      "path": "requirements.txt",
+      "sha256": "189439f89bb966af68c52d8e6d3d943eba11bfc28bf506230ed4cdbffee58de2",
+      "bytes": 220
+    },
+    {
+      "path": "scripts/ui_browser_check.py",
+      "sha256": "9c56f652f81ff41adbb0eb72c31f8d7a949a2516c35fa3d852317e03df07d04f",
+      "bytes": 11563
+    },
+    {
+      "path": "streamlit_qa_app.py",
+      "sha256": "cf6a33fe276b37e6164187567d7ce2af0363f4a12668226a9769f32e24f03722",
+      "bytes": 779
+    },
+    {
+      "path": "tests/test_streamlit_app.py",
+      "sha256": "868a79aaec8e180995c50e46eecc7bb68cfeef02ee55bb8ef328988a2dd54b56",
+      "bytes": 10086
+    },
+    {
+      "path": "ui/__init__.py",
+      "sha256": "4a76c666a24d5c07915f420a6832898b681447a0d5f1eab572e92953a5ffac0d",
+      "bytes": 73
+    },
+    {
+      "path": "ui/app.py",
+      "sha256": "d0d1577c4b2dc2b4b24346de0546db6fcbaef1271c8e538b31f12a06d0b67f2c",
+      "bytes": 2865
+    },
+    {
+      "path": "ui/app_service.py",
+      "sha256": "9c0a3b7c2703e3d40e2dfc3d6fe9acf74102f51737a4b52c55748944bd60b2b4",
+      "bytes": 4113
+    },
+    {
+      "path": "ui/chat_view.py",
+      "sha256": "d492a6b5842e5f9fdb3f98c2a31376000ea14cc67176dd3b89c8ac7670ee7172",
+      "bytes": 5120
+    },
+    {
+      "path": "ui/citations.py",
+      "sha256": "a8bb5ed92c83c00311370dfb762139957ad1717b8f976335d5f01a1411cafce4",
+      "bytes": 548
+    },
+    {
+      "path": "ui/components.py",
+      "sha256": "9da7b77447663844b32718ddfa697a319744d2fc891206e58f9b02a86c3748fe",
+      "bytes": 2326
+    },
+    {
+      "path": "ui/evidence.py",
+      "sha256": "8d5439554b5e6dbe2392c69913d00e76009ab70c5031cc4bb15709494bcfaa86",
+      "bytes": 1658
+    },
+    {
+      "path": "ui/pdf_document.py",
+      "sha256": "419a5267f1631bf9526e83c2a6d2215eb1f5534d3687f3576ea3ed9f3eda3779",
+      "bytes": 1279
+    },
+    {
+      "path": "ui/pdf_panel.py",
+      "sha256": "437550ee1c920ea90865f1f093fedf79a114732c66fab56f5942b565b78d1c2e",
+      "bytes": 6276
+    },
+    {
+      "path": "ui/sidebar.py",
+      "sha256": "44b6ad702aa61dc7f7c913e26ff35d45a3f59759914df0e12fa16ea743a3ab8c",
+      "bytes": 3257
+    },
+    {
+      "path": "ui/state.py",
+      "sha256": "4dac3e05860c97e2937fcd1adb64fe60ae561e61a7391efd5e0d086121dcc74c",
+      "bytes": 4199
+    },
+    {
+      "path": "ui/theme.py",
+      "sha256": "13380b26d572134a4f5a913863b6c6272506ecfd85dcba12dc69719368a43430",
+      "bytes": 420
+    },
+    {
+      "path": "ui/workbench.css",
+      "sha256": "3ce63c1b9a8a4dac2f7921c5072deef8e8600731995e769f35a0df387c2e2dc6",
+      "bytes": 2542
+    }
+  ]
+}

@@ -7,12 +7,12 @@ from . import state
 from .pdf_document import document, one_page
 
 
-def render(compact=False):
+def render(compact=False, height=None):
     s = st.session_state
     source = state.selected_source(s)
     chat = state.active_chat(s)
     busy = s["is_generating"]
-    with st.container(border=True, key="pdf_panel"):
+    with st.container(border=True, key="pdf_panel", height=height or "content"):
         with st.container(horizontal=True, vertical_alignment="center"):
             st.markdown("**Bằng chứng PDF**")
             label = "Quay lại hội thoại" if compact else "Đóng PDF"
@@ -21,6 +21,8 @@ def render(compact=False):
                 st.rerun()
         try:
             info = document()
+            if source and source.get("ui_document_sha256", info["sha256"]) != info["sha256"]:
+                raise ValueError("Nguồn đã lưu thuộc phiên bản PDF khác.")
             page_count = info["page_count"]
             page = chat["pdf_page"]
             if not 1 <= page <= page_count:
@@ -28,7 +30,7 @@ def render(compact=False):
             st.caption(f"{config.INPUT_PATH.name} · Trang PDF {page}/{page_count}")
             with st.container(horizontal=True, vertical_alignment="bottom"):
                 st.button("Trước", icon=":material/chevron_left:", key="pdf_previous",
-                          disabled=busy or page <= 1, on_click=state.set_page, args=(s, page - 1, page_count))
+                          disabled=busy or page <= 1, width=90, on_click=state.set_page, args=(s, page - 1, page_count))
                 page_key = f'pdf_page_{chat["id"]}'
                 s.setdefault(page_key, page)
 
@@ -36,21 +38,23 @@ def render(compact=False):
                     state.set_page(s, s[page_key], page_count)
 
                 st.number_input("Trang PDF", min_value=1, max_value=page_count, step=1,
-                                key=page_key, on_change=choose_page, disabled=busy, width=110)
+                                key=page_key, on_change=choose_page, disabled=busy, width=90)
                 st.button("Sau", icon=":material/chevron_right:", key="pdf_next",
-                          disabled=busy or page >= page_count, on_click=state.set_page, args=(s, page + 1, page_count))
+                          disabled=busy or page >= page_count, width=80, on_click=state.set_page, args=(s, page + 1, page_count))
             with st.container(horizontal=True, vertical_alignment="bottom"):
                 zoom = st.selectbox("Thu phóng", ["Vừa chiều rộng", "100%", "125%", "150%"],
-                                    key="pdf_zoom", disabled=busy, width=170)
+                                    key="pdf_zoom", disabled=busy, width=145)
                 engine = st.selectbox("Trình xem", ["PDF.js", "Bản dự phòng", "Chỉ văn bản"],
-                                      key="pdf_engine", disabled=busy, width=170)
+                                      key="pdf_engine", disabled=busy, width=145)
             st.caption("Nếu PDF không hiển thị, chọn Bản dự phòng hoặc tải trang được chọn.")
             if engine == "PDF.js":
                 try:
                     from streamlit_pdf_viewer import pdf_viewer
 
-                    pdf_viewer(info["bytes"], height=460, pages_to_render=[page], scroll_to_page=page,
-                               scroll_behavior="instant", zoom_level="auto" if zoom.startswith("Vừa") else float(zoom[:-1]) / 100,
+                    # Rendering exactly one physical page avoids scrollIntoView
+                    # scrolling the parent chat out of view inside an iframe.
+                    pdf_viewer(info["bytes"], height=360, pages_to_render=[page],
+                               zoom_level="auto" if zoom.startswith("Vừa") else float(zoom[:-1]) / 100,
                                resolution_boost=1, render_text=True,
                                key=f'pdf_view_{chat["id"]}_{page}_{zoom}')
                 except Exception as exc:
